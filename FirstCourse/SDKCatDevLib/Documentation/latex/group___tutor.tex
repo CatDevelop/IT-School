@@ -1,0 +1,1214 @@
+\hypertarget{group___tutor}{}\doxysection{Пример реализации}
+\label{group___tutor}\index{Пример реализации@{Пример реализации}}
+\hypertarget{Tutor_1st}{}\doxysubsubsection{Movie by Cat\+Dev}\label{Tutor_1st}
+\hypertarget{group___tutor_MovieDis}{}\doxysubsection{Описание}\label{group___tutor_MovieDis}
+В данном примере реализован мультфильм, с ипользованием всех функций Cat\+Dev\+Lib.\hypertarget{group___tutor_Connect}{}\doxysubsection{Подключение библиотек}\label{group___tutor_Connect}
+Для работы с Cat\+Dev\+Lib необходимо подключить минимум 2 библиотеки\+: T\+X\+Lib и саму Cat\+Dev\+Lib. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "TXLib.h"}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "CatDevLib.h"}}
+\end{DoxyCode}
+ \begin{DoxyNote}{Заметки}
+Не забывайте, что для подключения библиотек, они должны находиться в папке с проектом (С файлом .cpp).
+\end{DoxyNote}
+\hypertarget{group___tutor_Declaration}{}\doxysubsection{Деклорация функций}\label{group___tutor_Declaration}
+Затем декларируем наши функции мультфильма. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void} SkubiEyes1(\textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{int} SkubiScale, \textcolor{keywordtype}{bool} SkubiEyes, COLORREF SkubiStrokePanelColor, COLORREF SkubiEyesColor);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} scene1(HDC Fade);}
+\DoxyCodeLine{\textcolor{keywordtype}{void} scene2(HDC scene2\_background);}
+\DoxyCodeLine{\textcolor{keywordtype}{void} scene3(HDC openDoor, HDC closeDoor, HDC sky);}
+\DoxyCodeLine{\textcolor{keywordtype}{void} scene4(HDC minutes);}
+\DoxyCodeLine{\textcolor{keywordtype}{void} scene5(HDC openDoor, HDC sky);}
+\DoxyCodeLine{\textcolor{keywordtype}{void} scene6(HDC Scene6);}
+\DoxyCodeLine{\textcolor{keywordtype}{void} scene7(HDC Directed2, HDC Directed3, HDC Directed4);}
+\end{DoxyCode}
+\hypertarget{group___tutor_Main}{}\doxysubsection{Главная функция программы}\label{group___tutor_Main}
+В главной функции программы прописаны вызовы логических функций и загрузка ресурсов для мультфильма. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int} main()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{comment}{//Заливка фона}}
+\DoxyCodeLine{    txCreateWindow (1400, 800);}
+\DoxyCodeLine{    txSetFillColor (TX\_WHITE);}
+\DoxyCodeLine{    txFloodFill(0, 0, FLOODFILLBORDER);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    HDC Fade = txLoadImage (\textcolor{stringliteral}{"Resources\(\backslash\)\(\backslash\)Fade.bmp"});}
+\DoxyCodeLine{    txPlaySound(\textcolor{stringliteral}{"Resources\(\backslash\)\(\backslash\)start.wav"}, SND\_ASYNC);}
+\DoxyCodeLine{    scene1(Fade);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    HDC scene2\_background = txLoadImage(\textcolor{stringliteral}{"Resources\(\backslash\)\(\backslash\)Scene2\_background.bmp"});}
+\DoxyCodeLine{    txPlaySound(\textcolor{stringliteral}{"Resources\(\backslash\)\(\backslash\)tv.wav"}, SND\_ASYNC);}
+\DoxyCodeLine{    scene2(scene2\_background);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    HDC openDoor = txLoadImage(\textcolor{stringliteral}{"Resources\(\backslash\)\(\backslash\)OpenDoor.bmp"});}
+\DoxyCodeLine{    HDC closeDoor = txLoadImage(\textcolor{stringliteral}{"Resources\(\backslash\)\(\backslash\)CloseDoor.bmp"});}
+\DoxyCodeLine{    HDC sky = txLoadImage(\textcolor{stringliteral}{"Resources\(\backslash\)\(\backslash\)Sky.bmp"});}
+\DoxyCodeLine{    scene3(openDoor, closeDoor, sky);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    HDC minutes = txLoadImage(\textcolor{stringliteral}{"Resources\(\backslash\)\(\backslash\)5minutes.bmp"});}
+\DoxyCodeLine{    scene4(minutes);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    scene5(openDoor, sky);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    HDC Scene6 = txLoadImage(\textcolor{stringliteral}{"Resources\(\backslash\)\(\backslash\)Scene6.bmp"});}
+\DoxyCodeLine{    scene6(Scene6);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    HDC Directed2 = txLoadImage(\textcolor{stringliteral}{"Resources\(\backslash\)\(\backslash\)Directed2.bmp"});}
+\DoxyCodeLine{    HDC Directed3 = txLoadImage(\textcolor{stringliteral}{"Resources\(\backslash\)\(\backslash\)Directed3.bmp"});}
+\DoxyCodeLine{    HDC Directed4 = txLoadImage(\textcolor{stringliteral}{"Resources\(\backslash\)\(\backslash\)Directed4.bmp"});}
+\DoxyCodeLine{    scene7(Directed2, Directed3, Directed4);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+\hypertarget{group___tutor_NotLikeThis}{}\doxysubsection{Как не стоит поступать}\label{group___tutor_NotLikeThis}
+Здесь показан так называемый костыль. ~\newline
+ Костыли -\/ некое поделие, призванное оперативно устранить возникшую проблему, невзирая на стилистику в целом и здравый смысл в частности. ~\newline
+ В данном случае, этот \char`\"{}костыль\char`\"{} решает проблему с глазами Скуби-\/Ду. \begin{DoxyWarning}{Предупреждения}
+Избегайте \char`\"{}костылей\char`\"{}, ведь они нарушают красоту и гармонию программы. ~\newline
+ Нередко случается, что со временем кода \char`\"{}особых случаев\char`\"{}, которые обрабатывают \char`\"{}костыли\char`\"{}, становится в разы больше чем основной логики. ~\newline
+ \sout{Но... Работает -\/ не трогай.}
+\end{DoxyWarning}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void} SkubiEyes1(\textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{int} SkubiScale, \textcolor{keywordtype}{bool} SkubiEyes, COLORREF SkubiStrokePanelColor, COLORREF SkubiEyesColor)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{keywordflow}{if}(SkubiEyes)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        txSetFillColor(WHITE);}
+\DoxyCodeLine{        txSetColor(WHITE);}
+\DoxyCodeLine{        txCircle(x+(111*SkubiScale), y+(-\/226*SkubiScale), 10*SkubiScale);}
+\DoxyCodeLine{        txCircle(x+(86*SkubiScale), y+(-\/213*SkubiScale), 10*SkubiScale);}
+\DoxyCodeLine{        txSetFillColor(SkubiEyesColor);}
+\DoxyCodeLine{        txSetColor(SkubiEyesColor);}
+\DoxyCodeLine{        txCircle(x+(111*SkubiScale), y+(-\/226*SkubiScale), 6*SkubiScale);}
+\DoxyCodeLine{        txCircle(x+(86*SkubiScale), y+(-\/213*SkubiScale), 6*SkubiScale);}
+\DoxyCodeLine{        txSetFillColor(SkubiStrokePanelColor);}
+\DoxyCodeLine{        txCircle(x+(111*SkubiScale), y+(-\/226*SkubiScale), 4*SkubiScale);}
+\DoxyCodeLine{        txCircle(x+(86*SkubiScale), y+(-\/213*SkubiScale), 4*SkubiScale);}
+\DoxyCodeLine{    \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{        txSetColor(SkubiStrokePanelColor, 5);}
+\DoxyCodeLine{        txLine(x+(72*SkubiScale), y+(-\/247*SkubiScale), x+(85*SkubiScale), y+(-\/262*SkubiScale));}
+\DoxyCodeLine{        txLine(x+(85*SkubiScale), y+(-\/262*SkubiScale), x+(93*SkubiScale), y+(-\/258*SkubiScale));}
+\DoxyCodeLine{        txLine(x+(107*SkubiScale), y+(-\/257*SkubiScale), x+(117*SkubiScale), y+(-\/263*SkubiScale));}
+\DoxyCodeLine{        txLine(x+(117*SkubiScale), y+(-\/263*SkubiScale), x+(134*SkubiScale), y+(-\/257*SkubiScale));}
+\DoxyCodeLine{}
+\DoxyCodeLine{        txSetColor(SkubiStrokePanelColor, 3);}
+\DoxyCodeLine{        txLine(x+(70*SkubiScale), y+(-\/214*SkubiScale), x+(95*SkubiScale), y+(-\/216*SkubiScale));}
+\DoxyCodeLine{        txLine(x+(127*SkubiScale), y+(-\/231*SkubiScale), x+(103*SkubiScale), y+(-\/224*SkubiScale));}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+ \begin{DoxyNote}{Заметки}
+Присмотритесь к названию этой функции. Не допускайте такого. ~\newline
+ \sout{Иначе вас будет ожидать отдельный котёл в аду.} ~\newline
+ Названия функций, переменных, констант и т.\+д должны отражать их смысл.
+\end{DoxyNote}
+\hypertarget{group___tutor_Logic}{}\doxysubsection{Логические функции}\label{group___tutor_Logic}
+В логических функциях прописывается вызовы функций в определённое время с определёнными параметрами. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void} scene1(HDC Fade)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    txBitBlt (txDC(), 0, 0, 1400, 800, Fade, 0, 0);}
+\DoxyCodeLine{    txSleep(7000);}
+\DoxyCodeLine{    txDeleteDC (Fade);}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} scene2(HDC scene2\_background)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} pigX = 913;}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} pigY = 450;}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} pigEar = 3;  \textcolor{comment}{//0-\/Нет ушей, 1-\/Правое ухо, 2-\/Левое ухо, 3-\/Оба уха}}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} pigHand = 3;  \textcolor{comment}{//0-\/Нет рук, 1-\/Правая рука, 2-\/Левая рука, 3-\/Обе руки}}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} pigScale = 1;}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} pigEyes; \textcolor{comment}{//= true;}}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} pigLeg = \textcolor{keyword}{true};}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} pigLeftArm; \textcolor{comment}{//= 1;}}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} pigRoth = \textcolor{keyword}{true};}
+\DoxyCodeLine{    COLORREF pigEarColor = RGB(230, 152, 194);}
+\DoxyCodeLine{    COLORREF pigNoseColor = RGB(251, 202, 205);}
+\DoxyCodeLine{    COLORREF pigShirtColor = RGB(240, 78, 150);}
+\DoxyCodeLine{    COLORREF pigSkinColor = RGB(251, 202, 205);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} flyX = 431;}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} flyY = 275;}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} flyHand = 3;  \textcolor{comment}{//0-\/Нет рук, 1-\/Правая рука, 2-\/Левая рука, 3-\/Обе руки}}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} flyScale = 1;}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} flyLeg = \textcolor{keyword}{true};\textcolor{comment}{//При отсутствии ног, крылья автоматические исчезают}}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} flyHair = \textcolor{keyword}{true};}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} flyWings = \textcolor{keyword}{true};}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} flyEyes;}
+\DoxyCodeLine{    COLORREF flyRothColor = RGB(148, 56, 105);}
+\DoxyCodeLine{    COLORREF flyShirtColor = RGB(255, 0, 0);}
+\DoxyCodeLine{    COLORREF flySkinColor = RGB(88, 165, 155);}
+\DoxyCodeLine{    COLORREF flyEyesColor = RGB(255, 255, 0);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    txBegin();}
+\DoxyCodeLine{    \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=1; i<17; i++)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        txBitBlt (txDC(), 0, 0, 1400, 800, scene2\_background, 0, 0);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \mbox{\hyperlink{group___pig_gac9cb2d88a68d84133114cae1a9844f13}{drawPig}}(pigX, pigY, pigEar, pigHand, pigScale, pigEyes, pigLeg, pigLeftArm, pigRoth, pigEarColor, pigNoseColor, pigShirtColor, pigSkinColor);}
+\DoxyCodeLine{        \mbox{\hyperlink{group___fly_ga7f4a3b43b29cb14ffae24fa9efc7236e}{drawFly}}(flyX, flyY, flyHand, flyLeg, flyScale, flyHair, flyWings, flyEyes, flyRothColor, flyShirtColor, flySkinColor, flyEyesColor);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{keywordflow}{if}(i\%5==0)}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            flyEyes=\textcolor{keyword}{false};}
+\DoxyCodeLine{        \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{            flyEyes=\textcolor{keyword}{true};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{keywordflow}{if}(i\%6==0)}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            pigEyes=\textcolor{keyword}{false};}
+\DoxyCodeLine{        \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{            pigEyes=\textcolor{keyword}{true};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{keywordflow}{if}(i\%4==0)}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            pigLeftArm = 1;}
+\DoxyCodeLine{        \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{            pigLeftArm = 0;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{        txSleep(500);}
+\DoxyCodeLine{        txSetFillColor(WHITE);}
+\DoxyCodeLine{        txClear();}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    txEnd();}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} MinionX = -\/250;}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} MinionY = 446;}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} MinionHand = 3;  \textcolor{comment}{//0-\/Нет рук, 1-\/Правая рука, 2-\/Левая рука, 3-\/Обе руки}}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} MinionScale = 1;}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} MinionGlasses = \textcolor{keyword}{true};}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} MinionHair = \textcolor{keyword}{true};}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} MinionRoth = \textcolor{keyword}{true};}
+\DoxyCodeLine{    COLORREF MinionEyesColor = RGB(117, 79, 56);}
+\DoxyCodeLine{    COLORREF MinionPantsColor = RGB(0, 139, 255);}
+\DoxyCodeLine{    COLORREF MinionGlassesColor = RGB(87, 78, 64);}
+\DoxyCodeLine{    COLORREF MinionPocketColor = RGB(0, 139, 255);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    txBegin();}
+\DoxyCodeLine{    \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=1; i<34; i++)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        txBitBlt (txDC(), 0, 0, 1400, 800, scene2\_background, 0, 0);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \mbox{\hyperlink{group___pig_gac9cb2d88a68d84133114cae1a9844f13}{drawPig}}(pigX, pigY, pigEar, pigHand, pigScale, pigEyes, pigLeg, pigLeftArm, pigRoth, pigEarColor, pigNoseColor, pigShirtColor, pigSkinColor);}
+\DoxyCodeLine{        \mbox{\hyperlink{group___fly_ga7f4a3b43b29cb14ffae24fa9efc7236e}{drawFly}}(flyX, flyY, flyHand, flyLeg, flyScale, flyHair, flyWings, flyEyes, flyRothColor, flyShirtColor, flySkinColor, flyEyesColor);}
+\DoxyCodeLine{        \mbox{\hyperlink{group___minion_ga44f059566e14c4635211fe6765776182}{drawMinion}}(MinionX, MinionY, MinionHand, MinionScale, MinionGlasses, MinionHair, MinionRoth, MinionEyesColor, MinionPantsColor, MinionGlassesColor, MinionPocketColor);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        MinionX=MinionX+10;}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{keywordflow}{if}(i\%2)}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            MinionY=MinionY+10;}
+\DoxyCodeLine{        \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{            MinionY=MinionY-\/10;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{keywordflow}{if}(i\%10==0)}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            flyEyes=\textcolor{keyword}{false};}
+\DoxyCodeLine{        \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{            flyEyes=\textcolor{keyword}{true};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{keywordflow}{if}(i\%6==0)}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            pigEyes=\textcolor{keyword}{false};}
+\DoxyCodeLine{        \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{            pigEyes=\textcolor{keyword}{true};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{        txSleep(250);}
+\DoxyCodeLine{        txSetFillColor(WHITE);}
+\DoxyCodeLine{        txClear();}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    txEnd();}
+\DoxyCodeLine{}
+\DoxyCodeLine{    txPlaySound(\textcolor{stringliteral}{"Resources\(\backslash\)\(\backslash\)minion.wav"}, SND\_ASYNC);}
+\DoxyCodeLine{    txBegin();}
+\DoxyCodeLine{    \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=1; i<6; i++)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        txBitBlt (txDC(), 0, 0, 1400, 800, scene2\_background, 0, 0);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \mbox{\hyperlink{group___pig_gac9cb2d88a68d84133114cae1a9844f13}{drawPig}}(pigX, pigY, pigEar, pigHand, pigScale, pigEyes, pigLeg, pigLeftArm, pigRoth, pigEarColor, pigNoseColor, pigShirtColor, pigSkinColor);}
+\DoxyCodeLine{        \mbox{\hyperlink{group___fly_ga7f4a3b43b29cb14ffae24fa9efc7236e}{drawFly}}(flyX, flyY, flyHand, flyLeg, flyScale, flyHair, flyWings, flyEyes, flyRothColor, flyShirtColor, flySkinColor, flyEyesColor);}
+\DoxyCodeLine{        \mbox{\hyperlink{group___minion_ga44f059566e14c4635211fe6765776182}{drawMinion}}(MinionX, MinionY, MinionHand, MinionScale, MinionGlasses, MinionHair, MinionRoth, MinionEyesColor, MinionPantsColor, MinionGlassesColor, MinionPocketColor);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        SIZE size = txGetTextExtent (\textcolor{stringliteral}{"Миньон: Друзья, пойдёмте кушац!"});}
+\DoxyCodeLine{        txSelectFont (\textcolor{stringliteral}{"Comic Sans MS"}, 40);}
+\DoxyCodeLine{        txTextOut (700 -\/ size.cx/2, 700, \textcolor{stringliteral}{"Миньон: Друзья, пойдёмте кушац!"});}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{keywordflow}{if}(i\%5==0)}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            flyEyes=\textcolor{keyword}{false};}
+\DoxyCodeLine{        \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{            flyEyes=\textcolor{keyword}{true};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{keywordflow}{if}(i\%6==0)}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            pigEyes=\textcolor{keyword}{false};}
+\DoxyCodeLine{        \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{            pigEyes=\textcolor{keyword}{true};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{        MinionRoth = !MinionRoth;}
+\DoxyCodeLine{        txSleep(500);}
+\DoxyCodeLine{        txSetFillColor(WHITE);}
+\DoxyCodeLine{        txClear();}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    txEnd();}
+\DoxyCodeLine{    txDeleteDC (scene2\_background);}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} scene3(HDC openDoor, HDC closeDoor, HDC sky)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    txBitBlt (txDC(), 0, 0, 1400, 800, closeDoor, 0, 0);}
+\DoxyCodeLine{    txPlaySound(\textcolor{stringliteral}{"Resources\(\backslash\)\(\backslash\)fbi.wav"}, SND\_SYNC);}
+\DoxyCodeLine{    txDeleteDC (closeDoor);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} penguinX = 750;\textcolor{comment}{//670}}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} penguinY = 403;}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} penguinHand = 3;  \textcolor{comment}{//0-\/Нет рук, 1-\/Правая рука, 2-\/Левая рука, 3-\/Обе руки}}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} penguinLeg = 3;  \textcolor{comment}{//0-\/Нет ног, 1-\/Правая нога, 2-\/Левая нога, 3-\/Обе ноги}}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} penguinEyes = 3; \textcolor{comment}{//0-\/Нет глаз, 1-\/Правый глаз, 2-\/Левый газ, 3-\/Оба глаза}}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} penguinScale = 1;}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} penguinRoth = \textcolor{keyword}{true};}
+\DoxyCodeLine{    COLORREF penguinEyesColor = RGB(51, 83, 128);}
+\DoxyCodeLine{    COLORREF penguinLegsColor = RGB(169, 95, 46);}
+\DoxyCodeLine{    COLORREF penguinBackColor = RGB(0, 0, 1);}
+\DoxyCodeLine{    COLORREF penguinBallyColor = RGB(255, 255, 241);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} SkubiX = 726;\textcolor{comment}{//602}}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} SkubiY = 758;}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} SkubiScale = 1;}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} SkubiNose = \textcolor{keyword}{true};}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} SkubiKeychain = \textcolor{keyword}{true};}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} skubyiMoles = \textcolor{keyword}{true};}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} SkubiEyes = \textcolor{keyword}{false};}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} SkubiTeeth = \textcolor{keyword}{true};}
+\DoxyCodeLine{    COLORREF SkubiStrokePanelColor = RGB(0, 0, 2);}
+\DoxyCodeLine{    COLORREF SkubiSkinColor = RGB(142, 80, 6);}
+\DoxyCodeLine{    COLORREF SkubiCollarColor = RGB(10, 105, 127);}
+\DoxyCodeLine{    COLORREF SkubiEyesColor = RGB(51, 83, 128);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    txBegin();}
+\DoxyCodeLine{    \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=1; i<7; i++)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        txSetFillColor (TX\_WHITE);}
+\DoxyCodeLine{        txFloodFill(0, 0, FLOODFILLBORDER);}
+\DoxyCodeLine{        txBitBlt (txDC(), 0, 0, 1400, 800, sky, 0, 0);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \mbox{\hyperlink{group___pa_gac66fbb3763bd0ce6765e5883d95656f6}{drawPenguin}}(penguinX, penguinY, penguinHand, penguinLeg, penguinScale, penguinRoth, penguinEyes, penguinEyesColor, penguinLegsColor, penguinBackColor, penguinBallyColor);}
+\DoxyCodeLine{        \mbox{\hyperlink{group___skubi_ga36519e108a3f17316b56755270ab2023}{drawSkubi}}(SkubiX, SkubiY, SkubiScale, SkubiKeychain, skubyiMoles, SkubiEyes, SkubiNose, SkubiTeeth, SkubiStrokePanelColor, SkubiSkinColor, SkubiCollarColor, SkubiEyesColor);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        penguinX = penguinX-\/10;}
+\DoxyCodeLine{        SkubiX = SkubiX-\/20;}
+\DoxyCodeLine{}
+\DoxyCodeLine{        txAlphaBlend(txDC(), 0, 0, 1400, 800, openDoor, 0, 0, 1);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        txSleep(125);}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    txEnd();}
+\DoxyCodeLine{}
+\DoxyCodeLine{    txPlaySound(\textcolor{stringliteral}{"Resources\(\backslash\)\(\backslash\)SkubiKush.wav"}, SND\_ASYNC);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    txBegin();}
+\DoxyCodeLine{    \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=1; i<3; i++)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        txSetFillColor (TX\_WHITE);}
+\DoxyCodeLine{        txFloodFill(0, 0, FLOODFILLBORDER);}
+\DoxyCodeLine{        txBitBlt (txDC(), 0, 0, 1400, 800, sky, 0, 0);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \mbox{\hyperlink{group___pa_gac66fbb3763bd0ce6765e5883d95656f6}{drawPenguin}}(penguinX, penguinY, penguinHand, penguinLeg, penguinScale, penguinRoth, penguinEyes, penguinEyesColor, penguinLegsColor, penguinBackColor, penguinBallyColor);}
+\DoxyCodeLine{        \mbox{\hyperlink{group___skubi_ga36519e108a3f17316b56755270ab2023}{drawSkubi}}(SkubiX, SkubiY, SkubiScale, SkubiKeychain, skubyiMoles, SkubiEyes, SkubiNose, SkubiTeeth, SkubiStrokePanelColor, SkubiSkinColor, SkubiCollarColor, SkubiEyesColor);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        SkubiTeeth = !SkubiTeeth;}
+\DoxyCodeLine{}
+\DoxyCodeLine{        txAlphaBlend(txDC(), 0, 0, 1400, 800, openDoor, 0, 0, 1);}
+\DoxyCodeLine{        SkubiEyes1(SkubiX, SkubiY, SkubiScale, SkubiEyes, SkubiStrokePanelColor, SkubiEyesColor);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        SkubiEyes = !SkubiEyes;}
+\DoxyCodeLine{}
+\DoxyCodeLine{        txSleep(1000);}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    txEnd();}
+\DoxyCodeLine{    txSleep(250);}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} scene4(HDC minutes)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    txBitBlt (txDC(), 0, 0, 1400, 800, minutes, 0, 0);}
+\DoxyCodeLine{    txPlaySound(\textcolor{stringliteral}{"Resources\(\backslash\)\(\backslash\)5minutes.wav"}, SND\_SYNC);}
+\DoxyCodeLine{    txDeleteDC (minutes);}
+\DoxyCodeLine{    txSetFillColor(BLACK);}
+\DoxyCodeLine{    txClear();}
+\DoxyCodeLine{    txPlaySound(\textcolor{stringliteral}{"Resources\(\backslash\)\(\backslash\)eat.wav"}, SND\_SYNC);}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} scene5(HDC openDoor, HDC sky)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} penguinX = 680;\textcolor{comment}{//670}}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} penguinY = 403;}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} penguinHand = 3;  \textcolor{comment}{//0-\/Нет рук, 1-\/Правая рука, 2-\/Левая рука, 3-\/Обе руки}}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} penguinLeg = 3;  \textcolor{comment}{//0-\/Нет ног, 1-\/Правая нога, 2-\/Левая нога, 3-\/Обе ноги}}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} penguinEyes = 3; \textcolor{comment}{//0-\/Нет глаз, 1-\/Правый глаз, 2-\/Левый газ, 3-\/Оба глаза}}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} penguinScale = 1;}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} penguinRoth = \textcolor{keyword}{true};}
+\DoxyCodeLine{    COLORREF penguinEyesColor = RGB(51, 83, 128);}
+\DoxyCodeLine{    COLORREF penguinLegsColor = RGB(169, 95, 46);}
+\DoxyCodeLine{    COLORREF penguinBackColor = RGB(0, 0, 1);}
+\DoxyCodeLine{    COLORREF penguinBallyColor = RGB(255, 255, 241);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} SkubiX = 586;\textcolor{comment}{//602}}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} SkubiY = 758;}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} SkubiScale = 1;}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} SkubiNose = \textcolor{keyword}{true};}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} SkubiKeychain = \textcolor{keyword}{true};}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} skubyiMoles = \textcolor{keyword}{true};}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} SkubiEyes = \textcolor{keyword}{true};}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} SkubiTeeth = \textcolor{keyword}{false};}
+\DoxyCodeLine{    COLORREF SkubiStrokePanelColor = RGB(0, 0, 2);}
+\DoxyCodeLine{    COLORREF SkubiSkinColor = RGB(142, 80, 6);}
+\DoxyCodeLine{    COLORREF SkubiCollarColor = RGB(10, 105, 127);}
+\DoxyCodeLine{    COLORREF SkubiEyesColor = RGB(51, 83, 128);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    txBitBlt (txDC(), 0, 0, 1400, 800, sky, 0, 0);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \mbox{\hyperlink{group___pa_gac66fbb3763bd0ce6765e5883d95656f6}{drawPenguin}}(penguinX, penguinY, penguinHand, penguinLeg, penguinScale, penguinRoth, penguinEyes, penguinEyesColor, penguinLegsColor, penguinBackColor, penguinBallyColor);}
+\DoxyCodeLine{    \mbox{\hyperlink{group___skubi_ga36519e108a3f17316b56755270ab2023}{drawSkubi}}(SkubiX, SkubiY, SkubiScale, SkubiKeychain, skubyiMoles, SkubiEyes, SkubiNose, SkubiTeeth, SkubiStrokePanelColor, SkubiSkinColor, SkubiCollarColor, SkubiEyesColor);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    txAlphaBlend(txDC(), 0, 0, 1400, 800, openDoor, 0, 0, 1);}
+\DoxyCodeLine{    SkubiEyes1(SkubiX, SkubiY, SkubiScale, SkubiEyes, SkubiStrokePanelColor, SkubiEyesColor);}
+\DoxyCodeLine{    txSleep(1000);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    txPlaySound(\textcolor{stringliteral}{"Resources\(\backslash\)\(\backslash\)SkubiPosh.wav"}, SND\_ASYNC);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    txBegin();}
+\DoxyCodeLine{    \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=1; i<3; i++)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        txSetFillColor (TX\_WHITE);}
+\DoxyCodeLine{        txFloodFill(0, 0, FLOODFILLBORDER);}
+\DoxyCodeLine{        txBitBlt (txDC(), 0, 0, 1400, 800, sky, 0, 0);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \mbox{\hyperlink{group___pa_gac66fbb3763bd0ce6765e5883d95656f6}{drawPenguin}}(penguinX, penguinY, penguinHand, penguinLeg, penguinScale, penguinRoth, penguinEyes, penguinEyesColor, penguinLegsColor, penguinBackColor, penguinBallyColor);}
+\DoxyCodeLine{        \mbox{\hyperlink{group___skubi_ga36519e108a3f17316b56755270ab2023}{drawSkubi}}(SkubiX, SkubiY, SkubiScale, SkubiKeychain, skubyiMoles, SkubiEyes, SkubiNose, SkubiTeeth, SkubiStrokePanelColor, SkubiSkinColor, SkubiCollarColor, SkubiEyesColor);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        SkubiTeeth = !SkubiTeeth;}
+\DoxyCodeLine{}
+\DoxyCodeLine{        txAlphaBlend(txDC(), 0, 0, 1400, 800, openDoor, 0, 0, 1);}
+\DoxyCodeLine{        SkubiEyes1(SkubiX, SkubiY, SkubiScale, SkubiEyes, SkubiStrokePanelColor, SkubiEyesColor);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        SkubiEyes = !SkubiEyes;}
+\DoxyCodeLine{}
+\DoxyCodeLine{        txSleep(1000);}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    txEnd();}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=1; i<12; i++)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        txSetFillColor (TX\_WHITE);}
+\DoxyCodeLine{        txFloodFill(0, 0, FLOODFILLBORDER);}
+\DoxyCodeLine{        txBitBlt (txDC(), 0, 0, 1400, 800, sky, 0, 0);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \mbox{\hyperlink{group___pa_gac66fbb3763bd0ce6765e5883d95656f6}{drawPenguin}}(penguinX, penguinY, penguinHand, penguinLeg, penguinScale, penguinRoth, penguinEyes, penguinEyesColor, penguinLegsColor, penguinBackColor, penguinBallyColor);}
+\DoxyCodeLine{        \mbox{\hyperlink{group___skubi_ga36519e108a3f17316b56755270ab2023}{drawSkubi}}(SkubiX, SkubiY, SkubiScale, SkubiKeychain, skubyiMoles, SkubiEyes, SkubiNose, SkubiTeeth, SkubiStrokePanelColor, SkubiSkinColor, SkubiCollarColor, SkubiEyesColor);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        penguinX = penguinX+10;}
+\DoxyCodeLine{        SkubiX = SkubiX+20;}
+\DoxyCodeLine{}
+\DoxyCodeLine{        txAlphaBlend(txDC(), 0, 0, 1400, 800, openDoor, 0, 0, 1);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        txSleep(125);}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    txDeleteDC(openDoor);}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} scene6(HDC Scene6)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} pigX = 913;}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} pigY = 450;}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} pigEar = 3;  \textcolor{comment}{//0-\/Нет ушей, 1-\/Правое ухо, 2-\/Левое ухо, 3-\/Оба уха}}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} pigHand = 3;  \textcolor{comment}{//0-\/Нет рук, 1-\/Правая рука, 2-\/Левая рука, 3-\/Обе руки}}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} pigScale = 1;}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} pigEyes; \textcolor{comment}{//= true;}}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} pigLeg = \textcolor{keyword}{true};}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} pigLeftArm=1; \textcolor{comment}{//= 1;}}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} pigRoth = \textcolor{keyword}{true};}
+\DoxyCodeLine{    COLORREF pigEarColor = RGB(230, 152, 194);}
+\DoxyCodeLine{    COLORREF pigNoseColor = RGB(251, 202, 205);}
+\DoxyCodeLine{    COLORREF pigShirtColor = RGB(240, 78, 150);}
+\DoxyCodeLine{    COLORREF pigSkinColor = RGB(251, 202, 205);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} timonX = 178;}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} timonY = 493;}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} timonEar = 3;  \textcolor{comment}{//0-\/Нет ушей, 1-\/Правое ухо, 2-\/Левое ухо, 3-\/Оба уха}}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} timonLeg = 3;  \textcolor{comment}{//0-\/Нет ног, 1-\/Правая нога, 2-\/Левая нога, 3-\/Обе ноги}}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} timonScale = 1;}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} timonTale = \textcolor{keyword}{true};}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} timonHair = \textcolor{keyword}{true};}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} timonRoth = \textcolor{keyword}{false};}
+\DoxyCodeLine{    COLORREF timonBallyColor = RGB(241, 217, 183);}
+\DoxyCodeLine{    COLORREF timonBackColor = RGB(169, 95, 46);}
+\DoxyCodeLine{    COLORREF timonHairColor = RGB(166, 61, 40);}
+\DoxyCodeLine{    COLORREF timonLimbColor = RGB(87, 78, 64);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    txPlaySound(\textcolor{stringliteral}{"Resources\(\backslash\)\(\backslash\)Where.wav"}, SND\_ASYNC);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    txBegin();}
+\DoxyCodeLine{    \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=1; i<4; i++)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        txBitBlt (txDC(), 0, 0, 1400, 800, Scene6, 0, 0);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \mbox{\hyperlink{group___pig_gac9cb2d88a68d84133114cae1a9844f13}{drawPig}}(pigX, pigY, pigEar, pigHand, pigScale, pigEyes, pigLeg, pigLeftArm, pigRoth, pigEarColor, pigNoseColor, pigShirtColor, pigSkinColor);}
+\DoxyCodeLine{        \mbox{\hyperlink{group___timon_ga362cac2ca3452cbf9cd9cd0de8ccf493}{drawTimon}}(timonX, timonY, timonEar, timonLeg, timonScale, timonTale, timonHair, timonRoth, timonBallyColor, timonBackColor, timonHairColor, timonLimbColor);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{keywordflow}{if}(i\%2==0)}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            pigEyes=\textcolor{keyword}{false};}
+\DoxyCodeLine{        \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{            pigEyes=\textcolor{keyword}{true};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{        pigRoth = !pigRoth;}
+\DoxyCodeLine{}
+\DoxyCodeLine{        txSleep(500);}
+\DoxyCodeLine{        txSetFillColor(WHITE);}
+\DoxyCodeLine{        txClear();}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    txEnd();}
+\DoxyCodeLine{}
+\DoxyCodeLine{    txBitBlt (txDC(), 0, 0, 1400, 800, Scene6, 0, 0);}
+\DoxyCodeLine{    \mbox{\hyperlink{group___pig_gac9cb2d88a68d84133114cae1a9844f13}{drawPig}}(pigX, pigY, pigEar, pigHand, pigScale, pigEyes, pigLeg, pigLeftArm, pigRoth, pigEarColor, pigNoseColor, pigShirtColor, pigSkinColor);}
+\DoxyCodeLine{    \mbox{\hyperlink{group___timon_ga362cac2ca3452cbf9cd9cd0de8ccf493}{drawTimon}}(timonX, timonY, timonEar, timonLeg, timonScale, timonTale, timonHair, timonRoth, timonBallyColor, timonBackColor, timonHairColor, timonLimbColor);}
+\DoxyCodeLine{    txPlaySound(\textcolor{stringliteral}{"Resources\(\backslash\)\(\backslash\)IDon'tKnow.wav"}, SND\_ASYNC);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    txBegin();}
+\DoxyCodeLine{    \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=1; i<12; i++)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        txBitBlt (txDC(), 0, 0, 1400, 800, Scene6, 0, 0);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \mbox{\hyperlink{group___pig_gac9cb2d88a68d84133114cae1a9844f13}{drawPig}}(pigX, pigY, pigEar, pigHand, pigScale, pigEyes, pigLeg, pigLeftArm, pigRoth, pigEarColor, pigNoseColor, pigShirtColor, pigSkinColor);}
+\DoxyCodeLine{        \mbox{\hyperlink{group___timon_ga362cac2ca3452cbf9cd9cd0de8ccf493}{drawTimon}}(timonX, timonY, timonEar, timonLeg, timonScale, timonTale, timonHair, timonRoth, timonBallyColor, timonBackColor, timonHairColor, timonLimbColor);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{keywordflow}{if}(i\%2==0)}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            pigEyes=\textcolor{keyword}{false};}
+\DoxyCodeLine{        \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{            pigEyes=\textcolor{keyword}{true};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{        timonRoth=!timonRoth;}
+\DoxyCodeLine{}
+\DoxyCodeLine{        txSleep(250);}
+\DoxyCodeLine{        txSetFillColor(WHITE);}
+\DoxyCodeLine{        txClear();}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    txEnd();}
+\DoxyCodeLine{}
+\DoxyCodeLine{    txBegin();}
+\DoxyCodeLine{    \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=1; i<80; i++)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        txBitBlt (txDC(), 0, 0, 1400, 800, Scene6, 0, 0);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \mbox{\hyperlink{group___pig_gac9cb2d88a68d84133114cae1a9844f13}{drawPig}}(pigX, pigY, pigEar, pigHand, pigScale, pigEyes, pigLeg, pigLeftArm, pigRoth, pigEarColor, pigNoseColor, pigShirtColor, pigSkinColor);}
+\DoxyCodeLine{        \mbox{\hyperlink{group___timon_ga362cac2ca3452cbf9cd9cd0de8ccf493}{drawTimon}}(timonX, timonY, timonEar, timonLeg, timonScale, timonTale, timonHair, timonRoth, timonBallyColor, timonBackColor, timonHairColor, timonLimbColor);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{keywordflow}{if}(i\%6==0)}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            pigEyes=\textcolor{keyword}{false};}
+\DoxyCodeLine{        \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{            pigEyes=\textcolor{keyword}{true};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{keywordflow}{if}(i\%2==0)}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            timonY=timonY+15;}
+\DoxyCodeLine{        \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{            timonY=timonY-\/15;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{        timonX=timonX+20;}
+\DoxyCodeLine{}
+\DoxyCodeLine{        txSleep(100);}
+\DoxyCodeLine{        txSetFillColor(WHITE);}
+\DoxyCodeLine{        txClear();}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    txEnd();}
+\DoxyCodeLine{}
+\DoxyCodeLine{    txBitBlt (txDC(), 0, 0, 1400, 800, Scene6, 0, 0);}
+\DoxyCodeLine{    \mbox{\hyperlink{group___pig_gac9cb2d88a68d84133114cae1a9844f13}{drawPig}}(pigX, pigY, pigEar, pigHand, pigScale, pigEyes, pigLeg, pigLeftArm, pigRoth, pigEarColor, pigNoseColor, pigShirtColor, pigSkinColor);}
+\DoxyCodeLine{    txPlaySound(\textcolor{stringliteral}{"Resources\(\backslash\)\(\backslash\)obed.wav"}, SND\_ASYNC);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    txBegin();}
+\DoxyCodeLine{    \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=1; i<5; i++)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        txBitBlt (txDC(), 0, 0, 1400, 800, Scene6, 0, 0);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \mbox{\hyperlink{group___pig_gac9cb2d88a68d84133114cae1a9844f13}{drawPig}}(pigX, pigY, pigEar, pigHand, pigScale, pigEyes, pigLeg, pigLeftArm, pigRoth, pigEarColor, pigNoseColor, pigShirtColor, pigSkinColor);}
+\DoxyCodeLine{        \textcolor{keywordflow}{if}(i\%2==0)}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            pigEyes=\textcolor{keyword}{false};}
+\DoxyCodeLine{        \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{            pigEyes=\textcolor{keyword}{true};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{        pigRoth = !pigRoth;}
+\DoxyCodeLine{        txSleep(1000);}
+\DoxyCodeLine{        txSetFillColor(WHITE);}
+\DoxyCodeLine{        txClear();}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    txEnd();}
+\DoxyCodeLine{}
+\DoxyCodeLine{    pigX = 1184;}
+\DoxyCodeLine{    pigY = 829;}
+\DoxyCodeLine{    pigScale = 3;}
+\DoxyCodeLine{    pigEyes = \textcolor{keyword}{true};}
+\DoxyCodeLine{}
+\DoxyCodeLine{    txPlaySound(\textcolor{stringliteral}{"Resources\(\backslash\)\(\backslash\)ubir.wav"}, SND\_ASYNC);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    txBegin();}
+\DoxyCodeLine{    \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=1; i<3; i++)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        txBitBlt (txDC(), 0, 0, 1400, 800, Scene6, 0, 0);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \mbox{\hyperlink{group___pig_gac9cb2d88a68d84133114cae1a9844f13}{drawPig}}(pigX, pigY, pigEar, pigHand, pigScale, pigEyes, pigLeg, pigLeftArm, pigRoth, pigEarColor, pigNoseColor, pigShirtColor, pigSkinColor);}
+\DoxyCodeLine{        \textcolor{keywordflow}{if}(i\%2==0)}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            pigEyes=\textcolor{keyword}{false};}
+\DoxyCodeLine{        \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{            pigEyes=\textcolor{keyword}{true};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{        pigRoth = !pigRoth;}
+\DoxyCodeLine{        txSleep(1000);}
+\DoxyCodeLine{        txSetFillColor(WHITE);}
+\DoxyCodeLine{        txClear();}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    txEnd();}
+\DoxyCodeLine{    txDeleteDC(Scene6);}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} scene7(HDC Directed2, HDC Directed3, HDC Directed4)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    txSetFillColor(BLACK);}
+\DoxyCodeLine{    txClear();}
+\DoxyCodeLine{}
+\DoxyCodeLine{    txPlaySound(\textcolor{stringliteral}{"Resources\(\backslash\)\(\backslash\)directed1.wav"}, SND\_SYNC);}
+\DoxyCodeLine{    txSetFillColor(WHITE);}
+\DoxyCodeLine{    txClear();}
+\DoxyCodeLine{}
+\DoxyCodeLine{    txBitBlt (txDC(), 0, 0, 1400, 800, Directed2, 0, 0);}
+\DoxyCodeLine{    txPlaySound(\textcolor{stringliteral}{"Resources\(\backslash\)\(\backslash\)directed2.wav"}, SND\_SYNC);}
+\DoxyCodeLine{    txSetFillColor(WHITE);}
+\DoxyCodeLine{    txClear();}
+\DoxyCodeLine{    txDeleteDC (Directed2);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    txBitBlt (txDC(), 0, 0, 1400, 800, Directed3, 0, 0);}
+\DoxyCodeLine{    txPlaySound(\textcolor{stringliteral}{"Resources\(\backslash\)\(\backslash\)directed3.wav"}, SND\_SYNC);}
+\DoxyCodeLine{    txSetFillColor(WHITE);}
+\DoxyCodeLine{    txClear();}
+\DoxyCodeLine{    txDeleteDC (Directed3);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    txBitBlt (txDC(), 0, 0, 1400, 800, Directed4, 0, 0);}
+\DoxyCodeLine{    txPlaySound(\textcolor{stringliteral}{"Resources\(\backslash\)\(\backslash\)directed4.wav"}, SND\_SYNC);}
+\DoxyCodeLine{    txSetFillColor(WHITE);}
+\DoxyCodeLine{    txClear();}
+\DoxyCodeLine{    txDeleteDC (Directed4);}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+\hypertarget{group___tutor_ExAll}{}\doxysubsection{Законченный пример}\label{group___tutor_ExAll}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "TXLib.h"}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "CatDevLib.h"}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} SkubiEyes1(\textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{int} SkubiScale, \textcolor{keywordtype}{bool} SkubiEyes, COLORREF SkubiStrokePanelColor, COLORREF SkubiEyesColor);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} scene1(HDC Fade);}
+\DoxyCodeLine{\textcolor{keywordtype}{void} scene2(HDC scene2\_background);}
+\DoxyCodeLine{\textcolor{keywordtype}{void} scene3(HDC openDoor, HDC closeDoor, HDC sky);}
+\DoxyCodeLine{\textcolor{keywordtype}{void} scene4(HDC minutes);}
+\DoxyCodeLine{\textcolor{keywordtype}{void} scene5(HDC openDoor, HDC sky);}
+\DoxyCodeLine{\textcolor{keywordtype}{void} scene6(HDC Scene6);}
+\DoxyCodeLine{\textcolor{keywordtype}{void} scene7(HDC Directed2, HDC Directed3, HDC Directed4);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} main()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{comment}{//Заливка фона}}
+\DoxyCodeLine{    txCreateWindow (1400, 800);}
+\DoxyCodeLine{    txSetFillColor (TX\_WHITE);}
+\DoxyCodeLine{    txFloodFill(0, 0, FLOODFILLBORDER);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    HDC Fade = txLoadImage (\textcolor{stringliteral}{"Resources\(\backslash\)\(\backslash\)Fade.bmp"});}
+\DoxyCodeLine{    txPlaySound(\textcolor{stringliteral}{"Resources\(\backslash\)\(\backslash\)start.wav"}, SND\_ASYNC);}
+\DoxyCodeLine{    scene1(Fade);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    HDC scene2\_background = txLoadImage(\textcolor{stringliteral}{"Resources\(\backslash\)\(\backslash\)Scene2\_background.bmp"});}
+\DoxyCodeLine{    txPlaySound(\textcolor{stringliteral}{"Resources\(\backslash\)\(\backslash\)tv.wav"}, SND\_ASYNC);}
+\DoxyCodeLine{    scene2(scene2\_background);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    HDC openDoor = txLoadImage(\textcolor{stringliteral}{"Resources\(\backslash\)\(\backslash\)OpenDoor.bmp"});}
+\DoxyCodeLine{    HDC closeDoor = txLoadImage(\textcolor{stringliteral}{"Resources\(\backslash\)\(\backslash\)CloseDoor.bmp"});}
+\DoxyCodeLine{    HDC sky = txLoadImage(\textcolor{stringliteral}{"Resources\(\backslash\)\(\backslash\)Sky.bmp"});}
+\DoxyCodeLine{    scene3(openDoor, closeDoor, sky);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    HDC minutes = txLoadImage(\textcolor{stringliteral}{"Resources\(\backslash\)\(\backslash\)5minutes.bmp"});}
+\DoxyCodeLine{    scene4(minutes);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    scene5(openDoor, sky);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    HDC Scene6 = txLoadImage(\textcolor{stringliteral}{"Resources\(\backslash\)\(\backslash\)Scene6.bmp"});}
+\DoxyCodeLine{    scene6(Scene6);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    HDC Directed2 = txLoadImage(\textcolor{stringliteral}{"Resources\(\backslash\)\(\backslash\)Directed2.bmp"});}
+\DoxyCodeLine{    HDC Directed3 = txLoadImage(\textcolor{stringliteral}{"Resources\(\backslash\)\(\backslash\)Directed3.bmp"});}
+\DoxyCodeLine{    HDC Directed4 = txLoadImage(\textcolor{stringliteral}{"Resources\(\backslash\)\(\backslash\)Directed4.bmp"});}
+\DoxyCodeLine{    scene7(Directed2, Directed3, Directed4);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} SkubiEyes1(\textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{int} SkubiScale, \textcolor{keywordtype}{bool} SkubiEyes, COLORREF SkubiStrokePanelColor, COLORREF SkubiEyesColor)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{keywordflow}{if}(SkubiEyes)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        txSetFillColor(WHITE);}
+\DoxyCodeLine{        txSetColor(WHITE);}
+\DoxyCodeLine{        txCircle(x+(111*SkubiScale), y+(-\/226*SkubiScale), 10*SkubiScale);}
+\DoxyCodeLine{        txCircle(x+(86*SkubiScale), y+(-\/213*SkubiScale), 10*SkubiScale);}
+\DoxyCodeLine{        txSetFillColor(SkubiEyesColor);}
+\DoxyCodeLine{        txSetColor(SkubiEyesColor);}
+\DoxyCodeLine{        txCircle(x+(111*SkubiScale), y+(-\/226*SkubiScale), 6*SkubiScale);}
+\DoxyCodeLine{        txCircle(x+(86*SkubiScale), y+(-\/213*SkubiScale), 6*SkubiScale);}
+\DoxyCodeLine{        txSetFillColor(SkubiStrokePanelColor);}
+\DoxyCodeLine{        txCircle(x+(111*SkubiScale), y+(-\/226*SkubiScale), 4*SkubiScale);}
+\DoxyCodeLine{        txCircle(x+(86*SkubiScale), y+(-\/213*SkubiScale), 4*SkubiScale);}
+\DoxyCodeLine{    \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{        txSetColor(SkubiStrokePanelColor, 5);}
+\DoxyCodeLine{        txLine(x+(72*SkubiScale), y+(-\/247*SkubiScale), x+(85*SkubiScale), y+(-\/262*SkubiScale));}
+\DoxyCodeLine{        txLine(x+(85*SkubiScale), y+(-\/262*SkubiScale), x+(93*SkubiScale), y+(-\/258*SkubiScale));}
+\DoxyCodeLine{        txLine(x+(107*SkubiScale), y+(-\/257*SkubiScale), x+(117*SkubiScale), y+(-\/263*SkubiScale));}
+\DoxyCodeLine{        txLine(x+(117*SkubiScale), y+(-\/263*SkubiScale), x+(134*SkubiScale), y+(-\/257*SkubiScale));}
+\DoxyCodeLine{}
+\DoxyCodeLine{        txSetColor(SkubiStrokePanelColor, 3);}
+\DoxyCodeLine{        txLine(x+(70*SkubiScale), y+(-\/214*SkubiScale), x+(95*SkubiScale), y+(-\/216*SkubiScale));}
+\DoxyCodeLine{        txLine(x+(127*SkubiScale), y+(-\/231*SkubiScale), x+(103*SkubiScale), y+(-\/224*SkubiScale));}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} scene1(HDC Fade)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    txBitBlt (txDC(), 0, 0, 1400, 800, Fade, 0, 0);}
+\DoxyCodeLine{    txSleep(7000);}
+\DoxyCodeLine{    txDeleteDC (Fade);}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} scene2(HDC scene2\_background)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} pigX = 913;}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} pigY = 450;}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} pigEar = 3;  \textcolor{comment}{//0-\/Нет ушей, 1-\/Правое ухо, 2-\/Левое ухо, 3-\/Оба уха}}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} pigHand = 3;  \textcolor{comment}{//0-\/Нет рук, 1-\/Правая рука, 2-\/Левая рука, 3-\/Обе руки}}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} pigScale = 1;}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} pigEyes; \textcolor{comment}{//= true;}}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} pigLeg = \textcolor{keyword}{true};}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} pigLeftArm; \textcolor{comment}{//= 1;}}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} pigRoth = \textcolor{keyword}{true};}
+\DoxyCodeLine{    COLORREF pigEarColor = RGB(230, 152, 194);}
+\DoxyCodeLine{    COLORREF pigNoseColor = RGB(251, 202, 205);}
+\DoxyCodeLine{    COLORREF pigShirtColor = RGB(240, 78, 150);}
+\DoxyCodeLine{    COLORREF pigSkinColor = RGB(251, 202, 205);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} flyX = 431;}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} flyY = 275;}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} flyHand = 3;  \textcolor{comment}{//0-\/Нет рук, 1-\/Правая рука, 2-\/Левая рука, 3-\/Обе руки}}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} flyScale = 1;}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} flyLeg = \textcolor{keyword}{true};\textcolor{comment}{//При отсутствии ног, крылья автоматические исчезают}}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} flyHair = \textcolor{keyword}{true};}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} flyWings = \textcolor{keyword}{true};}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} flyEyes;}
+\DoxyCodeLine{    COLORREF flyRothColor = RGB(148, 56, 105);}
+\DoxyCodeLine{    COLORREF flyShirtColor = RGB(255, 0, 0);}
+\DoxyCodeLine{    COLORREF flySkinColor = RGB(88, 165, 155);}
+\DoxyCodeLine{    COLORREF flyEyesColor = RGB(255, 255, 0);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    txBegin();}
+\DoxyCodeLine{    \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=1; i<17; i++)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        txBitBlt (txDC(), 0, 0, 1400, 800, scene2\_background, 0, 0);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \mbox{\hyperlink{group___pig_gac9cb2d88a68d84133114cae1a9844f13}{drawPig}}(pigX, pigY, pigEar, pigHand, pigScale, pigEyes, pigLeg, pigLeftArm, pigRoth, pigEarColor, pigNoseColor, pigShirtColor, pigSkinColor);}
+\DoxyCodeLine{        \mbox{\hyperlink{group___fly_ga7f4a3b43b29cb14ffae24fa9efc7236e}{drawFly}}(flyX, flyY, flyHand, flyLeg, flyScale, flyHair, flyWings, flyEyes, flyRothColor, flyShirtColor, flySkinColor, flyEyesColor);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{keywordflow}{if}(i\%5==0)}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            flyEyes=\textcolor{keyword}{false};}
+\DoxyCodeLine{        \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{            flyEyes=\textcolor{keyword}{true};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{keywordflow}{if}(i\%6==0)}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            pigEyes=\textcolor{keyword}{false};}
+\DoxyCodeLine{        \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{            pigEyes=\textcolor{keyword}{true};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{keywordflow}{if}(i\%4==0)}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            pigLeftArm = 1;}
+\DoxyCodeLine{        \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{            pigLeftArm = 0;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{        txSleep(500);}
+\DoxyCodeLine{        txSetFillColor(WHITE);}
+\DoxyCodeLine{        txClear();}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    txEnd();}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} MinionX = -\/250;}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} MinionY = 446;}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} MinionHand = 3;  \textcolor{comment}{//0-\/Нет рук, 1-\/Правая рука, 2-\/Левая рука, 3-\/Обе руки}}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} MinionScale = 1;}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} MinionGlasses = \textcolor{keyword}{true};}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} MinionHair = \textcolor{keyword}{true};}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} MinionRoth = \textcolor{keyword}{true};}
+\DoxyCodeLine{    COLORREF MinionEyesColor = RGB(117, 79, 56);}
+\DoxyCodeLine{    COLORREF MinionPantsColor = RGB(0, 139, 255);}
+\DoxyCodeLine{    COLORREF MinionGlassesColor = RGB(87, 78, 64);}
+\DoxyCodeLine{    COLORREF MinionPocketColor = RGB(0, 139, 255);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    txBegin();}
+\DoxyCodeLine{    \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=1; i<34; i++)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        txBitBlt (txDC(), 0, 0, 1400, 800, scene2\_background, 0, 0);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \mbox{\hyperlink{group___pig_gac9cb2d88a68d84133114cae1a9844f13}{drawPig}}(pigX, pigY, pigEar, pigHand, pigScale, pigEyes, pigLeg, pigLeftArm, pigRoth, pigEarColor, pigNoseColor, pigShirtColor, pigSkinColor);}
+\DoxyCodeLine{        \mbox{\hyperlink{group___fly_ga7f4a3b43b29cb14ffae24fa9efc7236e}{drawFly}}(flyX, flyY, flyHand, flyLeg, flyScale, flyHair, flyWings, flyEyes, flyRothColor, flyShirtColor, flySkinColor, flyEyesColor);}
+\DoxyCodeLine{        \mbox{\hyperlink{group___minion_ga44f059566e14c4635211fe6765776182}{drawMinion}}(MinionX, MinionY, MinionHand, MinionScale, MinionGlasses, MinionHair, MinionRoth, MinionEyesColor, MinionPantsColor, MinionGlassesColor, MinionPocketColor);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        MinionX=MinionX+10;}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{keywordflow}{if}(i\%2)}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            MinionY=MinionY+10;}
+\DoxyCodeLine{        \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{            MinionY=MinionY-\/10;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{keywordflow}{if}(i\%10==0)}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            flyEyes=\textcolor{keyword}{false};}
+\DoxyCodeLine{        \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{            flyEyes=\textcolor{keyword}{true};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{keywordflow}{if}(i\%6==0)}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            pigEyes=\textcolor{keyword}{false};}
+\DoxyCodeLine{        \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{            pigEyes=\textcolor{keyword}{true};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{        txSleep(250);}
+\DoxyCodeLine{        txSetFillColor(WHITE);}
+\DoxyCodeLine{        txClear();}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    txEnd();}
+\DoxyCodeLine{}
+\DoxyCodeLine{    txPlaySound(\textcolor{stringliteral}{"Resources\(\backslash\)\(\backslash\)minion.wav"}, SND\_ASYNC);}
+\DoxyCodeLine{    txBegin();}
+\DoxyCodeLine{    \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=1; i<6; i++)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        txBitBlt (txDC(), 0, 0, 1400, 800, scene2\_background, 0, 0);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \mbox{\hyperlink{group___pig_gac9cb2d88a68d84133114cae1a9844f13}{drawPig}}(pigX, pigY, pigEar, pigHand, pigScale, pigEyes, pigLeg, pigLeftArm, pigRoth, pigEarColor, pigNoseColor, pigShirtColor, pigSkinColor);}
+\DoxyCodeLine{        \mbox{\hyperlink{group___fly_ga7f4a3b43b29cb14ffae24fa9efc7236e}{drawFly}}(flyX, flyY, flyHand, flyLeg, flyScale, flyHair, flyWings, flyEyes, flyRothColor, flyShirtColor, flySkinColor, flyEyesColor);}
+\DoxyCodeLine{        \mbox{\hyperlink{group___minion_ga44f059566e14c4635211fe6765776182}{drawMinion}}(MinionX, MinionY, MinionHand, MinionScale, MinionGlasses, MinionHair, MinionRoth, MinionEyesColor, MinionPantsColor, MinionGlassesColor, MinionPocketColor);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        SIZE size = txGetTextExtent (\textcolor{stringliteral}{"Миньон: Друзья, пойдёмте кушац!"});}
+\DoxyCodeLine{        txSelectFont (\textcolor{stringliteral}{"Comic Sans MS"}, 40);}
+\DoxyCodeLine{        txTextOut (700 -\/ size.cx/2, 700, \textcolor{stringliteral}{"Миньон: Друзья, пойдёмте кушац!"});}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{keywordflow}{if}(i\%5==0)}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            flyEyes=\textcolor{keyword}{false};}
+\DoxyCodeLine{        \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{            flyEyes=\textcolor{keyword}{true};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{keywordflow}{if}(i\%6==0)}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            pigEyes=\textcolor{keyword}{false};}
+\DoxyCodeLine{        \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{            pigEyes=\textcolor{keyword}{true};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{        MinionRoth = !MinionRoth;}
+\DoxyCodeLine{        txSleep(500);}
+\DoxyCodeLine{        txSetFillColor(WHITE);}
+\DoxyCodeLine{        txClear();}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    txEnd();}
+\DoxyCodeLine{    txDeleteDC (scene2\_background);}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} scene3(HDC openDoor, HDC closeDoor, HDC sky)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    txBitBlt (txDC(), 0, 0, 1400, 800, closeDoor, 0, 0);}
+\DoxyCodeLine{    txPlaySound(\textcolor{stringliteral}{"Resources\(\backslash\)\(\backslash\)fbi.wav"}, SND\_SYNC);}
+\DoxyCodeLine{    txDeleteDC (closeDoor);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} penguinX = 750;\textcolor{comment}{//670}}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} penguinY = 403;}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} penguinHand = 3;  \textcolor{comment}{//0-\/Нет рук, 1-\/Правая рука, 2-\/Левая рука, 3-\/Обе руки}}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} penguinLeg = 3;  \textcolor{comment}{//0-\/Нет ног, 1-\/Правая нога, 2-\/Левая нога, 3-\/Обе ноги}}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} penguinEyes = 3; \textcolor{comment}{//0-\/Нет глаз, 1-\/Правый глаз, 2-\/Левый газ, 3-\/Оба глаза}}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} penguinScale = 1;}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} penguinRoth = \textcolor{keyword}{true};}
+\DoxyCodeLine{    COLORREF penguinEyesColor = RGB(51, 83, 128);}
+\DoxyCodeLine{    COLORREF penguinLegsColor = RGB(169, 95, 46);}
+\DoxyCodeLine{    COLORREF penguinBackColor = RGB(0, 0, 1);}
+\DoxyCodeLine{    COLORREF penguinBallyColor = RGB(255, 255, 241);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} SkubiX = 726;\textcolor{comment}{//602}}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} SkubiY = 758;}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} SkubiScale = 1;}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} SkubiNose = \textcolor{keyword}{true};}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} SkubiKeychain = \textcolor{keyword}{true};}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} skubyiMoles = \textcolor{keyword}{true};}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} SkubiEyes = \textcolor{keyword}{false};}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} SkubiTeeth = \textcolor{keyword}{true};}
+\DoxyCodeLine{    COLORREF SkubiStrokePanelColor = RGB(0, 0, 2);}
+\DoxyCodeLine{    COLORREF SkubiSkinColor = RGB(142, 80, 6);}
+\DoxyCodeLine{    COLORREF SkubiCollarColor = RGB(10, 105, 127);}
+\DoxyCodeLine{    COLORREF SkubiEyesColor = RGB(51, 83, 128);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    txBegin();}
+\DoxyCodeLine{    \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=1; i<7; i++)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        txSetFillColor (TX\_WHITE);}
+\DoxyCodeLine{        txFloodFill(0, 0, FLOODFILLBORDER);}
+\DoxyCodeLine{        txBitBlt (txDC(), 0, 0, 1400, 800, sky, 0, 0);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \mbox{\hyperlink{group___pa_gac66fbb3763bd0ce6765e5883d95656f6}{drawPenguin}}(penguinX, penguinY, penguinHand, penguinLeg, penguinScale, penguinRoth, penguinEyes, penguinEyesColor, penguinLegsColor, penguinBackColor, penguinBallyColor);}
+\DoxyCodeLine{        \mbox{\hyperlink{group___skubi_ga36519e108a3f17316b56755270ab2023}{drawSkubi}}(SkubiX, SkubiY, SkubiScale, SkubiKeychain, skubyiMoles, SkubiEyes, SkubiNose, SkubiTeeth, SkubiStrokePanelColor, SkubiSkinColor, SkubiCollarColor, SkubiEyesColor);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        penguinX = penguinX-\/10;}
+\DoxyCodeLine{        SkubiX = SkubiX-\/20;}
+\DoxyCodeLine{}
+\DoxyCodeLine{        txAlphaBlend(txDC(), 0, 0, 1400, 800, openDoor, 0, 0, 1);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        txSleep(125);}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    txEnd();}
+\DoxyCodeLine{}
+\DoxyCodeLine{    txPlaySound(\textcolor{stringliteral}{"Resources\(\backslash\)\(\backslash\)SkubiKush.wav"}, SND\_ASYNC);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    txBegin();}
+\DoxyCodeLine{    \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=1; i<3; i++)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        txSetFillColor (TX\_WHITE);}
+\DoxyCodeLine{        txFloodFill(0, 0, FLOODFILLBORDER);}
+\DoxyCodeLine{        txBitBlt (txDC(), 0, 0, 1400, 800, sky, 0, 0);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \mbox{\hyperlink{group___pa_gac66fbb3763bd0ce6765e5883d95656f6}{drawPenguin}}(penguinX, penguinY, penguinHand, penguinLeg, penguinScale, penguinRoth, penguinEyes, penguinEyesColor, penguinLegsColor, penguinBackColor, penguinBallyColor);}
+\DoxyCodeLine{        \mbox{\hyperlink{group___skubi_ga36519e108a3f17316b56755270ab2023}{drawSkubi}}(SkubiX, SkubiY, SkubiScale, SkubiKeychain, skubyiMoles, SkubiEyes, SkubiNose, SkubiTeeth, SkubiStrokePanelColor, SkubiSkinColor, SkubiCollarColor, SkubiEyesColor);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        SkubiTeeth = !SkubiTeeth;}
+\DoxyCodeLine{}
+\DoxyCodeLine{        txAlphaBlend(txDC(), 0, 0, 1400, 800, openDoor, 0, 0, 1);}
+\DoxyCodeLine{        SkubiEyes1(SkubiX, SkubiY, SkubiScale, SkubiEyes, SkubiStrokePanelColor, SkubiEyesColor);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        SkubiEyes = !SkubiEyes;}
+\DoxyCodeLine{}
+\DoxyCodeLine{        txSleep(1000);}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    txEnd();}
+\DoxyCodeLine{    txSleep(250);}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} scene4(HDC minutes)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    txBitBlt (txDC(), 0, 0, 1400, 800, minutes, 0, 0);}
+\DoxyCodeLine{    txPlaySound(\textcolor{stringliteral}{"Resources\(\backslash\)\(\backslash\)5minutes.wav"}, SND\_SYNC);}
+\DoxyCodeLine{    txDeleteDC (minutes);}
+\DoxyCodeLine{    txSetFillColor(BLACK);}
+\DoxyCodeLine{    txClear();}
+\DoxyCodeLine{    txPlaySound(\textcolor{stringliteral}{"Resources\(\backslash\)\(\backslash\)eat.wav"}, SND\_SYNC);}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} scene5(HDC openDoor, HDC sky)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} penguinX = 680;\textcolor{comment}{//670}}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} penguinY = 403;}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} penguinHand = 3;  \textcolor{comment}{//0-\/Нет рук, 1-\/Правая рука, 2-\/Левая рука, 3-\/Обе руки}}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} penguinLeg = 3;  \textcolor{comment}{//0-\/Нет ног, 1-\/Правая нога, 2-\/Левая нога, 3-\/Обе ноги}}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} penguinEyes = 3; \textcolor{comment}{//0-\/Нет глаз, 1-\/Правый глаз, 2-\/Левый газ, 3-\/Оба глаза}}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} penguinScale = 1;}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} penguinRoth = \textcolor{keyword}{true};}
+\DoxyCodeLine{    COLORREF penguinEyesColor = RGB(51, 83, 128);}
+\DoxyCodeLine{    COLORREF penguinLegsColor = RGB(169, 95, 46);}
+\DoxyCodeLine{    COLORREF penguinBackColor = RGB(0, 0, 1);}
+\DoxyCodeLine{    COLORREF penguinBallyColor = RGB(255, 255, 241);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} SkubiX = 586;\textcolor{comment}{//602}}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} SkubiY = 758;}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} SkubiScale = 1;}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} SkubiNose = \textcolor{keyword}{true};}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} SkubiKeychain = \textcolor{keyword}{true};}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} skubyiMoles = \textcolor{keyword}{true};}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} SkubiEyes = \textcolor{keyword}{true};}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} SkubiTeeth = \textcolor{keyword}{false};}
+\DoxyCodeLine{    COLORREF SkubiStrokePanelColor = RGB(0, 0, 2);}
+\DoxyCodeLine{    COLORREF SkubiSkinColor = RGB(142, 80, 6);}
+\DoxyCodeLine{    COLORREF SkubiCollarColor = RGB(10, 105, 127);}
+\DoxyCodeLine{    COLORREF SkubiEyesColor = RGB(51, 83, 128);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    txBitBlt (txDC(), 0, 0, 1400, 800, sky, 0, 0);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \mbox{\hyperlink{group___pa_gac66fbb3763bd0ce6765e5883d95656f6}{drawPenguin}}(penguinX, penguinY, penguinHand, penguinLeg, penguinScale, penguinRoth, penguinEyes, penguinEyesColor, penguinLegsColor, penguinBackColor, penguinBallyColor);}
+\DoxyCodeLine{    \mbox{\hyperlink{group___skubi_ga36519e108a3f17316b56755270ab2023}{drawSkubi}}(SkubiX, SkubiY, SkubiScale, SkubiKeychain, skubyiMoles, SkubiEyes, SkubiNose, SkubiTeeth, SkubiStrokePanelColor, SkubiSkinColor, SkubiCollarColor, SkubiEyesColor);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    txAlphaBlend(txDC(), 0, 0, 1400, 800, openDoor, 0, 0, 1);}
+\DoxyCodeLine{    SkubiEyes1(SkubiX, SkubiY, SkubiScale, SkubiEyes, SkubiStrokePanelColor, SkubiEyesColor);}
+\DoxyCodeLine{    txSleep(1000);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    txPlaySound(\textcolor{stringliteral}{"Resources\(\backslash\)\(\backslash\)SkubiPosh.wav"}, SND\_ASYNC);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    txBegin();}
+\DoxyCodeLine{    \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=1; i<3; i++)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        txSetFillColor (TX\_WHITE);}
+\DoxyCodeLine{        txFloodFill(0, 0, FLOODFILLBORDER);}
+\DoxyCodeLine{        txBitBlt (txDC(), 0, 0, 1400, 800, sky, 0, 0);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \mbox{\hyperlink{group___pa_gac66fbb3763bd0ce6765e5883d95656f6}{drawPenguin}}(penguinX, penguinY, penguinHand, penguinLeg, penguinScale, penguinRoth, penguinEyes, penguinEyesColor, penguinLegsColor, penguinBackColor, penguinBallyColor);}
+\DoxyCodeLine{        \mbox{\hyperlink{group___skubi_ga36519e108a3f17316b56755270ab2023}{drawSkubi}}(SkubiX, SkubiY, SkubiScale, SkubiKeychain, skubyiMoles, SkubiEyes, SkubiNose, SkubiTeeth, SkubiStrokePanelColor, SkubiSkinColor, SkubiCollarColor, SkubiEyesColor);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        SkubiTeeth = !SkubiTeeth;}
+\DoxyCodeLine{}
+\DoxyCodeLine{        txAlphaBlend(txDC(), 0, 0, 1400, 800, openDoor, 0, 0, 1);}
+\DoxyCodeLine{        SkubiEyes1(SkubiX, SkubiY, SkubiScale, SkubiEyes, SkubiStrokePanelColor, SkubiEyesColor);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        SkubiEyes = !SkubiEyes;}
+\DoxyCodeLine{}
+\DoxyCodeLine{        txSleep(1000);}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    txEnd();}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=1; i<12; i++)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        txSetFillColor (TX\_WHITE);}
+\DoxyCodeLine{        txFloodFill(0, 0, FLOODFILLBORDER);}
+\DoxyCodeLine{        txBitBlt (txDC(), 0, 0, 1400, 800, sky, 0, 0);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \mbox{\hyperlink{group___pa_gac66fbb3763bd0ce6765e5883d95656f6}{drawPenguin}}(penguinX, penguinY, penguinHand, penguinLeg, penguinScale, penguinRoth, penguinEyes, penguinEyesColor, penguinLegsColor, penguinBackColor, penguinBallyColor);}
+\DoxyCodeLine{        \mbox{\hyperlink{group___skubi_ga36519e108a3f17316b56755270ab2023}{drawSkubi}}(SkubiX, SkubiY, SkubiScale, SkubiKeychain, skubyiMoles, SkubiEyes, SkubiNose, SkubiTeeth, SkubiStrokePanelColor, SkubiSkinColor, SkubiCollarColor, SkubiEyesColor);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        penguinX = penguinX+10;}
+\DoxyCodeLine{        SkubiX = SkubiX+20;}
+\DoxyCodeLine{}
+\DoxyCodeLine{        txAlphaBlend(txDC(), 0, 0, 1400, 800, openDoor, 0, 0, 1);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        txSleep(125);}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    txDeleteDC(openDoor);}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} scene6(HDC Scene6)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} pigX = 913;}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} pigY = 450;}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} pigEar = 3;  \textcolor{comment}{//0-\/Нет ушей, 1-\/Правое ухо, 2-\/Левое ухо, 3-\/Оба уха}}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} pigHand = 3;  \textcolor{comment}{//0-\/Нет рук, 1-\/Правая рука, 2-\/Левая рука, 3-\/Обе руки}}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} pigScale = 1;}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} pigEyes; \textcolor{comment}{//= true;}}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} pigLeg = \textcolor{keyword}{true};}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} pigLeftArm=1; \textcolor{comment}{//= 1;}}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} pigRoth = \textcolor{keyword}{true};}
+\DoxyCodeLine{    COLORREF pigEarColor = RGB(230, 152, 194);}
+\DoxyCodeLine{    COLORREF pigNoseColor = RGB(251, 202, 205);}
+\DoxyCodeLine{    COLORREF pigShirtColor = RGB(240, 78, 150);}
+\DoxyCodeLine{    COLORREF pigSkinColor = RGB(251, 202, 205);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} timonX = 178;}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} timonY = 493;}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} timonEar = 3;  \textcolor{comment}{//0-\/Нет ушей, 1-\/Правое ухо, 2-\/Левое ухо, 3-\/Оба уха}}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} timonLeg = 3;  \textcolor{comment}{//0-\/Нет ног, 1-\/Правая нога, 2-\/Левая нога, 3-\/Обе ноги}}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} timonScale = 1;}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} timonTale = \textcolor{keyword}{true};}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} timonHair = \textcolor{keyword}{true};}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} timonRoth = \textcolor{keyword}{false};}
+\DoxyCodeLine{    COLORREF timonBallyColor = RGB(241, 217, 183);}
+\DoxyCodeLine{    COLORREF timonBackColor = RGB(169, 95, 46);}
+\DoxyCodeLine{    COLORREF timonHairColor = RGB(166, 61, 40);}
+\DoxyCodeLine{    COLORREF timonLimbColor = RGB(87, 78, 64);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    txPlaySound(\textcolor{stringliteral}{"Resources\(\backslash\)\(\backslash\)Where.wav"}, SND\_ASYNC);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    txBegin();}
+\DoxyCodeLine{    \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=1; i<4; i++)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        txBitBlt (txDC(), 0, 0, 1400, 800, Scene6, 0, 0);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \mbox{\hyperlink{group___pig_gac9cb2d88a68d84133114cae1a9844f13}{drawPig}}(pigX, pigY, pigEar, pigHand, pigScale, pigEyes, pigLeg, pigLeftArm, pigRoth, pigEarColor, pigNoseColor, pigShirtColor, pigSkinColor);}
+\DoxyCodeLine{        \mbox{\hyperlink{group___timon_ga362cac2ca3452cbf9cd9cd0de8ccf493}{drawTimon}}(timonX, timonY, timonEar, timonLeg, timonScale, timonTale, timonHair, timonRoth, timonBallyColor, timonBackColor, timonHairColor, timonLimbColor);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{keywordflow}{if}(i\%2==0)}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            pigEyes=\textcolor{keyword}{false};}
+\DoxyCodeLine{        \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{            pigEyes=\textcolor{keyword}{true};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{        pigRoth = !pigRoth;}
+\DoxyCodeLine{}
+\DoxyCodeLine{        txSleep(500);}
+\DoxyCodeLine{        txSetFillColor(WHITE);}
+\DoxyCodeLine{        txClear();}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    txEnd();}
+\DoxyCodeLine{}
+\DoxyCodeLine{    txBitBlt (txDC(), 0, 0, 1400, 800, Scene6, 0, 0);}
+\DoxyCodeLine{    \mbox{\hyperlink{group___pig_gac9cb2d88a68d84133114cae1a9844f13}{drawPig}}(pigX, pigY, pigEar, pigHand, pigScale, pigEyes, pigLeg, pigLeftArm, pigRoth, pigEarColor, pigNoseColor, pigShirtColor, pigSkinColor);}
+\DoxyCodeLine{    \mbox{\hyperlink{group___timon_ga362cac2ca3452cbf9cd9cd0de8ccf493}{drawTimon}}(timonX, timonY, timonEar, timonLeg, timonScale, timonTale, timonHair, timonRoth, timonBallyColor, timonBackColor, timonHairColor, timonLimbColor);}
+\DoxyCodeLine{    txPlaySound(\textcolor{stringliteral}{"Resources\(\backslash\)\(\backslash\)IDon'tKnow.wav"}, SND\_ASYNC);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    txBegin();}
+\DoxyCodeLine{    \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=1; i<12; i++)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        txBitBlt (txDC(), 0, 0, 1400, 800, Scene6, 0, 0);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \mbox{\hyperlink{group___pig_gac9cb2d88a68d84133114cae1a9844f13}{drawPig}}(pigX, pigY, pigEar, pigHand, pigScale, pigEyes, pigLeg, pigLeftArm, pigRoth, pigEarColor, pigNoseColor, pigShirtColor, pigSkinColor);}
+\DoxyCodeLine{        \mbox{\hyperlink{group___timon_ga362cac2ca3452cbf9cd9cd0de8ccf493}{drawTimon}}(timonX, timonY, timonEar, timonLeg, timonScale, timonTale, timonHair, timonRoth, timonBallyColor, timonBackColor, timonHairColor, timonLimbColor);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{keywordflow}{if}(i\%2==0)}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            pigEyes=\textcolor{keyword}{false};}
+\DoxyCodeLine{        \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{            pigEyes=\textcolor{keyword}{true};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{        timonRoth=!timonRoth;}
+\DoxyCodeLine{}
+\DoxyCodeLine{        txSleep(250);}
+\DoxyCodeLine{        txSetFillColor(WHITE);}
+\DoxyCodeLine{        txClear();}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    txEnd();}
+\DoxyCodeLine{}
+\DoxyCodeLine{    txBegin();}
+\DoxyCodeLine{    \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=1; i<80; i++)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        txBitBlt (txDC(), 0, 0, 1400, 800, Scene6, 0, 0);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \mbox{\hyperlink{group___pig_gac9cb2d88a68d84133114cae1a9844f13}{drawPig}}(pigX, pigY, pigEar, pigHand, pigScale, pigEyes, pigLeg, pigLeftArm, pigRoth, pigEarColor, pigNoseColor, pigShirtColor, pigSkinColor);}
+\DoxyCodeLine{        \mbox{\hyperlink{group___timon_ga362cac2ca3452cbf9cd9cd0de8ccf493}{drawTimon}}(timonX, timonY, timonEar, timonLeg, timonScale, timonTale, timonHair, timonRoth, timonBallyColor, timonBackColor, timonHairColor, timonLimbColor);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{keywordflow}{if}(i\%6==0)}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            pigEyes=\textcolor{keyword}{false};}
+\DoxyCodeLine{        \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{            pigEyes=\textcolor{keyword}{true};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{keywordflow}{if}(i\%2==0)}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            timonY=timonY+15;}
+\DoxyCodeLine{        \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{            timonY=timonY-\/15;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{        timonX=timonX+20;}
+\DoxyCodeLine{}
+\DoxyCodeLine{        txSleep(100);}
+\DoxyCodeLine{        txSetFillColor(WHITE);}
+\DoxyCodeLine{        txClear();}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    txEnd();}
+\DoxyCodeLine{}
+\DoxyCodeLine{    txBitBlt (txDC(), 0, 0, 1400, 800, Scene6, 0, 0);}
+\DoxyCodeLine{    \mbox{\hyperlink{group___pig_gac9cb2d88a68d84133114cae1a9844f13}{drawPig}}(pigX, pigY, pigEar, pigHand, pigScale, pigEyes, pigLeg, pigLeftArm, pigRoth, pigEarColor, pigNoseColor, pigShirtColor, pigSkinColor);}
+\DoxyCodeLine{    txPlaySound(\textcolor{stringliteral}{"Resources\(\backslash\)\(\backslash\)obed.wav"}, SND\_ASYNC);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    txBegin();}
+\DoxyCodeLine{    \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=1; i<5; i++)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        txBitBlt (txDC(), 0, 0, 1400, 800, Scene6, 0, 0);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \mbox{\hyperlink{group___pig_gac9cb2d88a68d84133114cae1a9844f13}{drawPig}}(pigX, pigY, pigEar, pigHand, pigScale, pigEyes, pigLeg, pigLeftArm, pigRoth, pigEarColor, pigNoseColor, pigShirtColor, pigSkinColor);}
+\DoxyCodeLine{        \textcolor{keywordflow}{if}(i\%2==0)}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            pigEyes=\textcolor{keyword}{false};}
+\DoxyCodeLine{        \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{            pigEyes=\textcolor{keyword}{true};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{        pigRoth = !pigRoth;}
+\DoxyCodeLine{        txSleep(1000);}
+\DoxyCodeLine{        txSetFillColor(WHITE);}
+\DoxyCodeLine{        txClear();}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    txEnd();}
+\DoxyCodeLine{}
+\DoxyCodeLine{    pigX = 1184;}
+\DoxyCodeLine{    pigY = 829;}
+\DoxyCodeLine{    pigScale = 3;}
+\DoxyCodeLine{    pigEyes = \textcolor{keyword}{true};}
+\DoxyCodeLine{}
+\DoxyCodeLine{    txPlaySound(\textcolor{stringliteral}{"Resources\(\backslash\)\(\backslash\)ubir.wav"}, SND\_ASYNC);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    txBegin();}
+\DoxyCodeLine{    \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=1; i<3; i++)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        txBitBlt (txDC(), 0, 0, 1400, 800, Scene6, 0, 0);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \mbox{\hyperlink{group___pig_gac9cb2d88a68d84133114cae1a9844f13}{drawPig}}(pigX, pigY, pigEar, pigHand, pigScale, pigEyes, pigLeg, pigLeftArm, pigRoth, pigEarColor, pigNoseColor, pigShirtColor, pigSkinColor);}
+\DoxyCodeLine{        \textcolor{keywordflow}{if}(i\%2==0)}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            pigEyes=\textcolor{keyword}{false};}
+\DoxyCodeLine{        \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{            pigEyes=\textcolor{keyword}{true};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{        pigRoth = !pigRoth;}
+\DoxyCodeLine{        txSleep(1000);}
+\DoxyCodeLine{        txSetFillColor(WHITE);}
+\DoxyCodeLine{        txClear();}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    txEnd();}
+\DoxyCodeLine{    txDeleteDC(Scene6);}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} scene7(HDC Directed2, HDC Directed3, HDC Directed4)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    txSetFillColor(BLACK);}
+\DoxyCodeLine{    txClear();}
+\DoxyCodeLine{}
+\DoxyCodeLine{    txPlaySound(\textcolor{stringliteral}{"Resources\(\backslash\)\(\backslash\)directed1.wav"}, SND\_SYNC);}
+\DoxyCodeLine{    txSetFillColor(WHITE);}
+\DoxyCodeLine{    txClear();}
+\DoxyCodeLine{}
+\DoxyCodeLine{    txBitBlt (txDC(), 0, 0, 1400, 800, Directed2, 0, 0);}
+\DoxyCodeLine{    txPlaySound(\textcolor{stringliteral}{"Resources\(\backslash\)\(\backslash\)directed2.wav"}, SND\_SYNC);}
+\DoxyCodeLine{    txSetFillColor(WHITE);}
+\DoxyCodeLine{    txClear();}
+\DoxyCodeLine{    txDeleteDC (Directed2);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    txBitBlt (txDC(), 0, 0, 1400, 800, Directed3, 0, 0);}
+\DoxyCodeLine{    txPlaySound(\textcolor{stringliteral}{"Resources\(\backslash\)\(\backslash\)directed3.wav"}, SND\_SYNC);}
+\DoxyCodeLine{    txSetFillColor(WHITE);}
+\DoxyCodeLine{    txClear();}
+\DoxyCodeLine{    txDeleteDC (Directed3);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    txBitBlt (txDC(), 0, 0, 1400, 800, Directed4, 0, 0);}
+\DoxyCodeLine{    txPlaySound(\textcolor{stringliteral}{"Resources\(\backslash\)\(\backslash\)directed4.wav"}, SND\_SYNC);}
+\DoxyCodeLine{    txSetFillColor(WHITE);}
+\DoxyCodeLine{    txClear();}
+\DoxyCodeLine{    txDeleteDC (Directed4);}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+ 

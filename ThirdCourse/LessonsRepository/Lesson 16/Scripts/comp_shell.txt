@@ -1,0 +1,67 @@
+Python 3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 14:05:16) [MSC v.1915 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license()" for more information.
+>>> 
+=== RESTART: C:\IT-School\Python\Year 11 2019-2020\Lesson 17\Scripts\Answer\inherit_pet-cat_dog.py ===
+Чаплин: гав! гав! гав! гав! гав!
+Гоблин: мяу! мяу! мяу!
+
+
+Нажмите Enter, чтобы выйти
+>>> import json
+>>> 
+class PetExport:
+    def export(self, dog):
+        # не будем создавать экземпляров класса,
+        # он нужен только для наследования
+        raise NotImplementedError
+
+>>> 
+class ExportDogXML(PetExport):
+    def export(self, dog):
+        return """<?xml version="1.0" encoding="utf-8"?>
+<dog>
+   <name>{0}</name>
+   <breed>{1}</breed>
+   <noise>{2}</noise>
+   <harm>{3}</harm>
+   <guard>{4}</guard>
+</dog>""".format(dog.name, dog.breed, dog.noise, dog.harm, dog.guard)
+
+>>> 
+class ExportDogJSON(PetExport):
+    def export(self, dog):
+        return json.dumps({
+            "name": dog.name,
+            "breed": dog.breed,
+            "noise": dog.noise,
+            "harm": dog.harm,
+            "guard": dog.guard
+        })
+
+>>> 
+class ComposedExpDog(Dog):
+    def __init__(self, name, breed=None, exporter=None):
+        super().__init__(name, breed)
+        self.__exporter = exporter or ExportDogJSON()
+        if not isinstance(self.__exporter, PetExport):
+            raise ValueEror("Параметр экземпляра __exporter неправильного типа")
+        
+    def export(self):
+        return self.__exporter.export(self)
+
+>>> 
+>>> json_dog = ComposedExpDog("Джек", "Дворняга с экспортом в JSON по умолчанию")
+>>> json_dog.export()
+'{"name": "\\u0414\\u0436\\u0435\\u043a", "breed": "\\u0414\\u0432\\u043e\\u0440\\u043d\\u044f\\u0433\\u0430 \\u0441 \\u044d\\u043a\\u0441\\u043f\\u043e\\u0440\\u0442\\u043e\\u043c \\u0432 JSON \\u043f\\u043e \\u0443\\u043c\\u043e\\u043b\\u0447\\u0430\\u043d\\u0438\\u044e", "noise": 5, "harm": 5, "guard": 3}'
+>>> 
+>>> xml_dog = ComposedExpDog("Шарик", "Дворняга с экпортом в XML", exporter=ExportDogXML())
+>>> xml_dog.noise +=2
+>>> xml_dog.harm -= 3
+>>> xml_dog.guard += 8
+>>> # погавкаем перед сохранением
+>>> xml_dog.voice()
+'Шарик: гав! гав! гав! гав! гав! гав! гав! гав! гав! гав! гав!'
+>>> # сохранимся в XML
+>>> xml_dog.export()
+'<?xml version="1.0" encoding="utf-8"?>\n<dog>\n   <name>Шарик</name>\n   <breed>Дворняга с экпортом в XML</breed>\n   <noise>7</noise>\n   <harm>2</harm>\n   <guard>11</guard>\n</dog>'
+>>> 

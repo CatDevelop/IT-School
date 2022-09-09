@@ -1,0 +1,60 @@
+\hypertarget{group___pa}{}\doxysection{Прапор}
+\label{group___pa}\index{Прапор@{Прапор}}
+\doxysubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___pa_gac66fbb3763bd0ce6765e5883d95656f6}{draw\+Penguin}} (int x, int y, int penguin\+Hand, int penguin\+Leg, int penguin\+Scale, bool penguin\+Roth, int penguin\+Eyes, C\+O\+L\+O\+R\+R\+EF penguin\+Eyes\+Color, C\+O\+L\+O\+R\+R\+EF penguin\+Legs\+Color, C\+O\+L\+O\+R\+R\+EF penguin\+Back\+Color, C\+O\+L\+O\+R\+R\+EF penguin\+Bally\+Color)
+\begin{DoxyCompactList}\small\item\em Отрисовка персонажа ,,Прапор" -\/ герой мультфильма «Пингвины Мадагаскара». \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+
+
+\doxysubsection{Функции}
+\mbox{\Hypertarget{group___pa_gac66fbb3763bd0ce6765e5883d95656f6}\label{group___pa_gac66fbb3763bd0ce6765e5883d95656f6}} 
+\index{Прапор@{Прапор}!drawPenguin@{drawPenguin}}
+\index{drawPenguin@{drawPenguin}!Прапор@{Прапор}}
+\doxysubsubsection{\texorpdfstring{drawPenguin()}{drawPenguin()}}
+{\footnotesize\ttfamily void draw\+Penguin (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{penguin\+Hand,  }\item[{int}]{penguin\+Leg,  }\item[{int}]{penguin\+Scale,  }\item[{bool}]{penguin\+Roth,  }\item[{int}]{penguin\+Eyes,  }\item[{C\+O\+L\+O\+R\+R\+EF}]{penguin\+Eyes\+Color,  }\item[{C\+O\+L\+O\+R\+R\+EF}]{penguin\+Legs\+Color,  }\item[{C\+O\+L\+O\+R\+R\+EF}]{penguin\+Back\+Color,  }\item[{C\+O\+L\+O\+R\+R\+EF}]{penguin\+Bally\+Color }\end{DoxyParamCaption})}
+
+
+
+Отрисовка персонажа ,,Прапор" -\/ герой мультфильма «Пингвины Мадагаскара». 
+
+
+
+
+\begin{DoxyParams}{Аргументы}
+{\em x} & Х-\/координата точки \\
+\hline
+{\em y} & Y-\/координата точки \\
+\hline
+{\em penguin\+Hand} & Наличие рук у персонажа (0 -\/ Нет рук, 1 -\/ Правая рука, 2 -\/ Левая рука, 3 -\/ Обе руки) \\
+\hline
+{\em penguin\+Leg} & Наличие ног у персонажа (0 -\/ Нет ног, 1 -\/ Правая нога, 2 -\/ Левая нога, 3 -\/ Обе ноги) \\
+\hline
+{\em penguin\+Scale} & Размер персонажа (1 -\/ Стандартный размер, 2 -\/ В 2 раза больше стандартного размера и т.\+д.) \\
+\hline
+{\em penguin\+Roth} & Наличие рта у персонажа (0 -\/ Нет рта, 1 -\/ Есть рот) \\
+\hline
+{\em penguin\+Eyes} & Наличие глаз у персонажа (0 -\/ Нет глаз, 1 -\/ Есть глаза) \\
+\hline
+{\em penguin\+Eyes\+Color} & Цвет глаз у персонажа \\
+\hline
+{\em penguin\+Legs\+Color} & Цвет ног у персонажа \\
+\hline
+{\em penguin\+Back\+Color} & Цвет спины у персонажа \\
+\hline
+{\em penguin\+Bally\+Color} & Цвет пузика у персонажа)))\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Предупреждения}
+Если цвета разных частей тела совпадают, \sout{может произойти ядерный коллапс} могут наблюдаться серъёзные графические баги.
+\end{DoxyWarning}
+\begin{DoxyReturn}{Возвращает}
+Если операция была успешна -\/ true, иначе -\/ false.
+\end{DoxyReturn}
+\begin{DoxyNote}{Заметки}
+Для использования функции нужно создать холст из T\+X\+Lib.
+\end{DoxyNote}
+Пример использования функции смотрите в \mbox{\hyperlink{group___tutor}{примере реализации}}. 

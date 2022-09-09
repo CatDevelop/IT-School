@@ -1,0 +1,2 @@
+http://www.ling.helsinki.fi/kit/2006s/clt230/livewires/W-livewires.pdf
+https://github.com/livewires/python

@@ -1,0 +1,4 @@
+https://www.youtube.com/watch?v=lUS-0Tdsf5c&list=PLrCZzMib1e9p6lpNv-yt6uvHGyBxQncEh&index=3
+https://github.com/Bronnikoff/ML/tree/master/2_less
+https://github.com/Bronnikoff/ML/blob/master/2_less/lesson_2.Pandas.ipynb
+https://github.com/Bronnikoff/ML/blob/master/2_less/Pandas_Cheat_Sheet.pdf

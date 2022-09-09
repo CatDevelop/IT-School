@@ -1,0 +1,1015 @@
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe,
+
+ВНЕЗАПНО: Ю-ху! Переполнение стека!
+
+#1: Исключение EXCEPTION_STACK_OVERFLOW (0xC00000FD) при выполнении кода по адресу 0x75337FC7. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400], Instance: 0x0049870C (32-bit), Flags: CMdRe0, Thread: 0x2E98 (Main), GetLastError(): 131 (Попытка поместить указатель на файл перед началом файла), errno: 22 (Invalid argument), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	Resources\\TXLib.h
+Compiled:	Apr 21 2020 05:30:17, GNU g++ 9.2.0, std=201402L, MinGW Runtime 5.3, 32-bit, Debug
+Started:	Apr 21 2020 05:30:20
+
+Run file:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe
+Directory:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe,
+
+ВНЕЗАПНО: Ю-ху! Переполнение стека!
+
+#1: Исключение EXCEPTION_STACK_OVERFLOW (0xC00000FD) при выполнении кода по адресу 0x75337FC7. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции _set_se_translator() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400], Instance: 0x0049870C (32-bit), Flags: CMdRe0, Thread: 0x2E98 (Main), GetLastError(): 131 (Попытка поместить указатель на файл перед началом файла), errno: 22 (Invalid argument), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	Resources\\TXLib.h
+Compiled:	Apr 21 2020 05:30:17, GNU g++ 9.2.0, std=201402L, MinGW Runtime 5.3, 32-bit, Debug
+Started:	Apr 21 2020 05:30:20
+
+Run file:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe
+Directory:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe,
+
+ВНЕЗАПНО: Ю-ху! Переполнение стека!
+
+#1: Исключение EXCEPTION_STACK_OVERFLOW (0xC00000FD) при выполнении кода по адресу 0x75337FC7. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400], Instance: 0x0049870C (32-bit), Flags: CMdRe0, Thread: 0x1EC0 (Main), GetLastError(): 131 (Попытка поместить указатель на файл перед началом файла), errno: 22 (Invalid argument), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	Resources\\TXLib.h
+Compiled:	Apr 21 2020 05:43:28, GNU g++ 9.2.0, std=201402L, MinGW Runtime 5.3, 32-bit, Debug
+Started:	Apr 21 2020 05:43:31
+
+Run file:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe
+Directory:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe,
+
+ВНЕЗАПНО: Ю-ху! Переполнение стека!
+
+#1: Исключение EXCEPTION_STACK_OVERFLOW (0xC00000FD) при выполнении кода по адресу 0x75337FC7. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции _set_se_translator() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400], Instance: 0x0049870C (32-bit), Flags: CMdRe0, Thread: 0x1EC0 (Main), GetLastError(): 131 (Попытка поместить указатель на файл перед началом файла), errno: 22 (Invalid argument), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	Resources\\TXLib.h
+Compiled:	Apr 21 2020 05:43:28, GNU g++ 9.2.0, std=201402L, MinGW Runtime 5.3, 32-bit, Debug
+Started:	Apr 21 2020 05:43:31
+
+Run file:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe
+Directory:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe,
+
+ВНЕЗАПНО: Ю-ху! Переполнение стека!
+
+#1: Исключение EXCEPTION_STACK_OVERFLOW (0xC00000FD) при выполнении кода по адресу 0x75337FC7. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400], Instance: 0x0049870C (32-bit), Flags: CMdRe0, Thread: 0x16F0 (Main), GetLastError(): 131 (Попытка поместить указатель на файл перед началом файла), errno: 22 (Invalid argument), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	Resources\\TXLib.h
+Compiled:	Apr 21 2020 05:45:39, GNU g++ 9.2.0, std=201402L, MinGW Runtime 5.3, 32-bit, Debug
+Started:	Apr 21 2020 05:45:42
+
+Run file:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe
+Directory:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe,
+
+ВНЕЗАПНО: Ю-ху! Переполнение стека!
+
+#1: Исключение EXCEPTION_STACK_OVERFLOW (0xC00000FD) при выполнении кода по адресу 0x75337FC7. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции _set_se_translator() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400], Instance: 0x0049870C (32-bit), Flags: CMdRe0, Thread: 0x16F0 (Main), GetLastError(): 131 (Попытка поместить указатель на файл перед началом файла), errno: 22 (Invalid argument), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	Resources\\TXLib.h
+Compiled:	Apr 21 2020 05:45:39, GNU g++ 9.2.0, std=201402L, MinGW Runtime 5.3, 32-bit, Debug
+Started:	Apr 21 2020 05:45:42
+
+Run file:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe
+Directory:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe,
+
+ВНЕЗАПНО: Ю-ху! Переполнение стека!
+
+#1: Исключение EXCEPTION_STACK_OVERFLOW (0xC00000FD) при выполнении кода по адресу 0x75337FC7. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400], Instance: 0x0049870C (32-bit), Flags: CMdRe0, Thread: 0xF30 (Main), GetLastError(): 131 (Попытка поместить указатель на файл перед началом файла), errno: 22 (Invalid argument), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	Resources\\TXLib.h
+Compiled:	Apr 21 2020 05:47:12, GNU g++ 9.2.0, std=201402L, MinGW Runtime 5.3, 32-bit, Debug
+Started:	Apr 21 2020 05:47:14
+
+Run file:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe
+Directory:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe,
+
+ВНЕЗАПНО: Ю-ху! Переполнение стека!
+
+#1: Исключение EXCEPTION_STACK_OVERFLOW (0xC00000FD) при выполнении кода по адресу 0x75337FC7. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции _set_se_translator() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400], Instance: 0x0049870C (32-bit), Flags: CMdRe0, Thread: 0xF30 (Main), GetLastError(): 131 (Попытка поместить указатель на файл перед началом файла), errno: 22 (Invalid argument), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	Resources\\TXLib.h
+Compiled:	Apr 21 2020 05:47:12, GNU g++ 9.2.0, std=201402L, MinGW Runtime 5.3, 32-bit, Debug
+Started:	Apr 21 2020 05:47:14
+
+Run file:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe
+Directory:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe,
+
+ВНЕЗАПНО: Ю-ху! Переполнение стека!
+
+#1: Исключение EXCEPTION_STACK_OVERFLOW (0xC00000FD) при выполнении кода по адресу 0x75337FC7. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400], Instance: 0x0049770C (32-bit), Flags: CMdRe0, Thread: 0x25C (Main), GetLastError(): 131 (Попытка поместить указатель на файл перед началом файла), errno: 22 (Invalid argument), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	Resources\\TXLib.h
+Compiled:	Apr 21 2020 05:49:14, GNU g++ 9.2.0, std=201402L, MinGW Runtime 5.3, 32-bit, Debug
+Started:	Apr 21 2020 05:49:16
+
+Run file:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe
+Directory:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe,
+
+ВНЕЗАПНО: Ю-ху! Переполнение стека!
+
+#1: Исключение EXCEPTION_STACK_OVERFLOW (0xC00000FD) при выполнении кода по адресу 0x75337FC7. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции _set_se_translator() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400], Instance: 0x0049770C (32-bit), Flags: CMdRe0, Thread: 0x25C (Main), GetLastError(): 131 (Попытка поместить указатель на файл перед началом файла), errno: 22 (Invalid argument), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	Resources\\TXLib.h
+Compiled:	Apr 21 2020 05:49:14, GNU g++ 9.2.0, std=201402L, MinGW Runtime 5.3, 32-bit, Debug
+Started:	Apr 21 2020 05:49:16
+
+Run file:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe
+Directory:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe,
+
+ВНЕЗАПНО: Ю-ху! Переполнение стека!
+
+#1: Исключение EXCEPTION_STACK_OVERFLOW (0xC00000FD) при выполнении кода по адресу 0x75337FC7. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400], Instance: 0x0049870C (32-bit), Flags: CMdRe0, Thread: 0x2FF4 (Main), GetLastError(): 131 (Попытка поместить указатель на файл перед началом файла), errno: 22 (Invalid argument), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	Resources\\TXLib.h
+Compiled:	Apr 21 2020 05:56:49, GNU g++ 9.2.0, std=201402L, MinGW Runtime 5.3, 32-bit, Debug
+Started:	Apr 21 2020 05:56:52
+
+Run file:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe
+Directory:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe,
+
+ВНЕЗАПНО: Ю-ху! Переполнение стека!
+
+#1: Исключение EXCEPTION_STACK_OVERFLOW (0xC00000FD) при выполнении кода по адресу 0x75337FC7. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции _set_se_translator() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400], Instance: 0x0049870C (32-bit), Flags: CMdRe0, Thread: 0x2FF4 (Main), GetLastError(): 131 (Попытка поместить указатель на файл перед началом файла), errno: 22 (Invalid argument), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	Resources\\TXLib.h
+Compiled:	Apr 21 2020 05:56:49, GNU g++ 9.2.0, std=201402L, MinGW Runtime 5.3, 32-bit, Debug
+Started:	Apr 21 2020 05:56:52
+
+Run file:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe
+Directory:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe,
+
+ВНЕЗАПНО: Ю-ху! Переполнение стека!
+
+#1: Исключение EXCEPTION_STACK_OVERFLOW (0xC00000FD) при выполнении кода по адресу 0x75337FC7. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400], Instance: 0x0049870C (32-bit), Flags: CMdRe0, Thread: 0x24E8 (Main), GetLastError(): 131 (Попытка поместить указатель на файл перед началом файла), errno: 22 (Invalid argument), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	Resources\\TXLib.h
+Compiled:	Apr 21 2020 06:02:49, GNU g++ 9.2.0, std=201402L, MinGW Runtime 5.3, 32-bit, Debug
+Started:	Apr 21 2020 06:02:51
+
+Run file:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe
+Directory:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe,
+
+ВНЕЗАПНО: Ю-ху! Переполнение стека!
+
+#1: Исключение EXCEPTION_STACK_OVERFLOW (0xC00000FD) при выполнении кода по адресу 0x75337FC7. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции _set_se_translator() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400], Instance: 0x0049870C (32-bit), Flags: CMdRe0, Thread: 0x24E8 (Main), GetLastError(): 131 (Попытка поместить указатель на файл перед началом файла), errno: 22 (Invalid argument), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	Resources\\TXLib.h
+Compiled:	Apr 21 2020 06:02:49, GNU g++ 9.2.0, std=201402L, MinGW Runtime 5.3, 32-bit, Debug
+Started:	Apr 21 2020 06:02:51
+
+Run file:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe
+Directory:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe,
+
+ВНЕЗАПНО: Ю-ху! Переполнение стека!
+
+#1: Исключение EXCEPTION_STACK_OVERFLOW (0xC00000FD) при выполнении кода по адресу 0x75337FC7. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400], Instance: 0x0049870C (32-bit), Flags: CMdRe0, Thread: 0x19B8 (Main), GetLastError(): 131 (Попытка поместить указатель на файл перед началом файла), errno: 22 (Invalid argument), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	Resources\\TXLib.h
+Compiled:	Apr 21 2020 06:04:22, GNU g++ 9.2.0, std=201402L, MinGW Runtime 5.3, 32-bit, Debug
+Started:	Apr 21 2020 06:04:24
+
+Run file:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe
+Directory:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe,
+
+ВНЕЗАПНО: Ю-ху! Переполнение стека!
+
+#1: Исключение EXCEPTION_STACK_OVERFLOW (0xC00000FD) при выполнении кода по адресу 0x75337FC7. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции _set_se_translator() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400], Instance: 0x0049870C (32-bit), Flags: CMdRe0, Thread: 0x19B8 (Main), GetLastError(): 131 (Попытка поместить указатель на файл перед началом файла), errno: 22 (Invalid argument), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	Resources\\TXLib.h
+Compiled:	Apr 21 2020 06:04:22, GNU g++ 9.2.0, std=201402L, MinGW Runtime 5.3, 32-bit, Debug
+Started:	Apr 21 2020 06:04:24
+
+Run file:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe
+Directory:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe,
+
+ВНЕЗАПНО: Ю-ху! Переполнение стека!
+
+#1: Исключение EXCEPTION_STACK_OVERFLOW (0xC00000FD) при выполнении кода по адресу 0x75337FC7. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400], Instance: 0x0049870C (32-bit), Flags: CMdRe0, Thread: 0x990 (Main), GetLastError(): 131 (Попытка поместить указатель на файл перед началом файла), errno: 22 (Invalid argument), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	Resources\\TXLib.h
+Compiled:	Apr 21 2020 06:18:46, GNU g++ 9.2.0, std=201402L, MinGW Runtime 5.3, 32-bit, Debug
+Started:	Apr 21 2020 06:18:49
+
+Run file:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe
+Directory:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe,
+
+ВНЕЗАПНО: Ю-ху! Переполнение стека!
+
+#1: Исключение EXCEPTION_STACK_OVERFLOW (0xC00000FD) при выполнении кода по адресу 0x75337FC7. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции _set_se_translator() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400], Instance: 0x0049870C (32-bit), Flags: CMdRe0, Thread: 0x990 (Main), GetLastError(): 131 (Попытка поместить указатель на файл перед началом файла), errno: 22 (Invalid argument), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	Resources\\TXLib.h
+Compiled:	Apr 21 2020 06:18:46, GNU g++ 9.2.0, std=201402L, MinGW Runtime 5.3, 32-bit, Debug
+Started:	Apr 21 2020 06:18:49
+
+Run file:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe
+Directory:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe, файл: Resources\\TXLib.h, строка: 12512, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400], Instance: 0x0044770C (32-bit), Flags: CMdRe0, Thread: 0x2650 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	Resources\\TXLib.h
+Compiled:	Apr 21 2020 07:04:40, GNU g++ 9.2.0, std=201402L, MinGW Runtime 5.3, 32-bit, Debug
+Started:	Apr 21 2020 07:04:43
+
+Run file:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe
+Directory:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe, файл: Resources\\TXLib.h, строка: 12132, функция: COLORREF {anonymous}::TX::txGetPixel(double, double, HDC),
+
+Сообщение: Параметр "dc" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#2: TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400], Instance: 0x0044770C (32-bit), Flags: CMdRe0, Thread: 0x2650 (Main), GetLastError(): 13 (Недопустимые данные), errno: 22 (Invalid argument), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	Resources\\TXLib.h
+Compiled:	Apr 21 2020 07:04:40, GNU g++ 9.2.0, std=201402L, MinGW Runtime 5.3, 32-bit, Debug
+Started:	Apr 21 2020 07:04:43
+
+Run file:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe
+Directory:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe, файл: Resources\\TXLib.h, строка: 12512, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400], Instance: 0x0044770C (32-bit), Flags: CMdRe0, Thread: 0xFD0 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	Resources\\TXLib.h
+Compiled:	Apr 28 2020 14:09:16, GNU g++ 9.2.0, std=201402L, MinGW Runtime 5.3, 32-bit, Debug
+Started:	Apr 28 2020 14:09:19
+
+Run file:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe
+Directory:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe, файл: Resources\\TXLib.h, строка: 12132, функция: COLORREF {anonymous}::TX::txGetPixel(double, double, HDC),
+
+Сообщение: Параметр "dc" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#2: TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400], Instance: 0x0044770C (32-bit), Flags: CMdRe0, Thread: 0xFD0 (Main), GetLastError(): 13 (Недопустимые данные), errno: 22 (Invalid argument), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	Resources\\TXLib.h
+Compiled:	Apr 28 2020 14:09:16, GNU g++ 9.2.0, std=201402L, MinGW Runtime 5.3, 32-bit, Debug
+Started:	Apr 28 2020 14:09:19
+
+Run file:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe
+Directory:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe, файл: Resources\\TXLib.h, строка: 12132, функция: COLORREF {anonymous}::TX::txGetPixel(double, double, HDC),
+
+Сообщение: Параметр "dc" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#3: TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400], Instance: 0x0044770C (32-bit), Flags: CMdRe0, Thread: 0xFD0 (Main), GetLastError(): 13 (Недопустимые данные), errno: 22 (Invalid argument), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	Resources\\TXLib.h
+Compiled:	Apr 28 2020 14:09:16, GNU g++ 9.2.0, std=201402L, MinGW Runtime 5.3, 32-bit, Debug
+Started:	Apr 28 2020 14:09:19
+
+Run file:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe
+Directory:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe, файл: Resources\\TXLib.h, строка: 12512, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400], Instance: 0x0044770C (32-bit), Flags: CMdRe0, Thread: 0x2470 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	Resources\\TXLib.h
+Compiled:	Apr 28 2020 14:09:44, GNU g++ 9.2.0, std=201402L, MinGW Runtime 5.3, 32-bit, Debug
+Started:	Apr 28 2020 14:09:46
+
+Run file:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe
+Directory:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe, файл: Resources\\TXLib.h, строка: 12132, функция: COLORREF {anonymous}::TX::txGetPixel(double, double, HDC),
+
+Сообщение: Параметр "dc" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#2: TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400], Instance: 0x0044770C (32-bit), Flags: CMdRe0, Thread: 0x2470 (Main), GetLastError(): 13 (Недопустимые данные), errno: 22 (Invalid argument), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	Resources\\TXLib.h
+Compiled:	Apr 28 2020 14:09:44, GNU g++ 9.2.0, std=201402L, MinGW Runtime 5.3, 32-bit, Debug
+Started:	Apr 28 2020 14:09:47
+
+Run file:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe
+Directory:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe, файл: Resources\\TXLib.h, строка: 12132, функция: COLORREF {anonymous}::TX::txGetPixel(double, double, HDC),
+
+Сообщение: Параметр "dc" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#3: TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400], Instance: 0x0044770C (32-bit), Flags: CMdRe0, Thread: 0x2470 (Main), GetLastError(): 13 (Недопустимые данные), errno: 22 (Invalid argument), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	Resources\\TXLib.h
+Compiled:	Apr 28 2020 14:09:44, GNU g++ 9.2.0, std=201402L, MinGW Runtime 5.3, 32-bit, Debug
+Started:	Apr 28 2020 14:09:47
+
+Run file:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe
+Directory:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe, файл: Resources\\TXLib.h, строка: 12132, функция: COLORREF {anonymous}::TX::txGetPixel(double, double, HDC),
+
+Сообщение: Параметр "dc" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#4: TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400], Instance: 0x0044770C (32-bit), Flags: CMdRe0, Thread: 0x2470 (Main), GetLastError(): 13 (Недопустимые данные), errno: 22 (Invalid argument), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	Resources\\TXLib.h
+Compiled:	Apr 28 2020 14:09:44, GNU g++ 9.2.0, std=201402L, MinGW Runtime 5.3, 32-bit, Debug
+Started:	Apr 28 2020 14:09:46
+
+Run file:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe
+Directory:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe, файл: Resources\\TXLib.h, строка: 12512, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400], Instance: 0x0044770C (32-bit), Flags: CMdRe0, Thread: 0x17CC (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	Resources\\TXLib.h
+Compiled:	Apr 28 2020 14:11:06, GNU g++ 9.2.0, std=201402L, MinGW Runtime 5.3, 32-bit, Debug
+Started:	Apr 28 2020 14:11:08
+
+Run file:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe
+Directory:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe, файл: Resources\\TXLib.h, строка: 12512, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400], Instance: 0x0044770C (32-bit), Flags: CMdRe0, Thread: 0x197C (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	Resources\\TXLib.h
+Compiled:	Apr 28 2020 14:18:51, GNU g++ 9.2.0, std=201402L, MinGW Runtime 5.3, 32-bit, Debug
+Started:	Apr 28 2020 14:18:53
+
+Run file:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe
+Directory:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe, файл: Resources\\TXLib.h, строка: 12132, функция: COLORREF {anonymous}::TX::txGetPixel(double, double, HDC),
+
+Сообщение: Параметр "dc" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#2: TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400], Instance: 0x0044770C (32-bit), Flags: CMdRe0, Thread: 0x197C (Main), GetLastError(): 13 (Недопустимые данные), errno: 22 (Invalid argument), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	Resources\\TXLib.h
+Compiled:	Apr 28 2020 14:18:51, GNU g++ 9.2.0, std=201402L, MinGW Runtime 5.3, 32-bit, Debug
+Started:	Apr 28 2020 14:18:54
+
+Run file:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe
+Directory:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe, файл: Resources\\TXLib.h, строка: 12512, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400], Instance: 0x0044770C (32-bit), Flags: CMdRe0, Thread: 0x1D48 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-26 21:07:17 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	Resources\\TXLib.h
+Compiled:	Apr 28 2020 14:19:05, GNU g++ 9.2.0, std=201402L, MinGW Runtime 5.3, 32-bit, Debug
+Started:	Apr 28 2020 14:19:07
+
+Run file:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes\LoadImage.exe
+Directory:	e:\ItSchoolRep\ITSchool\HeroRetun\ImageArrayes
+
+--------------------------------------------------

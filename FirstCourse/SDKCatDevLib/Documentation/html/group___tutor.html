@@ -1,0 +1,1279 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CatDevLib: Пример реализации</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="CatDev.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">CatDevLib
+   &#160;<span id="projectnumber">1.0.0</span>
+   </div>
+   <div id="projectbrief">Документация к графической библиотеке CatDevLib.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.17 -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('group___tutor.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">Пример реализации</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+
+<h3><a id="Tutor_1st"></a>Movie by CatDev</h3><div class="textblock"><h1><a class="anchor" id="MovieDis"></a>
+Описание</h1>
+<p>В данном примере реализован мультфильм, с ипользованием всех функций CatDevLib.</p>
+<h1><a class="anchor" id="Connect"></a>
+Подключение библиотек</h1>
+<p>Для работы с CatDevLib необходимо подключить минимум 2 библиотеки: TXLib и саму CatDevLib. </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;TXLib.h&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;CatDevLib.h&quot;</span></div>
+</div><!-- fragment --> <dl class="section note"><dt>Заметки</dt><dd>Не забывайте, что для подключения библиотек, они должны находиться в папке с проектом (С файлом .cpp).</dd></dl>
+<h1><a class="anchor" id="Declaration"></a>
+Деклорация функций</h1>
+<p>Затем декларируем наши функции мультфильма. </p><div class="fragment"><div class="line"><span class="keywordtype">void</span> SkubiEyes1(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> SkubiScale, <span class="keywordtype">bool</span> SkubiEyes, COLORREF SkubiStrokePanelColor, COLORREF SkubiEyesColor);</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> scene1(HDC Fade);</div>
+<div class="line"><span class="keywordtype">void</span> scene2(HDC scene2_background);</div>
+<div class="line"><span class="keywordtype">void</span> scene3(HDC openDoor, HDC closeDoor, HDC sky);</div>
+<div class="line"><span class="keywordtype">void</span> scene4(HDC minutes);</div>
+<div class="line"><span class="keywordtype">void</span> scene5(HDC openDoor, HDC sky);</div>
+<div class="line"><span class="keywordtype">void</span> scene6(HDC Scene6);</div>
+<div class="line"><span class="keywordtype">void</span> scene7(HDC Directed2, HDC Directed3, HDC Directed4);</div>
+</div><!-- fragment --><h1><a class="anchor" id="Main"></a>
+Главная функция программы</h1>
+<p>В главной функции программы прописаны вызовы логических функций и загрузка ресурсов для мультфильма. </p><div class="fragment"><div class="line"><span class="keywordtype">int</span> main()</div>
+<div class="line">{</div>
+<div class="line">    <span class="comment">//Заливка фона</span></div>
+<div class="line">    txCreateWindow (1400, 800);</div>
+<div class="line">    txSetFillColor (TX_WHITE);</div>
+<div class="line">    txFloodFill(0, 0, FLOODFILLBORDER);</div>
+<div class="line"> </div>
+<div class="line">    HDC Fade = txLoadImage (<span class="stringliteral">&quot;Resources\\Fade.bmp&quot;</span>);</div>
+<div class="line">    txPlaySound(<span class="stringliteral">&quot;Resources\\start.wav&quot;</span>, SND_ASYNC);</div>
+<div class="line">    scene1(Fade);</div>
+<div class="line"> </div>
+<div class="line">    HDC scene2_background = txLoadImage(<span class="stringliteral">&quot;Resources\\Scene2_background.bmp&quot;</span>);</div>
+<div class="line">    txPlaySound(<span class="stringliteral">&quot;Resources\\tv.wav&quot;</span>, SND_ASYNC);</div>
+<div class="line">    scene2(scene2_background);</div>
+<div class="line"> </div>
+<div class="line">    HDC openDoor = txLoadImage(<span class="stringliteral">&quot;Resources\\OpenDoor.bmp&quot;</span>);</div>
+<div class="line">    HDC closeDoor = txLoadImage(<span class="stringliteral">&quot;Resources\\CloseDoor.bmp&quot;</span>);</div>
+<div class="line">    HDC sky = txLoadImage(<span class="stringliteral">&quot;Resources\\Sky.bmp&quot;</span>);</div>
+<div class="line">    scene3(openDoor, closeDoor, sky);</div>
+<div class="line"> </div>
+<div class="line">    HDC minutes = txLoadImage(<span class="stringliteral">&quot;Resources\\5minutes.bmp&quot;</span>);</div>
+<div class="line">    scene4(minutes);</div>
+<div class="line"> </div>
+<div class="line">    scene5(openDoor, sky);</div>
+<div class="line"> </div>
+<div class="line">    HDC Scene6 = txLoadImage(<span class="stringliteral">&quot;Resources\\Scene6.bmp&quot;</span>);</div>
+<div class="line">    scene6(Scene6);</div>
+<div class="line"> </div>
+<div class="line">    HDC Directed2 = txLoadImage(<span class="stringliteral">&quot;Resources\\Directed2.bmp&quot;</span>);</div>
+<div class="line">    HDC Directed3 = txLoadImage(<span class="stringliteral">&quot;Resources\\Directed3.bmp&quot;</span>);</div>
+<div class="line">    HDC Directed4 = txLoadImage(<span class="stringliteral">&quot;Resources\\Directed4.bmp&quot;</span>);</div>
+<div class="line">    scene7(Directed2, Directed3, Directed4);</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+</div><!-- fragment --><h1><a class="anchor" id="NotLikeThis"></a>
+Как не стоит поступать</h1>
+<p>Здесь показан так называемый костыль. <br  />
+ Костыли - некое поделие, призванное оперативно устранить возникшую проблему, невзирая на стилистику в целом и здравый смысл в частности. <br  />
+ В данном случае, этот "костыль" решает проблему с глазами Скуби-Ду. </p><dl class="section warning"><dt>Предупреждения</dt><dd>Избегайте "костылей", ведь они нарушают красоту и гармонию программы. <br  />
+ Нередко случается, что со временем кода "особых случаев", которые обрабатывают "костыли", становится в разы больше чем основной логики. <br  />
+ <del>Но... Работает - не трогай.</del></dd></dl>
+<div class="fragment"><div class="line"><span class="keywordtype">void</span> SkubiEyes1(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> SkubiScale, <span class="keywordtype">bool</span> SkubiEyes, COLORREF SkubiStrokePanelColor, COLORREF SkubiEyesColor)</div>
+<div class="line">{</div>
+<div class="line">    <span class="keywordflow">if</span>(SkubiEyes)</div>
+<div class="line">    {</div>
+<div class="line">        txSetFillColor(WHITE);</div>
+<div class="line">        txSetColor(WHITE);</div>
+<div class="line">        txCircle(x+(111*SkubiScale), y+(-226*SkubiScale), 10*SkubiScale);</div>
+<div class="line">        txCircle(x+(86*SkubiScale), y+(-213*SkubiScale), 10*SkubiScale);</div>
+<div class="line">        txSetFillColor(SkubiEyesColor);</div>
+<div class="line">        txSetColor(SkubiEyesColor);</div>
+<div class="line">        txCircle(x+(111*SkubiScale), y+(-226*SkubiScale), 6*SkubiScale);</div>
+<div class="line">        txCircle(x+(86*SkubiScale), y+(-213*SkubiScale), 6*SkubiScale);</div>
+<div class="line">        txSetFillColor(SkubiStrokePanelColor);</div>
+<div class="line">        txCircle(x+(111*SkubiScale), y+(-226*SkubiScale), 4*SkubiScale);</div>
+<div class="line">        txCircle(x+(86*SkubiScale), y+(-213*SkubiScale), 4*SkubiScale);</div>
+<div class="line">    }<span class="keywordflow">else</span>{</div>
+<div class="line">        txSetColor(SkubiStrokePanelColor, 5);</div>
+<div class="line">        txLine(x+(72*SkubiScale), y+(-247*SkubiScale), x+(85*SkubiScale), y+(-262*SkubiScale));</div>
+<div class="line">        txLine(x+(85*SkubiScale), y+(-262*SkubiScale), x+(93*SkubiScale), y+(-258*SkubiScale));</div>
+<div class="line">        txLine(x+(107*SkubiScale), y+(-257*SkubiScale), x+(117*SkubiScale), y+(-263*SkubiScale));</div>
+<div class="line">        txLine(x+(117*SkubiScale), y+(-263*SkubiScale), x+(134*SkubiScale), y+(-257*SkubiScale));</div>
+<div class="line"> </div>
+<div class="line">        txSetColor(SkubiStrokePanelColor, 3);</div>
+<div class="line">        txLine(x+(70*SkubiScale), y+(-214*SkubiScale), x+(95*SkubiScale), y+(-216*SkubiScale));</div>
+<div class="line">        txLine(x+(127*SkubiScale), y+(-231*SkubiScale), x+(103*SkubiScale), y+(-224*SkubiScale));</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment --> <dl class="section note"><dt>Заметки</dt><dd>Присмотритесь к названию этой функции. Не допускайте такого. <br  />
+ <del>Иначе вас будет ожидать отдельный котёл в аду.</del> <br  />
+ Названия функций, переменных, констант и т.д должны отражать их смысл.</dd></dl>
+<h1><a class="anchor" id="Logic"></a>
+Логические функции</h1>
+<p>В логических функциях прописывается вызовы функций в определённое время с определёнными параметрами. </p><div class="fragment"><div class="line"><span class="keywordtype">void</span> scene1(HDC Fade)</div>
+<div class="line">{</div>
+<div class="line">    txBitBlt (txDC(), 0, 0, 1400, 800, Fade, 0, 0);</div>
+<div class="line">    txSleep(7000);</div>
+<div class="line">    txDeleteDC (Fade);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> scene2(HDC scene2_background)</div>
+<div class="line">{</div>
+<div class="line">    <span class="keywordtype">int</span> pigX = 913;</div>
+<div class="line">    <span class="keywordtype">int</span> pigY = 450;</div>
+<div class="line">    <span class="keywordtype">int</span> pigEar = 3;  <span class="comment">//0-Нет ушей, 1-Правое ухо, 2-Левое ухо, 3-Оба уха</span></div>
+<div class="line">    <span class="keywordtype">int</span> pigHand = 3;  <span class="comment">//0-Нет рук, 1-Правая рука, 2-Левая рука, 3-Обе руки</span></div>
+<div class="line">    <span class="keywordtype">int</span> pigScale = 1;</div>
+<div class="line">    <span class="keywordtype">bool</span> pigEyes; <span class="comment">//= true;</span></div>
+<div class="line">    <span class="keywordtype">bool</span> pigLeg = <span class="keyword">true</span>;</div>
+<div class="line">    <span class="keywordtype">bool</span> pigLeftArm; <span class="comment">//= 1;</span></div>
+<div class="line">    <span class="keywordtype">bool</span> pigRoth = <span class="keyword">true</span>;</div>
+<div class="line">    COLORREF pigEarColor = RGB(230, 152, 194);</div>
+<div class="line">    COLORREF pigNoseColor = RGB(251, 202, 205);</div>
+<div class="line">    COLORREF pigShirtColor = RGB(240, 78, 150);</div>
+<div class="line">    COLORREF pigSkinColor = RGB(251, 202, 205);</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">int</span> flyX = 431;</div>
+<div class="line">    <span class="keywordtype">int</span> flyY = 275;</div>
+<div class="line">    <span class="keywordtype">int</span> flyHand = 3;  <span class="comment">//0-Нет рук, 1-Правая рука, 2-Левая рука, 3-Обе руки</span></div>
+<div class="line">    <span class="keywordtype">int</span> flyScale = 1;</div>
+<div class="line">    <span class="keywordtype">bool</span> flyLeg = <span class="keyword">true</span>;<span class="comment">//При отсутствии ног, крылья автоматические исчезают</span></div>
+<div class="line">    <span class="keywordtype">bool</span> flyHair = <span class="keyword">true</span>;</div>
+<div class="line">    <span class="keywordtype">bool</span> flyWings = <span class="keyword">true</span>;</div>
+<div class="line">    <span class="keywordtype">bool</span> flyEyes;</div>
+<div class="line">    COLORREF flyRothColor = RGB(148, 56, 105);</div>
+<div class="line">    COLORREF flyShirtColor = RGB(255, 0, 0);</div>
+<div class="line">    COLORREF flySkinColor = RGB(88, 165, 155);</div>
+<div class="line">    COLORREF flyEyesColor = RGB(255, 255, 0);</div>
+<div class="line"> </div>
+<div class="line">    txBegin();</div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=1; i&lt;17; i++)</div>
+<div class="line">    {</div>
+<div class="line">        txBitBlt (txDC(), 0, 0, 1400, 800, scene2_background, 0, 0);</div>
+<div class="line"> </div>
+<div class="line">        <a class="code" href="group___pig.html#gac9cb2d88a68d84133114cae1a9844f13">drawPig</a>(pigX, pigY, pigEar, pigHand, pigScale, pigEyes, pigLeg, pigLeftArm, pigRoth, pigEarColor, pigNoseColor, pigShirtColor, pigSkinColor);</div>
+<div class="line">        <a class="code" href="group___fly.html#ga7f4a3b43b29cb14ffae24fa9efc7236e">drawFly</a>(flyX, flyY, flyHand, flyLeg, flyScale, flyHair, flyWings, flyEyes, flyRothColor, flyShirtColor, flySkinColor, flyEyesColor);</div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordflow">if</span>(i%5==0)</div>
+<div class="line">        {</div>
+<div class="line">            flyEyes=<span class="keyword">false</span>;</div>
+<div class="line">        }<span class="keywordflow">else</span>{</div>
+<div class="line">            flyEyes=<span class="keyword">true</span>;</div>
+<div class="line">        }</div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordflow">if</span>(i%6==0)</div>
+<div class="line">        {</div>
+<div class="line">            pigEyes=<span class="keyword">false</span>;</div>
+<div class="line">        }<span class="keywordflow">else</span>{</div>
+<div class="line">            pigEyes=<span class="keyword">true</span>;</div>
+<div class="line">        }</div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordflow">if</span>(i%4==0)</div>
+<div class="line">        {</div>
+<div class="line">            pigLeftArm = 1;</div>
+<div class="line">        }<span class="keywordflow">else</span>{</div>
+<div class="line">            pigLeftArm = 0;</div>
+<div class="line">        }</div>
+<div class="line"> </div>
+<div class="line">        txSleep(500);</div>
+<div class="line">        txSetFillColor(WHITE);</div>
+<div class="line">        txClear();</div>
+<div class="line">    }</div>
+<div class="line">    txEnd();</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">int</span> MinionX = -250;</div>
+<div class="line">    <span class="keywordtype">int</span> MinionY = 446;</div>
+<div class="line">    <span class="keywordtype">int</span> MinionHand = 3;  <span class="comment">//0-Нет рук, 1-Правая рука, 2-Левая рука, 3-Обе руки</span></div>
+<div class="line">    <span class="keywordtype">int</span> MinionScale = 1;</div>
+<div class="line">    <span class="keywordtype">bool</span> MinionGlasses = <span class="keyword">true</span>;</div>
+<div class="line">    <span class="keywordtype">bool</span> MinionHair = <span class="keyword">true</span>;</div>
+<div class="line">    <span class="keywordtype">bool</span> MinionRoth = <span class="keyword">true</span>;</div>
+<div class="line">    COLORREF MinionEyesColor = RGB(117, 79, 56);</div>
+<div class="line">    COLORREF MinionPantsColor = RGB(0, 139, 255);</div>
+<div class="line">    COLORREF MinionGlassesColor = RGB(87, 78, 64);</div>
+<div class="line">    COLORREF MinionPocketColor = RGB(0, 139, 255);</div>
+<div class="line"> </div>
+<div class="line">    txBegin();</div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=1; i&lt;34; i++)</div>
+<div class="line">    {</div>
+<div class="line">        txBitBlt (txDC(), 0, 0, 1400, 800, scene2_background, 0, 0);</div>
+<div class="line"> </div>
+<div class="line">        <a class="code" href="group___pig.html#gac9cb2d88a68d84133114cae1a9844f13">drawPig</a>(pigX, pigY, pigEar, pigHand, pigScale, pigEyes, pigLeg, pigLeftArm, pigRoth, pigEarColor, pigNoseColor, pigShirtColor, pigSkinColor);</div>
+<div class="line">        <a class="code" href="group___fly.html#ga7f4a3b43b29cb14ffae24fa9efc7236e">drawFly</a>(flyX, flyY, flyHand, flyLeg, flyScale, flyHair, flyWings, flyEyes, flyRothColor, flyShirtColor, flySkinColor, flyEyesColor);</div>
+<div class="line">        <a class="code" href="group___minion.html#ga44f059566e14c4635211fe6765776182">drawMinion</a>(MinionX, MinionY, MinionHand, MinionScale, MinionGlasses, MinionHair, MinionRoth, MinionEyesColor, MinionPantsColor, MinionGlassesColor, MinionPocketColor);</div>
+<div class="line"> </div>
+<div class="line">        MinionX=MinionX+10;</div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordflow">if</span>(i%2)</div>
+<div class="line">        {</div>
+<div class="line">            MinionY=MinionY+10;</div>
+<div class="line">        }<span class="keywordflow">else</span>{</div>
+<div class="line">            MinionY=MinionY-10;</div>
+<div class="line">        }</div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordflow">if</span>(i%10==0)</div>
+<div class="line">        {</div>
+<div class="line">            flyEyes=<span class="keyword">false</span>;</div>
+<div class="line">        }<span class="keywordflow">else</span>{</div>
+<div class="line">            flyEyes=<span class="keyword">true</span>;</div>
+<div class="line">        }</div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordflow">if</span>(i%6==0)</div>
+<div class="line">        {</div>
+<div class="line">            pigEyes=<span class="keyword">false</span>;</div>
+<div class="line">        }<span class="keywordflow">else</span>{</div>
+<div class="line">            pigEyes=<span class="keyword">true</span>;</div>
+<div class="line">        }</div>
+<div class="line"> </div>
+<div class="line">        txSleep(250);</div>
+<div class="line">        txSetFillColor(WHITE);</div>
+<div class="line">        txClear();</div>
+<div class="line">    }</div>
+<div class="line">    txEnd();</div>
+<div class="line"> </div>
+<div class="line">    txPlaySound(<span class="stringliteral">&quot;Resources\\minion.wav&quot;</span>, SND_ASYNC);</div>
+<div class="line">    txBegin();</div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=1; i&lt;6; i++)</div>
+<div class="line">    {</div>
+<div class="line">        txBitBlt (txDC(), 0, 0, 1400, 800, scene2_background, 0, 0);</div>
+<div class="line"> </div>
+<div class="line">        <a class="code" href="group___pig.html#gac9cb2d88a68d84133114cae1a9844f13">drawPig</a>(pigX, pigY, pigEar, pigHand, pigScale, pigEyes, pigLeg, pigLeftArm, pigRoth, pigEarColor, pigNoseColor, pigShirtColor, pigSkinColor);</div>
+<div class="line">        <a class="code" href="group___fly.html#ga7f4a3b43b29cb14ffae24fa9efc7236e">drawFly</a>(flyX, flyY, flyHand, flyLeg, flyScale, flyHair, flyWings, flyEyes, flyRothColor, flyShirtColor, flySkinColor, flyEyesColor);</div>
+<div class="line">        <a class="code" href="group___minion.html#ga44f059566e14c4635211fe6765776182">drawMinion</a>(MinionX, MinionY, MinionHand, MinionScale, MinionGlasses, MinionHair, MinionRoth, MinionEyesColor, MinionPantsColor, MinionGlassesColor, MinionPocketColor);</div>
+<div class="line"> </div>
+<div class="line">        SIZE size = txGetTextExtent (<span class="stringliteral">&quot;Миньон: Друзья, пойдёмте кушац!&quot;</span>);</div>
+<div class="line">        txSelectFont (<span class="stringliteral">&quot;Comic Sans MS&quot;</span>, 40);</div>
+<div class="line">        txTextOut (700 - size.cx/2, 700, <span class="stringliteral">&quot;Миньон: Друзья, пойдёмте кушац!&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordflow">if</span>(i%5==0)</div>
+<div class="line">        {</div>
+<div class="line">            flyEyes=<span class="keyword">false</span>;</div>
+<div class="line">        }<span class="keywordflow">else</span>{</div>
+<div class="line">            flyEyes=<span class="keyword">true</span>;</div>
+<div class="line">        }</div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordflow">if</span>(i%6==0)</div>
+<div class="line">        {</div>
+<div class="line">            pigEyes=<span class="keyword">false</span>;</div>
+<div class="line">        }<span class="keywordflow">else</span>{</div>
+<div class="line">            pigEyes=<span class="keyword">true</span>;</div>
+<div class="line">        }</div>
+<div class="line"> </div>
+<div class="line">        MinionRoth = !MinionRoth;</div>
+<div class="line">        txSleep(500);</div>
+<div class="line">        txSetFillColor(WHITE);</div>
+<div class="line">        txClear();</div>
+<div class="line">    }</div>
+<div class="line">    txEnd();</div>
+<div class="line">    txDeleteDC (scene2_background);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> scene3(HDC openDoor, HDC closeDoor, HDC sky)</div>
+<div class="line">{</div>
+<div class="line">    txBitBlt (txDC(), 0, 0, 1400, 800, closeDoor, 0, 0);</div>
+<div class="line">    txPlaySound(<span class="stringliteral">&quot;Resources\\fbi.wav&quot;</span>, SND_SYNC);</div>
+<div class="line">    txDeleteDC (closeDoor);</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">int</span> penguinX = 750;<span class="comment">//670</span></div>
+<div class="line">    <span class="keywordtype">int</span> penguinY = 403;</div>
+<div class="line">    <span class="keywordtype">int</span> penguinHand = 3;  <span class="comment">//0-Нет рук, 1-Правая рука, 2-Левая рука, 3-Обе руки</span></div>
+<div class="line">    <span class="keywordtype">int</span> penguinLeg = 3;  <span class="comment">//0-Нет ног, 1-Правая нога, 2-Левая нога, 3-Обе ноги</span></div>
+<div class="line">    <span class="keywordtype">int</span> penguinEyes = 3; <span class="comment">//0-Нет глаз, 1-Правый глаз, 2-Левый газ, 3-Оба глаза</span></div>
+<div class="line">    <span class="keywordtype">int</span> penguinScale = 1;</div>
+<div class="line">    <span class="keywordtype">bool</span> penguinRoth = <span class="keyword">true</span>;</div>
+<div class="line">    COLORREF penguinEyesColor = RGB(51, 83, 128);</div>
+<div class="line">    COLORREF penguinLegsColor = RGB(169, 95, 46);</div>
+<div class="line">    COLORREF penguinBackColor = RGB(0, 0, 1);</div>
+<div class="line">    COLORREF penguinBallyColor = RGB(255, 255, 241);</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">int</span> SkubiX = 726;<span class="comment">//602</span></div>
+<div class="line">    <span class="keywordtype">int</span> SkubiY = 758;</div>
+<div class="line">    <span class="keywordtype">int</span> SkubiScale = 1;</div>
+<div class="line">    <span class="keywordtype">bool</span> SkubiNose = <span class="keyword">true</span>;</div>
+<div class="line">    <span class="keywordtype">bool</span> SkubiKeychain = <span class="keyword">true</span>;</div>
+<div class="line">    <span class="keywordtype">bool</span> skubyiMoles = <span class="keyword">true</span>;</div>
+<div class="line">    <span class="keywordtype">bool</span> SkubiEyes = <span class="keyword">false</span>;</div>
+<div class="line">    <span class="keywordtype">bool</span> SkubiTeeth = <span class="keyword">true</span>;</div>
+<div class="line">    COLORREF SkubiStrokePanelColor = RGB(0, 0, 2);</div>
+<div class="line">    COLORREF SkubiSkinColor = RGB(142, 80, 6);</div>
+<div class="line">    COLORREF SkubiCollarColor = RGB(10, 105, 127);</div>
+<div class="line">    COLORREF SkubiEyesColor = RGB(51, 83, 128);</div>
+<div class="line"> </div>
+<div class="line">    txBegin();</div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=1; i&lt;7; i++)</div>
+<div class="line">    {</div>
+<div class="line">        txSetFillColor (TX_WHITE);</div>
+<div class="line">        txFloodFill(0, 0, FLOODFILLBORDER);</div>
+<div class="line">        txBitBlt (txDC(), 0, 0, 1400, 800, sky, 0, 0);</div>
+<div class="line"> </div>
+<div class="line">        <a class="code" href="group___pa.html#gac66fbb3763bd0ce6765e5883d95656f6">drawPenguin</a>(penguinX, penguinY, penguinHand, penguinLeg, penguinScale, penguinRoth, penguinEyes, penguinEyesColor, penguinLegsColor, penguinBackColor, penguinBallyColor);</div>
+<div class="line">        <a class="code" href="group___skubi.html#ga36519e108a3f17316b56755270ab2023">drawSkubi</a>(SkubiX, SkubiY, SkubiScale, SkubiKeychain, skubyiMoles, SkubiEyes, SkubiNose, SkubiTeeth, SkubiStrokePanelColor, SkubiSkinColor, SkubiCollarColor, SkubiEyesColor);</div>
+<div class="line"> </div>
+<div class="line">        penguinX = penguinX-10;</div>
+<div class="line">        SkubiX = SkubiX-20;</div>
+<div class="line"> </div>
+<div class="line">        txAlphaBlend(txDC(), 0, 0, 1400, 800, openDoor, 0, 0, 1);</div>
+<div class="line"> </div>
+<div class="line">        txSleep(125);</div>
+<div class="line">    }</div>
+<div class="line">    txEnd();</div>
+<div class="line"> </div>
+<div class="line">    txPlaySound(<span class="stringliteral">&quot;Resources\\SkubiKush.wav&quot;</span>, SND_ASYNC);</div>
+<div class="line"> </div>
+<div class="line">    txBegin();</div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=1; i&lt;3; i++)</div>
+<div class="line">    {</div>
+<div class="line">        txSetFillColor (TX_WHITE);</div>
+<div class="line">        txFloodFill(0, 0, FLOODFILLBORDER);</div>
+<div class="line">        txBitBlt (txDC(), 0, 0, 1400, 800, sky, 0, 0);</div>
+<div class="line"> </div>
+<div class="line">        <a class="code" href="group___pa.html#gac66fbb3763bd0ce6765e5883d95656f6">drawPenguin</a>(penguinX, penguinY, penguinHand, penguinLeg, penguinScale, penguinRoth, penguinEyes, penguinEyesColor, penguinLegsColor, penguinBackColor, penguinBallyColor);</div>
+<div class="line">        <a class="code" href="group___skubi.html#ga36519e108a3f17316b56755270ab2023">drawSkubi</a>(SkubiX, SkubiY, SkubiScale, SkubiKeychain, skubyiMoles, SkubiEyes, SkubiNose, SkubiTeeth, SkubiStrokePanelColor, SkubiSkinColor, SkubiCollarColor, SkubiEyesColor);</div>
+<div class="line"> </div>
+<div class="line">        SkubiTeeth = !SkubiTeeth;</div>
+<div class="line"> </div>
+<div class="line">        txAlphaBlend(txDC(), 0, 0, 1400, 800, openDoor, 0, 0, 1);</div>
+<div class="line">        SkubiEyes1(SkubiX, SkubiY, SkubiScale, SkubiEyes, SkubiStrokePanelColor, SkubiEyesColor);</div>
+<div class="line"> </div>
+<div class="line">        SkubiEyes = !SkubiEyes;</div>
+<div class="line"> </div>
+<div class="line">        txSleep(1000);</div>
+<div class="line">    }</div>
+<div class="line">    txEnd();</div>
+<div class="line">    txSleep(250);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> scene4(HDC minutes)</div>
+<div class="line">{</div>
+<div class="line">    txBitBlt (txDC(), 0, 0, 1400, 800, minutes, 0, 0);</div>
+<div class="line">    txPlaySound(<span class="stringliteral">&quot;Resources\\5minutes.wav&quot;</span>, SND_SYNC);</div>
+<div class="line">    txDeleteDC (minutes);</div>
+<div class="line">    txSetFillColor(BLACK);</div>
+<div class="line">    txClear();</div>
+<div class="line">    txPlaySound(<span class="stringliteral">&quot;Resources\\eat.wav&quot;</span>, SND_SYNC);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> scene5(HDC openDoor, HDC sky)</div>
+<div class="line">{</div>
+<div class="line">    <span class="keywordtype">int</span> penguinX = 680;<span class="comment">//670</span></div>
+<div class="line">    <span class="keywordtype">int</span> penguinY = 403;</div>
+<div class="line">    <span class="keywordtype">int</span> penguinHand = 3;  <span class="comment">//0-Нет рук, 1-Правая рука, 2-Левая рука, 3-Обе руки</span></div>
+<div class="line">    <span class="keywordtype">int</span> penguinLeg = 3;  <span class="comment">//0-Нет ног, 1-Правая нога, 2-Левая нога, 3-Обе ноги</span></div>
+<div class="line">    <span class="keywordtype">int</span> penguinEyes = 3; <span class="comment">//0-Нет глаз, 1-Правый глаз, 2-Левый газ, 3-Оба глаза</span></div>
+<div class="line">    <span class="keywordtype">int</span> penguinScale = 1;</div>
+<div class="line">    <span class="keywordtype">bool</span> penguinRoth = <span class="keyword">true</span>;</div>
+<div class="line">    COLORREF penguinEyesColor = RGB(51, 83, 128);</div>
+<div class="line">    COLORREF penguinLegsColor = RGB(169, 95, 46);</div>
+<div class="line">    COLORREF penguinBackColor = RGB(0, 0, 1);</div>
+<div class="line">    COLORREF penguinBallyColor = RGB(255, 255, 241);</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">int</span> SkubiX = 586;<span class="comment">//602</span></div>
+<div class="line">    <span class="keywordtype">int</span> SkubiY = 758;</div>
+<div class="line">    <span class="keywordtype">int</span> SkubiScale = 1;</div>
+<div class="line">    <span class="keywordtype">bool</span> SkubiNose = <span class="keyword">true</span>;</div>
+<div class="line">    <span class="keywordtype">bool</span> SkubiKeychain = <span class="keyword">true</span>;</div>
+<div class="line">    <span class="keywordtype">bool</span> skubyiMoles = <span class="keyword">true</span>;</div>
+<div class="line">    <span class="keywordtype">bool</span> SkubiEyes = <span class="keyword">true</span>;</div>
+<div class="line">    <span class="keywordtype">bool</span> SkubiTeeth = <span class="keyword">false</span>;</div>
+<div class="line">    COLORREF SkubiStrokePanelColor = RGB(0, 0, 2);</div>
+<div class="line">    COLORREF SkubiSkinColor = RGB(142, 80, 6);</div>
+<div class="line">    COLORREF SkubiCollarColor = RGB(10, 105, 127);</div>
+<div class="line">    COLORREF SkubiEyesColor = RGB(51, 83, 128);</div>
+<div class="line"> </div>
+<div class="line">    txBitBlt (txDC(), 0, 0, 1400, 800, sky, 0, 0);</div>
+<div class="line"> </div>
+<div class="line">    <a class="code" href="group___pa.html#gac66fbb3763bd0ce6765e5883d95656f6">drawPenguin</a>(penguinX, penguinY, penguinHand, penguinLeg, penguinScale, penguinRoth, penguinEyes, penguinEyesColor, penguinLegsColor, penguinBackColor, penguinBallyColor);</div>
+<div class="line">    <a class="code" href="group___skubi.html#ga36519e108a3f17316b56755270ab2023">drawSkubi</a>(SkubiX, SkubiY, SkubiScale, SkubiKeychain, skubyiMoles, SkubiEyes, SkubiNose, SkubiTeeth, SkubiStrokePanelColor, SkubiSkinColor, SkubiCollarColor, SkubiEyesColor);</div>
+<div class="line"> </div>
+<div class="line">    txAlphaBlend(txDC(), 0, 0, 1400, 800, openDoor, 0, 0, 1);</div>
+<div class="line">    SkubiEyes1(SkubiX, SkubiY, SkubiScale, SkubiEyes, SkubiStrokePanelColor, SkubiEyesColor);</div>
+<div class="line">    txSleep(1000);</div>
+<div class="line"> </div>
+<div class="line">    txPlaySound(<span class="stringliteral">&quot;Resources\\SkubiPosh.wav&quot;</span>, SND_ASYNC);</div>
+<div class="line"> </div>
+<div class="line">    txBegin();</div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=1; i&lt;3; i++)</div>
+<div class="line">    {</div>
+<div class="line">        txSetFillColor (TX_WHITE);</div>
+<div class="line">        txFloodFill(0, 0, FLOODFILLBORDER);</div>
+<div class="line">        txBitBlt (txDC(), 0, 0, 1400, 800, sky, 0, 0);</div>
+<div class="line"> </div>
+<div class="line">        <a class="code" href="group___pa.html#gac66fbb3763bd0ce6765e5883d95656f6">drawPenguin</a>(penguinX, penguinY, penguinHand, penguinLeg, penguinScale, penguinRoth, penguinEyes, penguinEyesColor, penguinLegsColor, penguinBackColor, penguinBallyColor);</div>
+<div class="line">        <a class="code" href="group___skubi.html#ga36519e108a3f17316b56755270ab2023">drawSkubi</a>(SkubiX, SkubiY, SkubiScale, SkubiKeychain, skubyiMoles, SkubiEyes, SkubiNose, SkubiTeeth, SkubiStrokePanelColor, SkubiSkinColor, SkubiCollarColor, SkubiEyesColor);</div>
+<div class="line"> </div>
+<div class="line">        SkubiTeeth = !SkubiTeeth;</div>
+<div class="line"> </div>
+<div class="line">        txAlphaBlend(txDC(), 0, 0, 1400, 800, openDoor, 0, 0, 1);</div>
+<div class="line">        SkubiEyes1(SkubiX, SkubiY, SkubiScale, SkubiEyes, SkubiStrokePanelColor, SkubiEyesColor);</div>
+<div class="line"> </div>
+<div class="line">        SkubiEyes = !SkubiEyes;</div>
+<div class="line"> </div>
+<div class="line">        txSleep(1000);</div>
+<div class="line">    }</div>
+<div class="line">    txEnd();</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=1; i&lt;12; i++)</div>
+<div class="line">    {</div>
+<div class="line">        txSetFillColor (TX_WHITE);</div>
+<div class="line">        txFloodFill(0, 0, FLOODFILLBORDER);</div>
+<div class="line">        txBitBlt (txDC(), 0, 0, 1400, 800, sky, 0, 0);</div>
+<div class="line"> </div>
+<div class="line">        <a class="code" href="group___pa.html#gac66fbb3763bd0ce6765e5883d95656f6">drawPenguin</a>(penguinX, penguinY, penguinHand, penguinLeg, penguinScale, penguinRoth, penguinEyes, penguinEyesColor, penguinLegsColor, penguinBackColor, penguinBallyColor);</div>
+<div class="line">        <a class="code" href="group___skubi.html#ga36519e108a3f17316b56755270ab2023">drawSkubi</a>(SkubiX, SkubiY, SkubiScale, SkubiKeychain, skubyiMoles, SkubiEyes, SkubiNose, SkubiTeeth, SkubiStrokePanelColor, SkubiSkinColor, SkubiCollarColor, SkubiEyesColor);</div>
+<div class="line"> </div>
+<div class="line">        penguinX = penguinX+10;</div>
+<div class="line">        SkubiX = SkubiX+20;</div>
+<div class="line"> </div>
+<div class="line">        txAlphaBlend(txDC(), 0, 0, 1400, 800, openDoor, 0, 0, 1);</div>
+<div class="line"> </div>
+<div class="line">        txSleep(125);</div>
+<div class="line">    }</div>
+<div class="line">    txDeleteDC(openDoor);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> scene6(HDC Scene6)</div>
+<div class="line">{</div>
+<div class="line">    <span class="keywordtype">int</span> pigX = 913;</div>
+<div class="line">    <span class="keywordtype">int</span> pigY = 450;</div>
+<div class="line">    <span class="keywordtype">int</span> pigEar = 3;  <span class="comment">//0-Нет ушей, 1-Правое ухо, 2-Левое ухо, 3-Оба уха</span></div>
+<div class="line">    <span class="keywordtype">int</span> pigHand = 3;  <span class="comment">//0-Нет рук, 1-Правая рука, 2-Левая рука, 3-Обе руки</span></div>
+<div class="line">    <span class="keywordtype">int</span> pigScale = 1;</div>
+<div class="line">    <span class="keywordtype">bool</span> pigEyes; <span class="comment">//= true;</span></div>
+<div class="line">    <span class="keywordtype">bool</span> pigLeg = <span class="keyword">true</span>;</div>
+<div class="line">    <span class="keywordtype">bool</span> pigLeftArm=1; <span class="comment">//= 1;</span></div>
+<div class="line">    <span class="keywordtype">bool</span> pigRoth = <span class="keyword">true</span>;</div>
+<div class="line">    COLORREF pigEarColor = RGB(230, 152, 194);</div>
+<div class="line">    COLORREF pigNoseColor = RGB(251, 202, 205);</div>
+<div class="line">    COLORREF pigShirtColor = RGB(240, 78, 150);</div>
+<div class="line">    COLORREF pigSkinColor = RGB(251, 202, 205);</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">int</span> timonX = 178;</div>
+<div class="line">    <span class="keywordtype">int</span> timonY = 493;</div>
+<div class="line">    <span class="keywordtype">int</span> timonEar = 3;  <span class="comment">//0-Нет ушей, 1-Правое ухо, 2-Левое ухо, 3-Оба уха</span></div>
+<div class="line">    <span class="keywordtype">int</span> timonLeg = 3;  <span class="comment">//0-Нет ног, 1-Правая нога, 2-Левая нога, 3-Обе ноги</span></div>
+<div class="line">    <span class="keywordtype">int</span> timonScale = 1;</div>
+<div class="line">    <span class="keywordtype">bool</span> timonTale = <span class="keyword">true</span>;</div>
+<div class="line">    <span class="keywordtype">bool</span> timonHair = <span class="keyword">true</span>;</div>
+<div class="line">    <span class="keywordtype">bool</span> timonRoth = <span class="keyword">false</span>;</div>
+<div class="line">    COLORREF timonBallyColor = RGB(241, 217, 183);</div>
+<div class="line">    COLORREF timonBackColor = RGB(169, 95, 46);</div>
+<div class="line">    COLORREF timonHairColor = RGB(166, 61, 40);</div>
+<div class="line">    COLORREF timonLimbColor = RGB(87, 78, 64);</div>
+<div class="line"> </div>
+<div class="line">    txPlaySound(<span class="stringliteral">&quot;Resources\\Where.wav&quot;</span>, SND_ASYNC);</div>
+<div class="line"> </div>
+<div class="line">    txBegin();</div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=1; i&lt;4; i++)</div>
+<div class="line">    {</div>
+<div class="line">        txBitBlt (txDC(), 0, 0, 1400, 800, Scene6, 0, 0);</div>
+<div class="line"> </div>
+<div class="line">        <a class="code" href="group___pig.html#gac9cb2d88a68d84133114cae1a9844f13">drawPig</a>(pigX, pigY, pigEar, pigHand, pigScale, pigEyes, pigLeg, pigLeftArm, pigRoth, pigEarColor, pigNoseColor, pigShirtColor, pigSkinColor);</div>
+<div class="line">        <a class="code" href="group___timon.html#ga362cac2ca3452cbf9cd9cd0de8ccf493">drawTimon</a>(timonX, timonY, timonEar, timonLeg, timonScale, timonTale, timonHair, timonRoth, timonBallyColor, timonBackColor, timonHairColor, timonLimbColor);</div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordflow">if</span>(i%2==0)</div>
+<div class="line">        {</div>
+<div class="line">            pigEyes=<span class="keyword">false</span>;</div>
+<div class="line">        }<span class="keywordflow">else</span>{</div>
+<div class="line">            pigEyes=<span class="keyword">true</span>;</div>
+<div class="line">        }</div>
+<div class="line">        pigRoth = !pigRoth;</div>
+<div class="line"> </div>
+<div class="line">        txSleep(500);</div>
+<div class="line">        txSetFillColor(WHITE);</div>
+<div class="line">        txClear();</div>
+<div class="line">    }</div>
+<div class="line">    txEnd();</div>
+<div class="line"> </div>
+<div class="line">    txBitBlt (txDC(), 0, 0, 1400, 800, Scene6, 0, 0);</div>
+<div class="line">    <a class="code" href="group___pig.html#gac9cb2d88a68d84133114cae1a9844f13">drawPig</a>(pigX, pigY, pigEar, pigHand, pigScale, pigEyes, pigLeg, pigLeftArm, pigRoth, pigEarColor, pigNoseColor, pigShirtColor, pigSkinColor);</div>
+<div class="line">    <a class="code" href="group___timon.html#ga362cac2ca3452cbf9cd9cd0de8ccf493">drawTimon</a>(timonX, timonY, timonEar, timonLeg, timonScale, timonTale, timonHair, timonRoth, timonBallyColor, timonBackColor, timonHairColor, timonLimbColor);</div>
+<div class="line">    txPlaySound(<span class="stringliteral">&quot;Resources\\IDon&#39;tKnow.wav&quot;</span>, SND_ASYNC);</div>
+<div class="line"> </div>
+<div class="line">    txBegin();</div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=1; i&lt;12; i++)</div>
+<div class="line">    {</div>
+<div class="line">        txBitBlt (txDC(), 0, 0, 1400, 800, Scene6, 0, 0);</div>
+<div class="line"> </div>
+<div class="line">        <a class="code" href="group___pig.html#gac9cb2d88a68d84133114cae1a9844f13">drawPig</a>(pigX, pigY, pigEar, pigHand, pigScale, pigEyes, pigLeg, pigLeftArm, pigRoth, pigEarColor, pigNoseColor, pigShirtColor, pigSkinColor);</div>
+<div class="line">        <a class="code" href="group___timon.html#ga362cac2ca3452cbf9cd9cd0de8ccf493">drawTimon</a>(timonX, timonY, timonEar, timonLeg, timonScale, timonTale, timonHair, timonRoth, timonBallyColor, timonBackColor, timonHairColor, timonLimbColor);</div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordflow">if</span>(i%2==0)</div>
+<div class="line">        {</div>
+<div class="line">            pigEyes=<span class="keyword">false</span>;</div>
+<div class="line">        }<span class="keywordflow">else</span>{</div>
+<div class="line">            pigEyes=<span class="keyword">true</span>;</div>
+<div class="line">        }</div>
+<div class="line"> </div>
+<div class="line">        timonRoth=!timonRoth;</div>
+<div class="line"> </div>
+<div class="line">        txSleep(250);</div>
+<div class="line">        txSetFillColor(WHITE);</div>
+<div class="line">        txClear();</div>
+<div class="line">    }</div>
+<div class="line">    txEnd();</div>
+<div class="line"> </div>
+<div class="line">    txBegin();</div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=1; i&lt;80; i++)</div>
+<div class="line">    {</div>
+<div class="line">        txBitBlt (txDC(), 0, 0, 1400, 800, Scene6, 0, 0);</div>
+<div class="line"> </div>
+<div class="line">        <a class="code" href="group___pig.html#gac9cb2d88a68d84133114cae1a9844f13">drawPig</a>(pigX, pigY, pigEar, pigHand, pigScale, pigEyes, pigLeg, pigLeftArm, pigRoth, pigEarColor, pigNoseColor, pigShirtColor, pigSkinColor);</div>
+<div class="line">        <a class="code" href="group___timon.html#ga362cac2ca3452cbf9cd9cd0de8ccf493">drawTimon</a>(timonX, timonY, timonEar, timonLeg, timonScale, timonTale, timonHair, timonRoth, timonBallyColor, timonBackColor, timonHairColor, timonLimbColor);</div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordflow">if</span>(i%6==0)</div>
+<div class="line">        {</div>
+<div class="line">            pigEyes=<span class="keyword">false</span>;</div>
+<div class="line">        }<span class="keywordflow">else</span>{</div>
+<div class="line">            pigEyes=<span class="keyword">true</span>;</div>
+<div class="line">        }</div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordflow">if</span>(i%2==0)</div>
+<div class="line">        {</div>
+<div class="line">            timonY=timonY+15;</div>
+<div class="line">        }<span class="keywordflow">else</span>{</div>
+<div class="line">            timonY=timonY-15;</div>
+<div class="line">        }</div>
+<div class="line"> </div>
+<div class="line">        timonX=timonX+20;</div>
+<div class="line"> </div>
+<div class="line">        txSleep(100);</div>
+<div class="line">        txSetFillColor(WHITE);</div>
+<div class="line">        txClear();</div>
+<div class="line">    }</div>
+<div class="line">    txEnd();</div>
+<div class="line"> </div>
+<div class="line">    txBitBlt (txDC(), 0, 0, 1400, 800, Scene6, 0, 0);</div>
+<div class="line">    <a class="code" href="group___pig.html#gac9cb2d88a68d84133114cae1a9844f13">drawPig</a>(pigX, pigY, pigEar, pigHand, pigScale, pigEyes, pigLeg, pigLeftArm, pigRoth, pigEarColor, pigNoseColor, pigShirtColor, pigSkinColor);</div>
+<div class="line">    txPlaySound(<span class="stringliteral">&quot;Resources\\obed.wav&quot;</span>, SND_ASYNC);</div>
+<div class="line"> </div>
+<div class="line">    txBegin();</div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=1; i&lt;5; i++)</div>
+<div class="line">    {</div>
+<div class="line">        txBitBlt (txDC(), 0, 0, 1400, 800, Scene6, 0, 0);</div>
+<div class="line"> </div>
+<div class="line">        <a class="code" href="group___pig.html#gac9cb2d88a68d84133114cae1a9844f13">drawPig</a>(pigX, pigY, pigEar, pigHand, pigScale, pigEyes, pigLeg, pigLeftArm, pigRoth, pigEarColor, pigNoseColor, pigShirtColor, pigSkinColor);</div>
+<div class="line">        <span class="keywordflow">if</span>(i%2==0)</div>
+<div class="line">        {</div>
+<div class="line">            pigEyes=<span class="keyword">false</span>;</div>
+<div class="line">        }<span class="keywordflow">else</span>{</div>
+<div class="line">            pigEyes=<span class="keyword">true</span>;</div>
+<div class="line">        }</div>
+<div class="line">        pigRoth = !pigRoth;</div>
+<div class="line">        txSleep(1000);</div>
+<div class="line">        txSetFillColor(WHITE);</div>
+<div class="line">        txClear();</div>
+<div class="line">    }</div>
+<div class="line">    txEnd();</div>
+<div class="line"> </div>
+<div class="line">    pigX = 1184;</div>
+<div class="line">    pigY = 829;</div>
+<div class="line">    pigScale = 3;</div>
+<div class="line">    pigEyes = <span class="keyword">true</span>;</div>
+<div class="line"> </div>
+<div class="line">    txPlaySound(<span class="stringliteral">&quot;Resources\\ubir.wav&quot;</span>, SND_ASYNC);</div>
+<div class="line"> </div>
+<div class="line">    txBegin();</div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=1; i&lt;3; i++)</div>
+<div class="line">    {</div>
+<div class="line">        txBitBlt (txDC(), 0, 0, 1400, 800, Scene6, 0, 0);</div>
+<div class="line"> </div>
+<div class="line">        <a class="code" href="group___pig.html#gac9cb2d88a68d84133114cae1a9844f13">drawPig</a>(pigX, pigY, pigEar, pigHand, pigScale, pigEyes, pigLeg, pigLeftArm, pigRoth, pigEarColor, pigNoseColor, pigShirtColor, pigSkinColor);</div>
+<div class="line">        <span class="keywordflow">if</span>(i%2==0)</div>
+<div class="line">        {</div>
+<div class="line">            pigEyes=<span class="keyword">false</span>;</div>
+<div class="line">        }<span class="keywordflow">else</span>{</div>
+<div class="line">            pigEyes=<span class="keyword">true</span>;</div>
+<div class="line">        }</div>
+<div class="line">        pigRoth = !pigRoth;</div>
+<div class="line">        txSleep(1000);</div>
+<div class="line">        txSetFillColor(WHITE);</div>
+<div class="line">        txClear();</div>
+<div class="line">    }</div>
+<div class="line">    txEnd();</div>
+<div class="line">    txDeleteDC(Scene6);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> scene7(HDC Directed2, HDC Directed3, HDC Directed4)</div>
+<div class="line">{</div>
+<div class="line">    txSetFillColor(BLACK);</div>
+<div class="line">    txClear();</div>
+<div class="line"> </div>
+<div class="line">    txPlaySound(<span class="stringliteral">&quot;Resources\\directed1.wav&quot;</span>, SND_SYNC);</div>
+<div class="line">    txSetFillColor(WHITE);</div>
+<div class="line">    txClear();</div>
+<div class="line"> </div>
+<div class="line">    txBitBlt (txDC(), 0, 0, 1400, 800, Directed2, 0, 0);</div>
+<div class="line">    txPlaySound(<span class="stringliteral">&quot;Resources\\directed2.wav&quot;</span>, SND_SYNC);</div>
+<div class="line">    txSetFillColor(WHITE);</div>
+<div class="line">    txClear();</div>
+<div class="line">    txDeleteDC (Directed2);</div>
+<div class="line"> </div>
+<div class="line">    txBitBlt (txDC(), 0, 0, 1400, 800, Directed3, 0, 0);</div>
+<div class="line">    txPlaySound(<span class="stringliteral">&quot;Resources\\directed3.wav&quot;</span>, SND_SYNC);</div>
+<div class="line">    txSetFillColor(WHITE);</div>
+<div class="line">    txClear();</div>
+<div class="line">    txDeleteDC (Directed3);</div>
+<div class="line"> </div>
+<div class="line">    txBitBlt (txDC(), 0, 0, 1400, 800, Directed4, 0, 0);</div>
+<div class="line">    txPlaySound(<span class="stringliteral">&quot;Resources\\directed4.wav&quot;</span>, SND_SYNC);</div>
+<div class="line">    txSetFillColor(WHITE);</div>
+<div class="line">    txClear();</div>
+<div class="line">    txDeleteDC (Directed4);</div>
+<div class="line">}</div>
+</div><!-- fragment --><h1><a class="anchor" id="ExAll"></a>
+Законченный пример</h1>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;TXLib.h&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;CatDevLib.h&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> SkubiEyes1(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> SkubiScale, <span class="keywordtype">bool</span> SkubiEyes, COLORREF SkubiStrokePanelColor, COLORREF SkubiEyesColor);</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> scene1(HDC Fade);</div>
+<div class="line"><span class="keywordtype">void</span> scene2(HDC scene2_background);</div>
+<div class="line"><span class="keywordtype">void</span> scene3(HDC openDoor, HDC closeDoor, HDC sky);</div>
+<div class="line"><span class="keywordtype">void</span> scene4(HDC minutes);</div>
+<div class="line"><span class="keywordtype">void</span> scene5(HDC openDoor, HDC sky);</div>
+<div class="line"><span class="keywordtype">void</span> scene6(HDC Scene6);</div>
+<div class="line"><span class="keywordtype">void</span> scene7(HDC Directed2, HDC Directed3, HDC Directed4);</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> main()</div>
+<div class="line">{</div>
+<div class="line">    <span class="comment">//Заливка фона</span></div>
+<div class="line">    txCreateWindow (1400, 800);</div>
+<div class="line">    txSetFillColor (TX_WHITE);</div>
+<div class="line">    txFloodFill(0, 0, FLOODFILLBORDER);</div>
+<div class="line"> </div>
+<div class="line">    HDC Fade = txLoadImage (<span class="stringliteral">&quot;Resources\\Fade.bmp&quot;</span>);</div>
+<div class="line">    txPlaySound(<span class="stringliteral">&quot;Resources\\start.wav&quot;</span>, SND_ASYNC);</div>
+<div class="line">    scene1(Fade);</div>
+<div class="line"> </div>
+<div class="line">    HDC scene2_background = txLoadImage(<span class="stringliteral">&quot;Resources\\Scene2_background.bmp&quot;</span>);</div>
+<div class="line">    txPlaySound(<span class="stringliteral">&quot;Resources\\tv.wav&quot;</span>, SND_ASYNC);</div>
+<div class="line">    scene2(scene2_background);</div>
+<div class="line"> </div>
+<div class="line">    HDC openDoor = txLoadImage(<span class="stringliteral">&quot;Resources\\OpenDoor.bmp&quot;</span>);</div>
+<div class="line">    HDC closeDoor = txLoadImage(<span class="stringliteral">&quot;Resources\\CloseDoor.bmp&quot;</span>);</div>
+<div class="line">    HDC sky = txLoadImage(<span class="stringliteral">&quot;Resources\\Sky.bmp&quot;</span>);</div>
+<div class="line">    scene3(openDoor, closeDoor, sky);</div>
+<div class="line"> </div>
+<div class="line">    HDC minutes = txLoadImage(<span class="stringliteral">&quot;Resources\\5minutes.bmp&quot;</span>);</div>
+<div class="line">    scene4(minutes);</div>
+<div class="line"> </div>
+<div class="line">    scene5(openDoor, sky);</div>
+<div class="line"> </div>
+<div class="line">    HDC Scene6 = txLoadImage(<span class="stringliteral">&quot;Resources\\Scene6.bmp&quot;</span>);</div>
+<div class="line">    scene6(Scene6);</div>
+<div class="line"> </div>
+<div class="line">    HDC Directed2 = txLoadImage(<span class="stringliteral">&quot;Resources\\Directed2.bmp&quot;</span>);</div>
+<div class="line">    HDC Directed3 = txLoadImage(<span class="stringliteral">&quot;Resources\\Directed3.bmp&quot;</span>);</div>
+<div class="line">    HDC Directed4 = txLoadImage(<span class="stringliteral">&quot;Resources\\Directed4.bmp&quot;</span>);</div>
+<div class="line">    scene7(Directed2, Directed3, Directed4);</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> SkubiEyes1(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> SkubiScale, <span class="keywordtype">bool</span> SkubiEyes, COLORREF SkubiStrokePanelColor, COLORREF SkubiEyesColor)</div>
+<div class="line">{</div>
+<div class="line">    <span class="keywordflow">if</span>(SkubiEyes)</div>
+<div class="line">    {</div>
+<div class="line">        txSetFillColor(WHITE);</div>
+<div class="line">        txSetColor(WHITE);</div>
+<div class="line">        txCircle(x+(111*SkubiScale), y+(-226*SkubiScale), 10*SkubiScale);</div>
+<div class="line">        txCircle(x+(86*SkubiScale), y+(-213*SkubiScale), 10*SkubiScale);</div>
+<div class="line">        txSetFillColor(SkubiEyesColor);</div>
+<div class="line">        txSetColor(SkubiEyesColor);</div>
+<div class="line">        txCircle(x+(111*SkubiScale), y+(-226*SkubiScale), 6*SkubiScale);</div>
+<div class="line">        txCircle(x+(86*SkubiScale), y+(-213*SkubiScale), 6*SkubiScale);</div>
+<div class="line">        txSetFillColor(SkubiStrokePanelColor);</div>
+<div class="line">        txCircle(x+(111*SkubiScale), y+(-226*SkubiScale), 4*SkubiScale);</div>
+<div class="line">        txCircle(x+(86*SkubiScale), y+(-213*SkubiScale), 4*SkubiScale);</div>
+<div class="line">    }<span class="keywordflow">else</span>{</div>
+<div class="line">        txSetColor(SkubiStrokePanelColor, 5);</div>
+<div class="line">        txLine(x+(72*SkubiScale), y+(-247*SkubiScale), x+(85*SkubiScale), y+(-262*SkubiScale));</div>
+<div class="line">        txLine(x+(85*SkubiScale), y+(-262*SkubiScale), x+(93*SkubiScale), y+(-258*SkubiScale));</div>
+<div class="line">        txLine(x+(107*SkubiScale), y+(-257*SkubiScale), x+(117*SkubiScale), y+(-263*SkubiScale));</div>
+<div class="line">        txLine(x+(117*SkubiScale), y+(-263*SkubiScale), x+(134*SkubiScale), y+(-257*SkubiScale));</div>
+<div class="line"> </div>
+<div class="line">        txSetColor(SkubiStrokePanelColor, 3);</div>
+<div class="line">        txLine(x+(70*SkubiScale), y+(-214*SkubiScale), x+(95*SkubiScale), y+(-216*SkubiScale));</div>
+<div class="line">        txLine(x+(127*SkubiScale), y+(-231*SkubiScale), x+(103*SkubiScale), y+(-224*SkubiScale));</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> scene1(HDC Fade)</div>
+<div class="line">{</div>
+<div class="line">    txBitBlt (txDC(), 0, 0, 1400, 800, Fade, 0, 0);</div>
+<div class="line">    txSleep(7000);</div>
+<div class="line">    txDeleteDC (Fade);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> scene2(HDC scene2_background)</div>
+<div class="line">{</div>
+<div class="line">    <span class="keywordtype">int</span> pigX = 913;</div>
+<div class="line">    <span class="keywordtype">int</span> pigY = 450;</div>
+<div class="line">    <span class="keywordtype">int</span> pigEar = 3;  <span class="comment">//0-Нет ушей, 1-Правое ухо, 2-Левое ухо, 3-Оба уха</span></div>
+<div class="line">    <span class="keywordtype">int</span> pigHand = 3;  <span class="comment">//0-Нет рук, 1-Правая рука, 2-Левая рука, 3-Обе руки</span></div>
+<div class="line">    <span class="keywordtype">int</span> pigScale = 1;</div>
+<div class="line">    <span class="keywordtype">bool</span> pigEyes; <span class="comment">//= true;</span></div>
+<div class="line">    <span class="keywordtype">bool</span> pigLeg = <span class="keyword">true</span>;</div>
+<div class="line">    <span class="keywordtype">bool</span> pigLeftArm; <span class="comment">//= 1;</span></div>
+<div class="line">    <span class="keywordtype">bool</span> pigRoth = <span class="keyword">true</span>;</div>
+<div class="line">    COLORREF pigEarColor = RGB(230, 152, 194);</div>
+<div class="line">    COLORREF pigNoseColor = RGB(251, 202, 205);</div>
+<div class="line">    COLORREF pigShirtColor = RGB(240, 78, 150);</div>
+<div class="line">    COLORREF pigSkinColor = RGB(251, 202, 205);</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">int</span> flyX = 431;</div>
+<div class="line">    <span class="keywordtype">int</span> flyY = 275;</div>
+<div class="line">    <span class="keywordtype">int</span> flyHand = 3;  <span class="comment">//0-Нет рук, 1-Правая рука, 2-Левая рука, 3-Обе руки</span></div>
+<div class="line">    <span class="keywordtype">int</span> flyScale = 1;</div>
+<div class="line">    <span class="keywordtype">bool</span> flyLeg = <span class="keyword">true</span>;<span class="comment">//При отсутствии ног, крылья автоматические исчезают</span></div>
+<div class="line">    <span class="keywordtype">bool</span> flyHair = <span class="keyword">true</span>;</div>
+<div class="line">    <span class="keywordtype">bool</span> flyWings = <span class="keyword">true</span>;</div>
+<div class="line">    <span class="keywordtype">bool</span> flyEyes;</div>
+<div class="line">    COLORREF flyRothColor = RGB(148, 56, 105);</div>
+<div class="line">    COLORREF flyShirtColor = RGB(255, 0, 0);</div>
+<div class="line">    COLORREF flySkinColor = RGB(88, 165, 155);</div>
+<div class="line">    COLORREF flyEyesColor = RGB(255, 255, 0);</div>
+<div class="line"> </div>
+<div class="line">    txBegin();</div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=1; i&lt;17; i++)</div>
+<div class="line">    {</div>
+<div class="line">        txBitBlt (txDC(), 0, 0, 1400, 800, scene2_background, 0, 0);</div>
+<div class="line"> </div>
+<div class="line">        <a class="code" href="group___pig.html#gac9cb2d88a68d84133114cae1a9844f13">drawPig</a>(pigX, pigY, pigEar, pigHand, pigScale, pigEyes, pigLeg, pigLeftArm, pigRoth, pigEarColor, pigNoseColor, pigShirtColor, pigSkinColor);</div>
+<div class="line">        <a class="code" href="group___fly.html#ga7f4a3b43b29cb14ffae24fa9efc7236e">drawFly</a>(flyX, flyY, flyHand, flyLeg, flyScale, flyHair, flyWings, flyEyes, flyRothColor, flyShirtColor, flySkinColor, flyEyesColor);</div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordflow">if</span>(i%5==0)</div>
+<div class="line">        {</div>
+<div class="line">            flyEyes=<span class="keyword">false</span>;</div>
+<div class="line">        }<span class="keywordflow">else</span>{</div>
+<div class="line">            flyEyes=<span class="keyword">true</span>;</div>
+<div class="line">        }</div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordflow">if</span>(i%6==0)</div>
+<div class="line">        {</div>
+<div class="line">            pigEyes=<span class="keyword">false</span>;</div>
+<div class="line">        }<span class="keywordflow">else</span>{</div>
+<div class="line">            pigEyes=<span class="keyword">true</span>;</div>
+<div class="line">        }</div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordflow">if</span>(i%4==0)</div>
+<div class="line">        {</div>
+<div class="line">            pigLeftArm = 1;</div>
+<div class="line">        }<span class="keywordflow">else</span>{</div>
+<div class="line">            pigLeftArm = 0;</div>
+<div class="line">        }</div>
+<div class="line"> </div>
+<div class="line">        txSleep(500);</div>
+<div class="line">        txSetFillColor(WHITE);</div>
+<div class="line">        txClear();</div>
+<div class="line">    }</div>
+<div class="line">    txEnd();</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">int</span> MinionX = -250;</div>
+<div class="line">    <span class="keywordtype">int</span> MinionY = 446;</div>
+<div class="line">    <span class="keywordtype">int</span> MinionHand = 3;  <span class="comment">//0-Нет рук, 1-Правая рука, 2-Левая рука, 3-Обе руки</span></div>
+<div class="line">    <span class="keywordtype">int</span> MinionScale = 1;</div>
+<div class="line">    <span class="keywordtype">bool</span> MinionGlasses = <span class="keyword">true</span>;</div>
+<div class="line">    <span class="keywordtype">bool</span> MinionHair = <span class="keyword">true</span>;</div>
+<div class="line">    <span class="keywordtype">bool</span> MinionRoth = <span class="keyword">true</span>;</div>
+<div class="line">    COLORREF MinionEyesColor = RGB(117, 79, 56);</div>
+<div class="line">    COLORREF MinionPantsColor = RGB(0, 139, 255);</div>
+<div class="line">    COLORREF MinionGlassesColor = RGB(87, 78, 64);</div>
+<div class="line">    COLORREF MinionPocketColor = RGB(0, 139, 255);</div>
+<div class="line"> </div>
+<div class="line">    txBegin();</div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=1; i&lt;34; i++)</div>
+<div class="line">    {</div>
+<div class="line">        txBitBlt (txDC(), 0, 0, 1400, 800, scene2_background, 0, 0);</div>
+<div class="line"> </div>
+<div class="line">        <a class="code" href="group___pig.html#gac9cb2d88a68d84133114cae1a9844f13">drawPig</a>(pigX, pigY, pigEar, pigHand, pigScale, pigEyes, pigLeg, pigLeftArm, pigRoth, pigEarColor, pigNoseColor, pigShirtColor, pigSkinColor);</div>
+<div class="line">        <a class="code" href="group___fly.html#ga7f4a3b43b29cb14ffae24fa9efc7236e">drawFly</a>(flyX, flyY, flyHand, flyLeg, flyScale, flyHair, flyWings, flyEyes, flyRothColor, flyShirtColor, flySkinColor, flyEyesColor);</div>
+<div class="line">        <a class="code" href="group___minion.html#ga44f059566e14c4635211fe6765776182">drawMinion</a>(MinionX, MinionY, MinionHand, MinionScale, MinionGlasses, MinionHair, MinionRoth, MinionEyesColor, MinionPantsColor, MinionGlassesColor, MinionPocketColor);</div>
+<div class="line"> </div>
+<div class="line">        MinionX=MinionX+10;</div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordflow">if</span>(i%2)</div>
+<div class="line">        {</div>
+<div class="line">            MinionY=MinionY+10;</div>
+<div class="line">        }<span class="keywordflow">else</span>{</div>
+<div class="line">            MinionY=MinionY-10;</div>
+<div class="line">        }</div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordflow">if</span>(i%10==0)</div>
+<div class="line">        {</div>
+<div class="line">            flyEyes=<span class="keyword">false</span>;</div>
+<div class="line">        }<span class="keywordflow">else</span>{</div>
+<div class="line">            flyEyes=<span class="keyword">true</span>;</div>
+<div class="line">        }</div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordflow">if</span>(i%6==0)</div>
+<div class="line">        {</div>
+<div class="line">            pigEyes=<span class="keyword">false</span>;</div>
+<div class="line">        }<span class="keywordflow">else</span>{</div>
+<div class="line">            pigEyes=<span class="keyword">true</span>;</div>
+<div class="line">        }</div>
+<div class="line"> </div>
+<div class="line">        txSleep(250);</div>
+<div class="line">        txSetFillColor(WHITE);</div>
+<div class="line">        txClear();</div>
+<div class="line">    }</div>
+<div class="line">    txEnd();</div>
+<div class="line"> </div>
+<div class="line">    txPlaySound(<span class="stringliteral">&quot;Resources\\minion.wav&quot;</span>, SND_ASYNC);</div>
+<div class="line">    txBegin();</div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=1; i&lt;6; i++)</div>
+<div class="line">    {</div>
+<div class="line">        txBitBlt (txDC(), 0, 0, 1400, 800, scene2_background, 0, 0);</div>
+<div class="line"> </div>
+<div class="line">        <a class="code" href="group___pig.html#gac9cb2d88a68d84133114cae1a9844f13">drawPig</a>(pigX, pigY, pigEar, pigHand, pigScale, pigEyes, pigLeg, pigLeftArm, pigRoth, pigEarColor, pigNoseColor, pigShirtColor, pigSkinColor);</div>
+<div class="line">        <a class="code" href="group___fly.html#ga7f4a3b43b29cb14ffae24fa9efc7236e">drawFly</a>(flyX, flyY, flyHand, flyLeg, flyScale, flyHair, flyWings, flyEyes, flyRothColor, flyShirtColor, flySkinColor, flyEyesColor);</div>
+<div class="line">        <a class="code" href="group___minion.html#ga44f059566e14c4635211fe6765776182">drawMinion</a>(MinionX, MinionY, MinionHand, MinionScale, MinionGlasses, MinionHair, MinionRoth, MinionEyesColor, MinionPantsColor, MinionGlassesColor, MinionPocketColor);</div>
+<div class="line"> </div>
+<div class="line">        SIZE size = txGetTextExtent (<span class="stringliteral">&quot;Миньон: Друзья, пойдёмте кушац!&quot;</span>);</div>
+<div class="line">        txSelectFont (<span class="stringliteral">&quot;Comic Sans MS&quot;</span>, 40);</div>
+<div class="line">        txTextOut (700 - size.cx/2, 700, <span class="stringliteral">&quot;Миньон: Друзья, пойдёмте кушац!&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordflow">if</span>(i%5==0)</div>
+<div class="line">        {</div>
+<div class="line">            flyEyes=<span class="keyword">false</span>;</div>
+<div class="line">        }<span class="keywordflow">else</span>{</div>
+<div class="line">            flyEyes=<span class="keyword">true</span>;</div>
+<div class="line">        }</div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordflow">if</span>(i%6==0)</div>
+<div class="line">        {</div>
+<div class="line">            pigEyes=<span class="keyword">false</span>;</div>
+<div class="line">        }<span class="keywordflow">else</span>{</div>
+<div class="line">            pigEyes=<span class="keyword">true</span>;</div>
+<div class="line">        }</div>
+<div class="line"> </div>
+<div class="line">        MinionRoth = !MinionRoth;</div>
+<div class="line">        txSleep(500);</div>
+<div class="line">        txSetFillColor(WHITE);</div>
+<div class="line">        txClear();</div>
+<div class="line">    }</div>
+<div class="line">    txEnd();</div>
+<div class="line">    txDeleteDC (scene2_background);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> scene3(HDC openDoor, HDC closeDoor, HDC sky)</div>
+<div class="line">{</div>
+<div class="line">    txBitBlt (txDC(), 0, 0, 1400, 800, closeDoor, 0, 0);</div>
+<div class="line">    txPlaySound(<span class="stringliteral">&quot;Resources\\fbi.wav&quot;</span>, SND_SYNC);</div>
+<div class="line">    txDeleteDC (closeDoor);</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">int</span> penguinX = 750;<span class="comment">//670</span></div>
+<div class="line">    <span class="keywordtype">int</span> penguinY = 403;</div>
+<div class="line">    <span class="keywordtype">int</span> penguinHand = 3;  <span class="comment">//0-Нет рук, 1-Правая рука, 2-Левая рука, 3-Обе руки</span></div>
+<div class="line">    <span class="keywordtype">int</span> penguinLeg = 3;  <span class="comment">//0-Нет ног, 1-Правая нога, 2-Левая нога, 3-Обе ноги</span></div>
+<div class="line">    <span class="keywordtype">int</span> penguinEyes = 3; <span class="comment">//0-Нет глаз, 1-Правый глаз, 2-Левый газ, 3-Оба глаза</span></div>
+<div class="line">    <span class="keywordtype">int</span> penguinScale = 1;</div>
+<div class="line">    <span class="keywordtype">bool</span> penguinRoth = <span class="keyword">true</span>;</div>
+<div class="line">    COLORREF penguinEyesColor = RGB(51, 83, 128);</div>
+<div class="line">    COLORREF penguinLegsColor = RGB(169, 95, 46);</div>
+<div class="line">    COLORREF penguinBackColor = RGB(0, 0, 1);</div>
+<div class="line">    COLORREF penguinBallyColor = RGB(255, 255, 241);</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">int</span> SkubiX = 726;<span class="comment">//602</span></div>
+<div class="line">    <span class="keywordtype">int</span> SkubiY = 758;</div>
+<div class="line">    <span class="keywordtype">int</span> SkubiScale = 1;</div>
+<div class="line">    <span class="keywordtype">bool</span> SkubiNose = <span class="keyword">true</span>;</div>
+<div class="line">    <span class="keywordtype">bool</span> SkubiKeychain = <span class="keyword">true</span>;</div>
+<div class="line">    <span class="keywordtype">bool</span> skubyiMoles = <span class="keyword">true</span>;</div>
+<div class="line">    <span class="keywordtype">bool</span> SkubiEyes = <span class="keyword">false</span>;</div>
+<div class="line">    <span class="keywordtype">bool</span> SkubiTeeth = <span class="keyword">true</span>;</div>
+<div class="line">    COLORREF SkubiStrokePanelColor = RGB(0, 0, 2);</div>
+<div class="line">    COLORREF SkubiSkinColor = RGB(142, 80, 6);</div>
+<div class="line">    COLORREF SkubiCollarColor = RGB(10, 105, 127);</div>
+<div class="line">    COLORREF SkubiEyesColor = RGB(51, 83, 128);</div>
+<div class="line"> </div>
+<div class="line">    txBegin();</div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=1; i&lt;7; i++)</div>
+<div class="line">    {</div>
+<div class="line">        txSetFillColor (TX_WHITE);</div>
+<div class="line">        txFloodFill(0, 0, FLOODFILLBORDER);</div>
+<div class="line">        txBitBlt (txDC(), 0, 0, 1400, 800, sky, 0, 0);</div>
+<div class="line"> </div>
+<div class="line">        <a class="code" href="group___pa.html#gac66fbb3763bd0ce6765e5883d95656f6">drawPenguin</a>(penguinX, penguinY, penguinHand, penguinLeg, penguinScale, penguinRoth, penguinEyes, penguinEyesColor, penguinLegsColor, penguinBackColor, penguinBallyColor);</div>
+<div class="line">        <a class="code" href="group___skubi.html#ga36519e108a3f17316b56755270ab2023">drawSkubi</a>(SkubiX, SkubiY, SkubiScale, SkubiKeychain, skubyiMoles, SkubiEyes, SkubiNose, SkubiTeeth, SkubiStrokePanelColor, SkubiSkinColor, SkubiCollarColor, SkubiEyesColor);</div>
+<div class="line"> </div>
+<div class="line">        penguinX = penguinX-10;</div>
+<div class="line">        SkubiX = SkubiX-20;</div>
+<div class="line"> </div>
+<div class="line">        txAlphaBlend(txDC(), 0, 0, 1400, 800, openDoor, 0, 0, 1);</div>
+<div class="line"> </div>
+<div class="line">        txSleep(125);</div>
+<div class="line">    }</div>
+<div class="line">    txEnd();</div>
+<div class="line"> </div>
+<div class="line">    txPlaySound(<span class="stringliteral">&quot;Resources\\SkubiKush.wav&quot;</span>, SND_ASYNC);</div>
+<div class="line"> </div>
+<div class="line">    txBegin();</div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=1; i&lt;3; i++)</div>
+<div class="line">    {</div>
+<div class="line">        txSetFillColor (TX_WHITE);</div>
+<div class="line">        txFloodFill(0, 0, FLOODFILLBORDER);</div>
+<div class="line">        txBitBlt (txDC(), 0, 0, 1400, 800, sky, 0, 0);</div>
+<div class="line"> </div>
+<div class="line">        <a class="code" href="group___pa.html#gac66fbb3763bd0ce6765e5883d95656f6">drawPenguin</a>(penguinX, penguinY, penguinHand, penguinLeg, penguinScale, penguinRoth, penguinEyes, penguinEyesColor, penguinLegsColor, penguinBackColor, penguinBallyColor);</div>
+<div class="line">        <a class="code" href="group___skubi.html#ga36519e108a3f17316b56755270ab2023">drawSkubi</a>(SkubiX, SkubiY, SkubiScale, SkubiKeychain, skubyiMoles, SkubiEyes, SkubiNose, SkubiTeeth, SkubiStrokePanelColor, SkubiSkinColor, SkubiCollarColor, SkubiEyesColor);</div>
+<div class="line"> </div>
+<div class="line">        SkubiTeeth = !SkubiTeeth;</div>
+<div class="line"> </div>
+<div class="line">        txAlphaBlend(txDC(), 0, 0, 1400, 800, openDoor, 0, 0, 1);</div>
+<div class="line">        SkubiEyes1(SkubiX, SkubiY, SkubiScale, SkubiEyes, SkubiStrokePanelColor, SkubiEyesColor);</div>
+<div class="line"> </div>
+<div class="line">        SkubiEyes = !SkubiEyes;</div>
+<div class="line"> </div>
+<div class="line">        txSleep(1000);</div>
+<div class="line">    }</div>
+<div class="line">    txEnd();</div>
+<div class="line">    txSleep(250);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> scene4(HDC minutes)</div>
+<div class="line">{</div>
+<div class="line">    txBitBlt (txDC(), 0, 0, 1400, 800, minutes, 0, 0);</div>
+<div class="line">    txPlaySound(<span class="stringliteral">&quot;Resources\\5minutes.wav&quot;</span>, SND_SYNC);</div>
+<div class="line">    txDeleteDC (minutes);</div>
+<div class="line">    txSetFillColor(BLACK);</div>
+<div class="line">    txClear();</div>
+<div class="line">    txPlaySound(<span class="stringliteral">&quot;Resources\\eat.wav&quot;</span>, SND_SYNC);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> scene5(HDC openDoor, HDC sky)</div>
+<div class="line">{</div>
+<div class="line">    <span class="keywordtype">int</span> penguinX = 680;<span class="comment">//670</span></div>
+<div class="line">    <span class="keywordtype">int</span> penguinY = 403;</div>
+<div class="line">    <span class="keywordtype">int</span> penguinHand = 3;  <span class="comment">//0-Нет рук, 1-Правая рука, 2-Левая рука, 3-Обе руки</span></div>
+<div class="line">    <span class="keywordtype">int</span> penguinLeg = 3;  <span class="comment">//0-Нет ног, 1-Правая нога, 2-Левая нога, 3-Обе ноги</span></div>
+<div class="line">    <span class="keywordtype">int</span> penguinEyes = 3; <span class="comment">//0-Нет глаз, 1-Правый глаз, 2-Левый газ, 3-Оба глаза</span></div>
+<div class="line">    <span class="keywordtype">int</span> penguinScale = 1;</div>
+<div class="line">    <span class="keywordtype">bool</span> penguinRoth = <span class="keyword">true</span>;</div>
+<div class="line">    COLORREF penguinEyesColor = RGB(51, 83, 128);</div>
+<div class="line">    COLORREF penguinLegsColor = RGB(169, 95, 46);</div>
+<div class="line">    COLORREF penguinBackColor = RGB(0, 0, 1);</div>
+<div class="line">    COLORREF penguinBallyColor = RGB(255, 255, 241);</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">int</span> SkubiX = 586;<span class="comment">//602</span></div>
+<div class="line">    <span class="keywordtype">int</span> SkubiY = 758;</div>
+<div class="line">    <span class="keywordtype">int</span> SkubiScale = 1;</div>
+<div class="line">    <span class="keywordtype">bool</span> SkubiNose = <span class="keyword">true</span>;</div>
+<div class="line">    <span class="keywordtype">bool</span> SkubiKeychain = <span class="keyword">true</span>;</div>
+<div class="line">    <span class="keywordtype">bool</span> skubyiMoles = <span class="keyword">true</span>;</div>
+<div class="line">    <span class="keywordtype">bool</span> SkubiEyes = <span class="keyword">true</span>;</div>
+<div class="line">    <span class="keywordtype">bool</span> SkubiTeeth = <span class="keyword">false</span>;</div>
+<div class="line">    COLORREF SkubiStrokePanelColor = RGB(0, 0, 2);</div>
+<div class="line">    COLORREF SkubiSkinColor = RGB(142, 80, 6);</div>
+<div class="line">    COLORREF SkubiCollarColor = RGB(10, 105, 127);</div>
+<div class="line">    COLORREF SkubiEyesColor = RGB(51, 83, 128);</div>
+<div class="line"> </div>
+<div class="line">    txBitBlt (txDC(), 0, 0, 1400, 800, sky, 0, 0);</div>
+<div class="line"> </div>
+<div class="line">    <a class="code" href="group___pa.html#gac66fbb3763bd0ce6765e5883d95656f6">drawPenguin</a>(penguinX, penguinY, penguinHand, penguinLeg, penguinScale, penguinRoth, penguinEyes, penguinEyesColor, penguinLegsColor, penguinBackColor, penguinBallyColor);</div>
+<div class="line">    <a class="code" href="group___skubi.html#ga36519e108a3f17316b56755270ab2023">drawSkubi</a>(SkubiX, SkubiY, SkubiScale, SkubiKeychain, skubyiMoles, SkubiEyes, SkubiNose, SkubiTeeth, SkubiStrokePanelColor, SkubiSkinColor, SkubiCollarColor, SkubiEyesColor);</div>
+<div class="line"> </div>
+<div class="line">    txAlphaBlend(txDC(), 0, 0, 1400, 800, openDoor, 0, 0, 1);</div>
+<div class="line">    SkubiEyes1(SkubiX, SkubiY, SkubiScale, SkubiEyes, SkubiStrokePanelColor, SkubiEyesColor);</div>
+<div class="line">    txSleep(1000);</div>
+<div class="line"> </div>
+<div class="line">    txPlaySound(<span class="stringliteral">&quot;Resources\\SkubiPosh.wav&quot;</span>, SND_ASYNC);</div>
+<div class="line"> </div>
+<div class="line">    txBegin();</div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=1; i&lt;3; i++)</div>
+<div class="line">    {</div>
+<div class="line">        txSetFillColor (TX_WHITE);</div>
+<div class="line">        txFloodFill(0, 0, FLOODFILLBORDER);</div>
+<div class="line">        txBitBlt (txDC(), 0, 0, 1400, 800, sky, 0, 0);</div>
+<div class="line"> </div>
+<div class="line">        <a class="code" href="group___pa.html#gac66fbb3763bd0ce6765e5883d95656f6">drawPenguin</a>(penguinX, penguinY, penguinHand, penguinLeg, penguinScale, penguinRoth, penguinEyes, penguinEyesColor, penguinLegsColor, penguinBackColor, penguinBallyColor);</div>
+<div class="line">        <a class="code" href="group___skubi.html#ga36519e108a3f17316b56755270ab2023">drawSkubi</a>(SkubiX, SkubiY, SkubiScale, SkubiKeychain, skubyiMoles, SkubiEyes, SkubiNose, SkubiTeeth, SkubiStrokePanelColor, SkubiSkinColor, SkubiCollarColor, SkubiEyesColor);</div>
+<div class="line"> </div>
+<div class="line">        SkubiTeeth = !SkubiTeeth;</div>
+<div class="line"> </div>
+<div class="line">        txAlphaBlend(txDC(), 0, 0, 1400, 800, openDoor, 0, 0, 1);</div>
+<div class="line">        SkubiEyes1(SkubiX, SkubiY, SkubiScale, SkubiEyes, SkubiStrokePanelColor, SkubiEyesColor);</div>
+<div class="line"> </div>
+<div class="line">        SkubiEyes = !SkubiEyes;</div>
+<div class="line"> </div>
+<div class="line">        txSleep(1000);</div>
+<div class="line">    }</div>
+<div class="line">    txEnd();</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=1; i&lt;12; i++)</div>
+<div class="line">    {</div>
+<div class="line">        txSetFillColor (TX_WHITE);</div>
+<div class="line">        txFloodFill(0, 0, FLOODFILLBORDER);</div>
+<div class="line">        txBitBlt (txDC(), 0, 0, 1400, 800, sky, 0, 0);</div>
+<div class="line"> </div>
+<div class="line">        <a class="code" href="group___pa.html#gac66fbb3763bd0ce6765e5883d95656f6">drawPenguin</a>(penguinX, penguinY, penguinHand, penguinLeg, penguinScale, penguinRoth, penguinEyes, penguinEyesColor, penguinLegsColor, penguinBackColor, penguinBallyColor);</div>
+<div class="line">        <a class="code" href="group___skubi.html#ga36519e108a3f17316b56755270ab2023">drawSkubi</a>(SkubiX, SkubiY, SkubiScale, SkubiKeychain, skubyiMoles, SkubiEyes, SkubiNose, SkubiTeeth, SkubiStrokePanelColor, SkubiSkinColor, SkubiCollarColor, SkubiEyesColor);</div>
+<div class="line"> </div>
+<div class="line">        penguinX = penguinX+10;</div>
+<div class="line">        SkubiX = SkubiX+20;</div>
+<div class="line"> </div>
+<div class="line">        txAlphaBlend(txDC(), 0, 0, 1400, 800, openDoor, 0, 0, 1);</div>
+<div class="line"> </div>
+<div class="line">        txSleep(125);</div>
+<div class="line">    }</div>
+<div class="line">    txDeleteDC(openDoor);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> scene6(HDC Scene6)</div>
+<div class="line">{</div>
+<div class="line">    <span class="keywordtype">int</span> pigX = 913;</div>
+<div class="line">    <span class="keywordtype">int</span> pigY = 450;</div>
+<div class="line">    <span class="keywordtype">int</span> pigEar = 3;  <span class="comment">//0-Нет ушей, 1-Правое ухо, 2-Левое ухо, 3-Оба уха</span></div>
+<div class="line">    <span class="keywordtype">int</span> pigHand = 3;  <span class="comment">//0-Нет рук, 1-Правая рука, 2-Левая рука, 3-Обе руки</span></div>
+<div class="line">    <span class="keywordtype">int</span> pigScale = 1;</div>
+<div class="line">    <span class="keywordtype">bool</span> pigEyes; <span class="comment">//= true;</span></div>
+<div class="line">    <span class="keywordtype">bool</span> pigLeg = <span class="keyword">true</span>;</div>
+<div class="line">    <span class="keywordtype">bool</span> pigLeftArm=1; <span class="comment">//= 1;</span></div>
+<div class="line">    <span class="keywordtype">bool</span> pigRoth = <span class="keyword">true</span>;</div>
+<div class="line">    COLORREF pigEarColor = RGB(230, 152, 194);</div>
+<div class="line">    COLORREF pigNoseColor = RGB(251, 202, 205);</div>
+<div class="line">    COLORREF pigShirtColor = RGB(240, 78, 150);</div>
+<div class="line">    COLORREF pigSkinColor = RGB(251, 202, 205);</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">int</span> timonX = 178;</div>
+<div class="line">    <span class="keywordtype">int</span> timonY = 493;</div>
+<div class="line">    <span class="keywordtype">int</span> timonEar = 3;  <span class="comment">//0-Нет ушей, 1-Правое ухо, 2-Левое ухо, 3-Оба уха</span></div>
+<div class="line">    <span class="keywordtype">int</span> timonLeg = 3;  <span class="comment">//0-Нет ног, 1-Правая нога, 2-Левая нога, 3-Обе ноги</span></div>
+<div class="line">    <span class="keywordtype">int</span> timonScale = 1;</div>
+<div class="line">    <span class="keywordtype">bool</span> timonTale = <span class="keyword">true</span>;</div>
+<div class="line">    <span class="keywordtype">bool</span> timonHair = <span class="keyword">true</span>;</div>
+<div class="line">    <span class="keywordtype">bool</span> timonRoth = <span class="keyword">false</span>;</div>
+<div class="line">    COLORREF timonBallyColor = RGB(241, 217, 183);</div>
+<div class="line">    COLORREF timonBackColor = RGB(169, 95, 46);</div>
+<div class="line">    COLORREF timonHairColor = RGB(166, 61, 40);</div>
+<div class="line">    COLORREF timonLimbColor = RGB(87, 78, 64);</div>
+<div class="line"> </div>
+<div class="line">    txPlaySound(<span class="stringliteral">&quot;Resources\\Where.wav&quot;</span>, SND_ASYNC);</div>
+<div class="line"> </div>
+<div class="line">    txBegin();</div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=1; i&lt;4; i++)</div>
+<div class="line">    {</div>
+<div class="line">        txBitBlt (txDC(), 0, 0, 1400, 800, Scene6, 0, 0);</div>
+<div class="line"> </div>
+<div class="line">        <a class="code" href="group___pig.html#gac9cb2d88a68d84133114cae1a9844f13">drawPig</a>(pigX, pigY, pigEar, pigHand, pigScale, pigEyes, pigLeg, pigLeftArm, pigRoth, pigEarColor, pigNoseColor, pigShirtColor, pigSkinColor);</div>
+<div class="line">        <a class="code" href="group___timon.html#ga362cac2ca3452cbf9cd9cd0de8ccf493">drawTimon</a>(timonX, timonY, timonEar, timonLeg, timonScale, timonTale, timonHair, timonRoth, timonBallyColor, timonBackColor, timonHairColor, timonLimbColor);</div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordflow">if</span>(i%2==0)</div>
+<div class="line">        {</div>
+<div class="line">            pigEyes=<span class="keyword">false</span>;</div>
+<div class="line">        }<span class="keywordflow">else</span>{</div>
+<div class="line">            pigEyes=<span class="keyword">true</span>;</div>
+<div class="line">        }</div>
+<div class="line">        pigRoth = !pigRoth;</div>
+<div class="line"> </div>
+<div class="line">        txSleep(500);</div>
+<div class="line">        txSetFillColor(WHITE);</div>
+<div class="line">        txClear();</div>
+<div class="line">    }</div>
+<div class="line">    txEnd();</div>
+<div class="line"> </div>
+<div class="line">    txBitBlt (txDC(), 0, 0, 1400, 800, Scene6, 0, 0);</div>
+<div class="line">    <a class="code" href="group___pig.html#gac9cb2d88a68d84133114cae1a9844f13">drawPig</a>(pigX, pigY, pigEar, pigHand, pigScale, pigEyes, pigLeg, pigLeftArm, pigRoth, pigEarColor, pigNoseColor, pigShirtColor, pigSkinColor);</div>
+<div class="line">    <a class="code" href="group___timon.html#ga362cac2ca3452cbf9cd9cd0de8ccf493">drawTimon</a>(timonX, timonY, timonEar, timonLeg, timonScale, timonTale, timonHair, timonRoth, timonBallyColor, timonBackColor, timonHairColor, timonLimbColor);</div>
+<div class="line">    txPlaySound(<span class="stringliteral">&quot;Resources\\IDon&#39;tKnow.wav&quot;</span>, SND_ASYNC);</div>
+<div class="line"> </div>
+<div class="line">    txBegin();</div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=1; i&lt;12; i++)</div>
+<div class="line">    {</div>
+<div class="line">        txBitBlt (txDC(), 0, 0, 1400, 800, Scene6, 0, 0);</div>
+<div class="line"> </div>
+<div class="line">        <a class="code" href="group___pig.html#gac9cb2d88a68d84133114cae1a9844f13">drawPig</a>(pigX, pigY, pigEar, pigHand, pigScale, pigEyes, pigLeg, pigLeftArm, pigRoth, pigEarColor, pigNoseColor, pigShirtColor, pigSkinColor);</div>
+<div class="line">        <a class="code" href="group___timon.html#ga362cac2ca3452cbf9cd9cd0de8ccf493">drawTimon</a>(timonX, timonY, timonEar, timonLeg, timonScale, timonTale, timonHair, timonRoth, timonBallyColor, timonBackColor, timonHairColor, timonLimbColor);</div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordflow">if</span>(i%2==0)</div>
+<div class="line">        {</div>
+<div class="line">            pigEyes=<span class="keyword">false</span>;</div>
+<div class="line">        }<span class="keywordflow">else</span>{</div>
+<div class="line">            pigEyes=<span class="keyword">true</span>;</div>
+<div class="line">        }</div>
+<div class="line"> </div>
+<div class="line">        timonRoth=!timonRoth;</div>
+<div class="line"> </div>
+<div class="line">        txSleep(250);</div>
+<div class="line">        txSetFillColor(WHITE);</div>
+<div class="line">        txClear();</div>
+<div class="line">    }</div>
+<div class="line">    txEnd();</div>
+<div class="line"> </div>
+<div class="line">    txBegin();</div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=1; i&lt;80; i++)</div>
+<div class="line">    {</div>
+<div class="line">        txBitBlt (txDC(), 0, 0, 1400, 800, Scene6, 0, 0);</div>
+<div class="line"> </div>
+<div class="line">        <a class="code" href="group___pig.html#gac9cb2d88a68d84133114cae1a9844f13">drawPig</a>(pigX, pigY, pigEar, pigHand, pigScale, pigEyes, pigLeg, pigLeftArm, pigRoth, pigEarColor, pigNoseColor, pigShirtColor, pigSkinColor);</div>
+<div class="line">        <a class="code" href="group___timon.html#ga362cac2ca3452cbf9cd9cd0de8ccf493">drawTimon</a>(timonX, timonY, timonEar, timonLeg, timonScale, timonTale, timonHair, timonRoth, timonBallyColor, timonBackColor, timonHairColor, timonLimbColor);</div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordflow">if</span>(i%6==0)</div>
+<div class="line">        {</div>
+<div class="line">            pigEyes=<span class="keyword">false</span>;</div>
+<div class="line">        }<span class="keywordflow">else</span>{</div>
+<div class="line">            pigEyes=<span class="keyword">true</span>;</div>
+<div class="line">        }</div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordflow">if</span>(i%2==0)</div>
+<div class="line">        {</div>
+<div class="line">            timonY=timonY+15;</div>
+<div class="line">        }<span class="keywordflow">else</span>{</div>
+<div class="line">            timonY=timonY-15;</div>
+<div class="line">        }</div>
+<div class="line"> </div>
+<div class="line">        timonX=timonX+20;</div>
+<div class="line"> </div>
+<div class="line">        txSleep(100);</div>
+<div class="line">        txSetFillColor(WHITE);</div>
+<div class="line">        txClear();</div>
+<div class="line">    }</div>
+<div class="line">    txEnd();</div>
+<div class="line"> </div>
+<div class="line">    txBitBlt (txDC(), 0, 0, 1400, 800, Scene6, 0, 0);</div>
+<div class="line">    <a class="code" href="group___pig.html#gac9cb2d88a68d84133114cae1a9844f13">drawPig</a>(pigX, pigY, pigEar, pigHand, pigScale, pigEyes, pigLeg, pigLeftArm, pigRoth, pigEarColor, pigNoseColor, pigShirtColor, pigSkinColor);</div>
+<div class="line">    txPlaySound(<span class="stringliteral">&quot;Resources\\obed.wav&quot;</span>, SND_ASYNC);</div>
+<div class="line"> </div>
+<div class="line">    txBegin();</div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=1; i&lt;5; i++)</div>
+<div class="line">    {</div>
+<div class="line">        txBitBlt (txDC(), 0, 0, 1400, 800, Scene6, 0, 0);</div>
+<div class="line"> </div>
+<div class="line">        <a class="code" href="group___pig.html#gac9cb2d88a68d84133114cae1a9844f13">drawPig</a>(pigX, pigY, pigEar, pigHand, pigScale, pigEyes, pigLeg, pigLeftArm, pigRoth, pigEarColor, pigNoseColor, pigShirtColor, pigSkinColor);</div>
+<div class="line">        <span class="keywordflow">if</span>(i%2==0)</div>
+<div class="line">        {</div>
+<div class="line">            pigEyes=<span class="keyword">false</span>;</div>
+<div class="line">        }<span class="keywordflow">else</span>{</div>
+<div class="line">            pigEyes=<span class="keyword">true</span>;</div>
+<div class="line">        }</div>
+<div class="line">        pigRoth = !pigRoth;</div>
+<div class="line">        txSleep(1000);</div>
+<div class="line">        txSetFillColor(WHITE);</div>
+<div class="line">        txClear();</div>
+<div class="line">    }</div>
+<div class="line">    txEnd();</div>
+<div class="line"> </div>
+<div class="line">    pigX = 1184;</div>
+<div class="line">    pigY = 829;</div>
+<div class="line">    pigScale = 3;</div>
+<div class="line">    pigEyes = <span class="keyword">true</span>;</div>
+<div class="line"> </div>
+<div class="line">    txPlaySound(<span class="stringliteral">&quot;Resources\\ubir.wav&quot;</span>, SND_ASYNC);</div>
+<div class="line"> </div>
+<div class="line">    txBegin();</div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=1; i&lt;3; i++)</div>
+<div class="line">    {</div>
+<div class="line">        txBitBlt (txDC(), 0, 0, 1400, 800, Scene6, 0, 0);</div>
+<div class="line"> </div>
+<div class="line">        <a class="code" href="group___pig.html#gac9cb2d88a68d84133114cae1a9844f13">drawPig</a>(pigX, pigY, pigEar, pigHand, pigScale, pigEyes, pigLeg, pigLeftArm, pigRoth, pigEarColor, pigNoseColor, pigShirtColor, pigSkinColor);</div>
+<div class="line">        <span class="keywordflow">if</span>(i%2==0)</div>
+<div class="line">        {</div>
+<div class="line">            pigEyes=<span class="keyword">false</span>;</div>
+<div class="line">        }<span class="keywordflow">else</span>{</div>
+<div class="line">            pigEyes=<span class="keyword">true</span>;</div>
+<div class="line">        }</div>
+<div class="line">        pigRoth = !pigRoth;</div>
+<div class="line">        txSleep(1000);</div>
+<div class="line">        txSetFillColor(WHITE);</div>
+<div class="line">        txClear();</div>
+<div class="line">    }</div>
+<div class="line">    txEnd();</div>
+<div class="line">    txDeleteDC(Scene6);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> scene7(HDC Directed2, HDC Directed3, HDC Directed4)</div>
+<div class="line">{</div>
+<div class="line">    txSetFillColor(BLACK);</div>
+<div class="line">    txClear();</div>
+<div class="line"> </div>
+<div class="line">    txPlaySound(<span class="stringliteral">&quot;Resources\\directed1.wav&quot;</span>, SND_SYNC);</div>
+<div class="line">    txSetFillColor(WHITE);</div>
+<div class="line">    txClear();</div>
+<div class="line"> </div>
+<div class="line">    txBitBlt (txDC(), 0, 0, 1400, 800, Directed2, 0, 0);</div>
+<div class="line">    txPlaySound(<span class="stringliteral">&quot;Resources\\directed2.wav&quot;</span>, SND_SYNC);</div>
+<div class="line">    txSetFillColor(WHITE);</div>
+<div class="line">    txClear();</div>
+<div class="line">    txDeleteDC (Directed2);</div>
+<div class="line"> </div>
+<div class="line">    txBitBlt (txDC(), 0, 0, 1400, 800, Directed3, 0, 0);</div>
+<div class="line">    txPlaySound(<span class="stringliteral">&quot;Resources\\directed3.wav&quot;</span>, SND_SYNC);</div>
+<div class="line">    txSetFillColor(WHITE);</div>
+<div class="line">    txClear();</div>
+<div class="line">    txDeleteDC (Directed3);</div>
+<div class="line"> </div>
+<div class="line">    txBitBlt (txDC(), 0, 0, 1400, 800, Directed4, 0, 0);</div>
+<div class="line">    txPlaySound(<span class="stringliteral">&quot;Resources\\directed4.wav&quot;</span>, SND_SYNC);</div>
+<div class="line">    txSetFillColor(WHITE);</div>
+<div class="line">    txClear();</div>
+<div class="line">    txDeleteDC (Directed4);</div>
+<div class="line">}</div>
+</div><!-- fragment --> </div></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="agroup___skubi_html_ga36519e108a3f17316b56755270ab2023"><div class="ttname"><a href="group___skubi.html#ga36519e108a3f17316b56755270ab2023">drawSkubi</a></div><div class="ttdeci">void drawSkubi(int x, int y, int SkubiScale, bool SkubiKeychain, bool SkubyMoles, bool SkubiEyes, bool SkubiNose, bool SkubiTeeth, COLORREF SkubiStrokePanelColor, COLORREF SkubiSkinColor, COLORREF SkubiCollarColor, COLORREF SkubiEyesColor)</div><div class="ttdoc">Отрисовка персонажа ,,Скуби-Ду&quot; - герой мультсериала «Скуби-Ду шоу».</div><div class="ttdef"><b>Definition:</b> CatDevLib.h:1220</div></div>
+<div class="ttc" id="agroup___minion_html_ga44f059566e14c4635211fe6765776182"><div class="ttname"><a href="group___minion.html#ga44f059566e14c4635211fe6765776182">drawMinion</a></div><div class="ttdeci">void drawMinion(int x, int y, int MinionHand, int MinionScale, bool MinionGlasses, bool MinionHair, bool MinionRoth, COLORREF MinionEyesColor, COLORREF MinionPantsColor, COLORREF MinionGlassesColor, COLORREF MinionPocketColor)</div><div class="ttdoc">Отрисовка персонажа ,,Миньон&quot; - герой мультфильма «Гадкий я».</div><div class="ttdef"><b>Definition:</b> CatDevLib.h:946</div></div>
+<div class="ttc" id="agroup___pa_html_gac66fbb3763bd0ce6765e5883d95656f6"><div class="ttname"><a href="group___pa.html#gac66fbb3763bd0ce6765e5883d95656f6">drawPenguin</a></div><div class="ttdeci">void drawPenguin(int x, int y, int penguinHand, int penguinLeg, int penguinScale, bool penguinRoth, int penguinEyes, COLORREF penguinEyesColor, COLORREF penguinLegsColor, COLORREF penguinBackColor, COLORREF penguinBallyColor)</div><div class="ttdoc">Отрисовка персонажа ,,Прапор&quot; - герой мультфильма «Пингвины Мадагаскара».</div><div class="ttdef"><b>Definition:</b> CatDevLib.h:1501</div></div>
+<div class="ttc" id="agroup___fly_html_ga7f4a3b43b29cb14ffae24fa9efc7236e"><div class="ttname"><a href="group___fly.html#ga7f4a3b43b29cb14ffae24fa9efc7236e">drawFly</a></div><div class="ttdeci">void drawFly(int x, int y, int flyHand, int flyLeg, int flyScale, bool flyHair, bool flyWings, bool flyEyes, COLORREF flyRothColor, COLORREF flyShirtColor, COLORREF flySkinColor, COLORREF flyEyesColor)</div><div class="ttdoc">Отрисовка персонажа ,,Вжиг&quot; - герой мультсериала «Чип и Дейл спешат на помощь».</div><div class="ttdef"><b>Definition:</b> CatDevLib.h:471</div></div>
+<div class="ttc" id="agroup___timon_html_ga362cac2ca3452cbf9cd9cd0de8ccf493"><div class="ttname"><a href="group___timon.html#ga362cac2ca3452cbf9cd9cd0de8ccf493">drawTimon</a></div><div class="ttdeci">void drawTimon(int x, int y, int timonEar, int timonLeg, int timonScale, bool timonTale, bool timonHair, bool timonRoth, COLORREF timonBallyColor, COLORREF timonBackColor, COLORREF timonHairColor, COLORREF timonLimbColor)</div><div class="ttdoc">Отрисовка персонажа ,,Тимон&quot; - герой анимационного фильма «Король Лев».</div><div class="ttdef"><b>Definition:</b> CatDevLib.h:82</div></div>
+<div class="ttc" id="agroup___pig_html_gac9cb2d88a68d84133114cae1a9844f13"><div class="ttname"><a href="group___pig.html#gac9cb2d88a68d84133114cae1a9844f13">drawPig</a></div><div class="ttdeci">void drawPig(int x, int y, int pigEar, int pigHand, int pigScale, bool pigEyes, bool pigLeg, bool pigLeftArm, bool pigRoth, COLORREF pigEarColor, COLORREF pigNoseColor, COLORREF pigShirtColor, COLORREF pigSkinColor)</div><div class="ttdoc">Отрисовка персонажа ,,Пятачок&quot; - герой мультфильма «Винни-Пух».</div><div class="ttdef"><b>Definition:</b> CatDevLib.h:700</div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Создано системой
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

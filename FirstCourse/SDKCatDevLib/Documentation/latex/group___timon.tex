@@ -1,0 +1,62 @@
+\hypertarget{group___timon}{}\doxysection{Тимон}
+\label{group___timon}\index{Тимон@{Тимон}}
+\doxysubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___timon_ga362cac2ca3452cbf9cd9cd0de8ccf493}{draw\+Timon}} (int x, int y, int timon\+Ear, int timon\+Leg, int timon\+Scale, bool timon\+Tale, bool timon\+Hair, bool timon\+Roth, C\+O\+L\+O\+R\+R\+EF timon\+Bally\+Color, C\+O\+L\+O\+R\+R\+EF timon\+Back\+Color, C\+O\+L\+O\+R\+R\+EF timon\+Hair\+Color, C\+O\+L\+O\+R\+R\+EF timon\+Limb\+Color)
+\begin{DoxyCompactList}\small\item\em Отрисовка персонажа ,,Тимон" -\/ герой анимационного фильма «Король Лев». \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+
+
+\doxysubsection{Функции}
+\mbox{\Hypertarget{group___timon_ga362cac2ca3452cbf9cd9cd0de8ccf493}\label{group___timon_ga362cac2ca3452cbf9cd9cd0de8ccf493}} 
+\index{Тимон@{Тимон}!drawTimon@{drawTimon}}
+\index{drawTimon@{drawTimon}!Тимон@{Тимон}}
+\doxysubsubsection{\texorpdfstring{drawTimon()}{drawTimon()}}
+{\footnotesize\ttfamily void draw\+Timon (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{timon\+Ear,  }\item[{int}]{timon\+Leg,  }\item[{int}]{timon\+Scale,  }\item[{bool}]{timon\+Tale,  }\item[{bool}]{timon\+Hair,  }\item[{bool}]{timon\+Roth,  }\item[{C\+O\+L\+O\+R\+R\+EF}]{timon\+Bally\+Color,  }\item[{C\+O\+L\+O\+R\+R\+EF}]{timon\+Back\+Color,  }\item[{C\+O\+L\+O\+R\+R\+EF}]{timon\+Hair\+Color,  }\item[{C\+O\+L\+O\+R\+R\+EF}]{timon\+Limb\+Color }\end{DoxyParamCaption})}
+
+
+
+Отрисовка персонажа ,,Тимон" -\/ герой анимационного фильма «Король Лев». 
+
+
+
+
+\begin{DoxyParams}{Аргументы}
+{\em x} & Х-\/координата точки \\
+\hline
+{\em y} & Y-\/координата точки \\
+\hline
+{\em timon\+Ear} & Наличие ушей у персонажа (0 -\/ Нет ушей, 1 -\/ Правое ухо, 2 -\/ Левое ухо, 3 -\/ Оба уха) \\
+\hline
+{\em timon\+Leg} & Наличие ног у персонажа (0 -\/ Нет ног, 1 -\/ Правая нога, 2 -\/ Левая нога, 3 -\/ Обе ноги) \\
+\hline
+{\em timon\+Scale} & Размер персонажа (1 -\/ Стандартный размер, 2 -\/ В 2 раза больше стандартного размера и т.\+д.) \\
+\hline
+{\em timon\+Tale} & Наличие хвоста у персонажа (0 -\/ Нет хвоста, 1 -\/ Есть хвост) \\
+\hline
+{\em timon\+Hair} & Наличие волос у персонажа (0 -\/ Нет волос, 1 -\/ Есть волос) \\
+\hline
+{\em timon\+Roth} & Наличие рта у персонажа (0 -\/ Нет рта, 1 -\/ Есть рот) \\
+\hline
+{\em timon\+Bally\+Color} & Цвет пузика персонажа))) \\
+\hline
+{\em timon\+Back\+Color} & Цвет спины персонажа \\
+\hline
+{\em timon\+Hair\+Color} & Цвет волос персонажа \\
+\hline
+{\em timon\+Limb\+Color} & Цвет конечностей персонажа\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Предупреждения}
+Если цвета разных частей тела совпадают, \sout{может произойти ядерный коллапс} могут наблюдаться серъёзные графические баги.
+\end{DoxyWarning}
+\begin{DoxyReturn}{Возвращает}
+Если операция была успешна -\/ true, иначе -\/ false.
+\end{DoxyReturn}
+\begin{DoxyNote}{Заметки}
+Для использования функции нужно создать холст из T\+X\+Lib.
+\end{DoxyNote}
+Пример использования функции смотрите в \mbox{\hyperlink{group___tutor}{примере реализации}}. 

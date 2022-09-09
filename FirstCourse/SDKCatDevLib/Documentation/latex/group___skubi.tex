@@ -1,0 +1,62 @@
+\hypertarget{group___skubi}{}\doxysection{Скуби-\/Ду}
+\label{group___skubi}\index{Скуби-\/Ду@{Скуби-\/Ду}}
+\doxysubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___skubi_ga36519e108a3f17316b56755270ab2023}{draw\+Skubi}} (int x, int y, int Skubi\+Scale, bool Skubi\+Keychain, bool Skuby\+Moles, bool Skubi\+Eyes, bool Skubi\+Nose, bool Skubi\+Teeth, C\+O\+L\+O\+R\+R\+EF Skubi\+Stroke\+Panel\+Color, C\+O\+L\+O\+R\+R\+EF Skubi\+Skin\+Color, C\+O\+L\+O\+R\+R\+EF Skubi\+Collar\+Color, C\+O\+L\+O\+R\+R\+EF Skubi\+Eyes\+Color)
+\begin{DoxyCompactList}\small\item\em Отрисовка персонажа ,,Скуби-\/Ду" -\/ герой мультсериала «Скуби-\/Ду шоу». \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+
+
+\doxysubsection{Функции}
+\mbox{\Hypertarget{group___skubi_ga36519e108a3f17316b56755270ab2023}\label{group___skubi_ga36519e108a3f17316b56755270ab2023}} 
+\index{Скуби-\/Ду@{Скуби-\/Ду}!drawSkubi@{drawSkubi}}
+\index{drawSkubi@{drawSkubi}!Скуби-\/Ду@{Скуби-\/Ду}}
+\doxysubsubsection{\texorpdfstring{drawSkubi()}{drawSkubi()}}
+{\footnotesize\ttfamily void draw\+Skubi (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{Skubi\+Scale,  }\item[{bool}]{Skubi\+Keychain,  }\item[{bool}]{Skuby\+Moles,  }\item[{bool}]{Skubi\+Eyes,  }\item[{bool}]{Skubi\+Nose,  }\item[{bool}]{Skubi\+Teeth,  }\item[{C\+O\+L\+O\+R\+R\+EF}]{Skubi\+Stroke\+Panel\+Color,  }\item[{C\+O\+L\+O\+R\+R\+EF}]{Skubi\+Skin\+Color,  }\item[{C\+O\+L\+O\+R\+R\+EF}]{Skubi\+Collar\+Color,  }\item[{C\+O\+L\+O\+R\+R\+EF}]{Skubi\+Eyes\+Color }\end{DoxyParamCaption})}
+
+
+
+Отрисовка персонажа ,,Скуби-\/Ду" -\/ герой мультсериала «Скуби-\/Ду шоу». 
+
+
+
+
+\begin{DoxyParams}{Аргументы}
+{\em x} & Х-\/координата точки \\
+\hline
+{\em y} & Y-\/координата точки \\
+\hline
+{\em Skubi\+Scale} & Размер персонажа (1 -\/ Стандартный размер, 2 -\/ В 2 раза больше стандартного размера и т.\+д.) \\
+\hline
+{\em Skubi\+Keychain} & Наличие брелка у персонажа (0 -\/ Нет брелка, 1 -\/ Есть брелок) \\
+\hline
+{\em Skuby\+Moles} & Наличие родинок у персонажа (0 -\/ Нет родинок, 1 -\/ Есть родинки) \\
+\hline
+{\em Skubi\+Eyes} & Наличие глаз у персонажа (0 -\/ Нет глаз, 1 -\/ Есть глаза) \\
+\hline
+{\em Skubi\+Nose} & Наличие носа у персонажа (0 -\/ Нет носа, 1 -\/ Есть нос) \\
+\hline
+{\em Skubi\+Teeth} & Наличие зубов у персонажа (0 -\/ Нет зубов, 1 -\/ Есть зубы) \\
+\hline
+{\em Skubi\+Stroke\+Panel\+Color} & Цвет обводки у персонажа \\
+\hline
+{\em Skubi\+Skin\+Color} & Цвет кожи персонажа \sout{Внимание\+: Мы против рассизма! } \\
+\hline
+{\em Skubi\+Collar\+Color} & Цвет ошейника у персонажа \\
+\hline
+{\em Skubi\+Eyes\+Color} & Цвет глаз у персонажа\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Предупреждения}
+Если цвета разных частей тела совпадают, \sout{может произойти ядерный коллапс} могут наблюдаться серъёзные графические баги.
+\end{DoxyWarning}
+\begin{DoxyReturn}{Возвращает}
+Если операция была успешна -\/ true, иначе -\/ false.
+\end{DoxyReturn}
+\begin{DoxyNote}{Заметки}
+Для использования функции нужно создать холст из T\+X\+Lib.
+\end{DoxyNote}
+Пример использования функции смотрите в \mbox{\hyperlink{group___tutor}{примере реализации}}. 

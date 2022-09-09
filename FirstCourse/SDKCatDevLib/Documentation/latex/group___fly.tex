@@ -1,0 +1,62 @@
+\hypertarget{group___fly}{}\doxysection{Вжиг}
+\label{group___fly}\index{Вжиг@{Вжиг}}
+\doxysubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___fly_ga7f4a3b43b29cb14ffae24fa9efc7236e}{draw\+Fly}} (int x, int y, int fly\+Hand, int fly\+Leg, int fly\+Scale, bool fly\+Hair, bool fly\+Wings, bool fly\+Eyes, C\+O\+L\+O\+R\+R\+EF fly\+Roth\+Color, C\+O\+L\+O\+R\+R\+EF fly\+Shirt\+Color, C\+O\+L\+O\+R\+R\+EF fly\+Skin\+Color, C\+O\+L\+O\+R\+R\+EF fly\+Eyes\+Color)
+\begin{DoxyCompactList}\small\item\em Отрисовка персонажа ,,Вжиг" -\/ герой мультсериала «Чип и Дейл спешат на помощь». \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+
+
+\doxysubsection{Функции}
+\mbox{\Hypertarget{group___fly_ga7f4a3b43b29cb14ffae24fa9efc7236e}\label{group___fly_ga7f4a3b43b29cb14ffae24fa9efc7236e}} 
+\index{Вжиг@{Вжиг}!drawFly@{drawFly}}
+\index{drawFly@{drawFly}!Вжиг@{Вжиг}}
+\doxysubsubsection{\texorpdfstring{drawFly()}{drawFly()}}
+{\footnotesize\ttfamily void draw\+Fly (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{fly\+Hand,  }\item[{int}]{fly\+Leg,  }\item[{int}]{fly\+Scale,  }\item[{bool}]{fly\+Hair,  }\item[{bool}]{fly\+Wings,  }\item[{bool}]{fly\+Eyes,  }\item[{C\+O\+L\+O\+R\+R\+EF}]{fly\+Roth\+Color,  }\item[{C\+O\+L\+O\+R\+R\+EF}]{fly\+Shirt\+Color,  }\item[{C\+O\+L\+O\+R\+R\+EF}]{fly\+Skin\+Color,  }\item[{C\+O\+L\+O\+R\+R\+EF}]{fly\+Eyes\+Color }\end{DoxyParamCaption})}
+
+
+
+Отрисовка персонажа ,,Вжиг" -\/ герой мультсериала «Чип и Дейл спешат на помощь». 
+
+
+
+
+\begin{DoxyParams}{Аргументы}
+{\em x} & Х-\/координата точки \\
+\hline
+{\em y} & Y-\/координата точки \\
+\hline
+{\em fly\+Hand} & Наличие \sout{рук} лапок у персонажа (0 -\/ Нет рук, 1 -\/ Правая рука, 2 -\/ Левая рука, 3 -\/ Обе руки) \\
+\hline
+{\em fly\+Leg} & Наличие ног у персонажа (0 -\/ Нет ног, 1 -\/ Правая нога, 2 -\/ Левая нога, 3 -\/ Обе ноги) (При отсутствии ног, крылья автоматические исчезают) \\
+\hline
+{\em fly\+Scale} & Размер персонажа (1 -\/ Стандартный размер, 2 -\/ В 2 раза больше стандартного размера и т.\+д.) \\
+\hline
+{\em fly\+Hair} & Наличие волос у персонажа (0 -\/ Нет волос, 1 -\/ Есть волос) \\
+\hline
+{\em fly\+Wings} & Наличие крыльев у персонажа (0 -\/ Нет крыльев, 1 -\/ Есть крылья) \\
+\hline
+{\em fly\+Eyes} & Наличие глаз у персонажа (0 -\/ Нет глаз, 1 -\/ Есть глаза) \\
+\hline
+{\em fly\+Roth\+Color} & Цвет рта персонажа \\
+\hline
+{\em fly\+Shirt\+Color} & Цвет футболки персонажа \\
+\hline
+{\em fly\+Skin\+Color} & Цвет кожи персонажа \\
+\hline
+{\em fly\+Eyes\+Color} & Цвет глаз персонажа\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Предупреждения}
+Если цвета разных частей тела совпадают, \sout{может произойти ядерный коллапс} могут наблюдаться серъёзные графические баги.
+\end{DoxyWarning}
+\begin{DoxyReturn}{Возвращает}
+Если операция была успешна -\/ true, иначе -\/ false.
+\end{DoxyReturn}
+\begin{DoxyNote}{Заметки}
+Для использования функции нужно создать холст из T\+X\+Lib.
+\end{DoxyNote}
+Пример использования функции смотрите в \mbox{\hyperlink{group___tutor}{примере реализации}}. 

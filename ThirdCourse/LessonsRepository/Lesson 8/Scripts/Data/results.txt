@@ -1,0 +1,3 @@
+Numbers: [23, 65, 14, 68, 2, 80, 34667, 456]
+Sorted numbers: [2, 14, 23, 65, 68, 80, 456, 34667]
+count =  8 sum =  35375 lowest =  2 highest =  34667 mean =  4421.875 median =  66.5

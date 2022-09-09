@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Compiler Value="C:\FPC\2.6.0\bin\i386-Win32\fpc.exe" Date="1067034221"/>
+  <Params Value=" -MObjFPC -Scghi -O1 -g -gl -WG -l -vewnhibq -FiE:\Programming\Lazarus\First\lib\i386-win32 -FuC:\lazarus2\lcl\units\i386-win32\win32 -FuC:\lazarus2\lcl\units\i386-win32 -FuC:\lazarus2\components\lazutils\lib\i386-win32 -FuC:\lazarus2\packager\units\i386-win32 -FuE:\Programming\Lazarus\First\ -FUE:\Programming\Lazarus\First\lib\i386-win32\ -FEE:\Programming\Lazarus\First\ -oE:\Programming\Lazarus\First\ShultTable.exe -dLCL -dLCLwin32 ShultTable.lpr"/>
+  <Complete Value="False"/>
+</CONFIG>

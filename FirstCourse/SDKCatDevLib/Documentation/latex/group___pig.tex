@@ -1,0 +1,64 @@
+\hypertarget{group___pig}{}\doxysection{Пятачок}
+\label{group___pig}\index{Пятачок@{Пятачок}}
+\doxysubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___pig_gac9cb2d88a68d84133114cae1a9844f13}{draw\+Pig}} (int x, int y, int pig\+Ear, int pig\+Hand, int pig\+Scale, bool pig\+Eyes, bool pig\+Leg, bool pig\+Left\+Arm, bool pig\+Roth, C\+O\+L\+O\+R\+R\+EF pig\+Ear\+Color, C\+O\+L\+O\+R\+R\+EF pig\+Nose\+Color, C\+O\+L\+O\+R\+R\+EF pig\+Shirt\+Color, C\+O\+L\+O\+R\+R\+EF pig\+Skin\+Color)
+\begin{DoxyCompactList}\small\item\em Отрисовка персонажа ,,Пятачок" -\/ герой мультфильма «Винни-\/Пух». \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+
+
+\doxysubsection{Функции}
+\mbox{\Hypertarget{group___pig_gac9cb2d88a68d84133114cae1a9844f13}\label{group___pig_gac9cb2d88a68d84133114cae1a9844f13}} 
+\index{Пятачок@{Пятачок}!drawPig@{drawPig}}
+\index{drawPig@{drawPig}!Пятачок@{Пятачок}}
+\doxysubsubsection{\texorpdfstring{drawPig()}{drawPig()}}
+{\footnotesize\ttfamily void draw\+Pig (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{pig\+Ear,  }\item[{int}]{pig\+Hand,  }\item[{int}]{pig\+Scale,  }\item[{bool}]{pig\+Eyes,  }\item[{bool}]{pig\+Leg,  }\item[{bool}]{pig\+Left\+Arm,  }\item[{bool}]{pig\+Roth,  }\item[{C\+O\+L\+O\+R\+R\+EF}]{pig\+Ear\+Color,  }\item[{C\+O\+L\+O\+R\+R\+EF}]{pig\+Nose\+Color,  }\item[{C\+O\+L\+O\+R\+R\+EF}]{pig\+Shirt\+Color,  }\item[{C\+O\+L\+O\+R\+R\+EF}]{pig\+Skin\+Color }\end{DoxyParamCaption})}
+
+
+
+Отрисовка персонажа ,,Пятачок" -\/ герой мультфильма «Винни-\/Пух». 
+
+
+
+
+\begin{DoxyParams}{Аргументы}
+{\em x} & Х-\/координата точки \\
+\hline
+{\em y} & Y-\/координата точки \\
+\hline
+{\em pig\+Ear} & Наличие ушей у персонажа (0 -\/ Нет ушей, 1 -\/ Правое ухо, 2 -\/ Левое ухо, 3 -\/ Оба уха) \\
+\hline
+{\em pig\+Hand} & Наличие \sout{рук} лапок у персонажа (0 -\/ Нет рук, 1 -\/ Правая рука, 2 -\/ Левая рука, 3 -\/ Обе руки) \\
+\hline
+{\em pig\+Scale} & Размер персонажа (1 -\/ Стандартный размер, 2 -\/ В 2 раза больше стандартного размера и т.\+д.) \\
+\hline
+{\em pig\+Eyes} & Наличие глаз у персонажа (0 -\/ Нет глаз, 1 -\/ Есть глаза) \\
+\hline
+{\em pig\+Leg} & Наличие \sout{я в душе не знаю, что там у свиней\+: ноги, лапы, копыта} ног у персонажа (0 -\/ Нет ног, 1 -\/ Правая нога, 2 -\/ Левая нога, 3 -\/ Обе ноги) \\
+\hline
+{\em pig\+Left\+Arm} & Наличие левой руки (0 -\/ Нет левой руки, 1 -\/ Есть левая рука) (Изминение наличия правой руки отсутствует) \\
+\hline
+{\em pig\+Roth} & Наличие рта у персонажа (0 -\/ Нет рта, 1 -\/ Есть рот) \\
+\hline
+{\em pig\+Ear\+Color} & Цвет ушей персонажа \\
+\hline
+{\em pig\+Nose\+Color} & Цвет \sout{носа} пятачка персонажа \\
+\hline
+{\em pig\+Shirt\+Color} & Цвет футболки персонажа \\
+\hline
+{\em pig\+Skin\+Color} & Цвет кожи персонажа\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Предупреждения}
+Если цвета разных частей тела совпадают, \sout{может произойти ядерный коллапс} могут наблюдаться серъёзные графические баги.
+\end{DoxyWarning}
+\begin{DoxyReturn}{Возвращает}
+Если операция была успешна -\/ true, иначе -\/ false.
+\end{DoxyReturn}
+\begin{DoxyNote}{Заметки}
+Для использования функции нужно создать холст из T\+X\+Lib.
+\end{DoxyNote}
+Пример использования функции смотрите в \mbox{\hyperlink{group___tutor}{примере реализации}}. 

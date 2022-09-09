@@ -1,0 +1,33 @@
+Python 3.7.6 (default, Dec 30 2019, 19:38:26) 
+[Clang 11.0.0 (clang-1100.0.33.16)] on darwin
+Type "help", "copyright", "credits" or "license()" for more information.
+
+>>> import PyPDF2
+>>> import os
+>>> os.getcwd()
+'/Users/sl/Documents'
+
+>>> # изменяем текущий каталог на каталог с примерами файлов для урока
+>>> os.chdir('/Users/sl/Projects/it-school/python/Year 11 2019-2020/Lesson 23/Scripts')
+>>> os.getcwd()
+'/Users/sl/Projects/it-school/python/Year 11 2019-2020/Lesson 23/Scripts'
+
+>>> pdf_file_obj = open('meetingminutes.pdf', 'rb')
+>>> pdf_file_obj
+<_io.BufferedReader name='meetingminutes.pdf'>
+
+>>> pdf_reader = PyPDF2.PdfFileReader(pdf_file_obj)
+>>> pdf_reader
+<PyPDF2.pdf.PdfFileReader object at 0x10d26cb90>
+
+>>> # узнаем количество страниц в документе
+>>> pdf_reader.numPages
+19
+
+>>> # индексация страниц в документе начинается с нуля
+>>> page_obj = pdf_reader.getPage(0)
+>>> type(page_obj)
+<class 'PyPDF2.pdf.PageObject'>
+>>> page_obj.extractText()
+'OOFFFFIICCIIAALL  BBOOAARRDD  MMIINNUUTTEESS   Meeting of \nMarch 7\n, 2014\n        \n     The Board of Elementary and Secondary Education shall provide leadership and \ncreate policies for education that expand opportunities for children, empower \nfamilies and communities, and advance Louisiana in an increasingly \ncompetitive glob\nal market.\n BOARD \n of ELEMENTARY\n and \n SECONDARY\n EDUCATION\n  '
+>>> 

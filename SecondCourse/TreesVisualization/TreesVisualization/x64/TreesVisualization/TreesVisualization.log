@@ -1,0 +1,13 @@
+﻿  VisualizationWindow.cpp
+E:\ItSchoolRep\ITSchool\Second course\TreesVisualization\TreesVisualization\VisualizationWindow.h(1045,222): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+E:\ItSchoolRep\ITSchool\Second course\TreesVisualization\TreesVisualization\VisualizationWindow.h(1045,211): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+E:\ItSchoolRep\ITSchool\Second course\TreesVisualization\TreesVisualization\VisualizationWindow.h(1089,224): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+E:\ItSchoolRep\ITSchool\Second course\TreesVisualization\TreesVisualization\VisualizationWindow.h(1089,211): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+E:\ItSchoolRep\ITSchool\Second course\TreesVisualization\TreesVisualization\VisualizationWindow.h(1155,15): warning C4244: инициализация: преобразование "wchar_t" в "char", возможна потеря данных
+E:\ItSchoolRep\ITSchool\Second course\TreesVisualization\TreesVisualization\VisualizationWindow.h(1162,15): warning C4244: инициализация: преобразование "wchar_t" в "char", возможна потеря данных
+E:\ItSchoolRep\ITSchool\Second course\TreesVisualization\TreesVisualization\VisualizationWindow.h(1448,9): warning C4101: element: неиспользованная локальная переменная
+E:\ItSchoolRep\ITSchool\Second course\TreesVisualization\TreesVisualization\VisualizationWindow.cpp(6,32): warning C4829: Возможно, неправильные параметры функции main. Рекомендуемый вариант - "int main(Platform::Array<Platform::String^>^ argv)"
+  .NETFramework,Version=v4.6.1.AssemblyAttributes.cpp
+  Создание кода...
+  VisualizationWindow.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
+  TreesVisualization.vcxproj -> E:\ItSchoolRep\ITSchool\Second course\TreesVisualization\x64\TreesVisualization\TreesVisualization.exe

@@ -1,0 +1,2 @@
+https://younglinux.info/tkinter.php
+https://ru.wikiversity.org/wiki/Курс_по_библиотеке_Tkinter_языка_Python

@@ -1,0 +1,4 @@
+>>> def is_palindrom(string):
+	if len(string) <= 1:
+		return True
+	return string[0] == string[-1] and is_palindrom(string[1:-1])

@@ -1,0 +1,29 @@
+>>> import PyPDF2, os
+>>> os.getcwd()
+'/Users/sl/Documents'
+>>> os.chdir('/Users/sl/Projects/!Python/AutomateTheBoringStuff/BoringStuff')
+
+>>> # изменяем текущий каталог на каталог с примерами файлов для урока
+>>> os.chdir('/Users/sl/Projects/it-school/python/Year 11 2019-2020/Lesson 23/Scripts')
+>>> os.getcwd()
+'/Users/sl/Projects/it-school/python/Year 11 2019-2020/Lesson 23/Scripts'
+
+>>> # для создания объекта PdfFileReader можно передать полное имя файла
+>>> pdf1_reader = PyPDF2.PdfFileReader('meetingminutes.pdf')
+>>> pdf2_reader = PyPDF2.PdfFileReader('meetingminutes2.pdf')
+>>> 
+>>> pdf_writer = PyPDF2.PdfFileWriter()
+>>> for page in range(pdf1_reader.numPages):
+	page_obj = pdf1_reader.getPage(page)
+	pdf_writer.addPage(page_obj)
+
+	
+>>> for page in range(pdf2_reader.numPages):
+	page_obj = pdf2_reader.getPage(page)
+	pdf_writer.addPage(page_obj)
+
+	
+>>> pdf_out_file = open('combinedminutes.pdf', 'wb')
+>>> pdf_writer.write(pdf_out_file)
+>>> pdf_out_file.close()
+>>> 

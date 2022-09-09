@@ -1,0 +1,2 @@
+E:\ItSchoolRep\ITSchool\Second course\TreesVisualization\TreesVisualization\Debug\TreesVisualization.VisualizationWindow.resources
+E:\ItSchoolRep\ITSchool\Second course\TreesVisualization\TreesVisualization\Debug\TreesVisualization.vcxproj.GenerateResource.cache

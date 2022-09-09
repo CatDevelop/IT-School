@@ -1,0 +1,79 @@
+Python 3.9.1 (v3.9.1:1e5d33e9b9, Dec  7 2020, 12:10:52) 
+[Clang 6.0 (clang-600.0.57)] on darwin
+Type "help", "copyright", "credits" or "license()" for more information.
+>>> 
+>>> 
+>>> import docx, os
+>>> os.getcwd()
+'/Users/sl/Projects/it-school/python/Year 11 2020-2021/Lesson 23/Scripts'
+>>> 
+>>> doc = docx.Document('demo.docx')
+>>> len(doc.paragraphs)
+7
+>>> doc.paragraphs[0].text
+'Document Title'
+>>> doc.paragraphs[1].text
+'A plain paragraph with some bold and some italic'
+>>> len(doc.paragraphs[1].runs)
+5
+>>> doc.paragraphs[1].runs[0].text
+'A plain paragraph with'
+>>> doc.paragraphs[1].runs[1].text
+' some '
+>>> doc.paragraphs[1].runs[2].text
+'bold'
+>>> doc.paragraphs[1].runs[3].text
+' and some '
+>>> doc.paragraphs[1].runs[4].text
+'italic'
+>>> 
+>>> import read_docx
+>>> read_docx.get_text('demo.docx')
+'Document Title\nA plain paragraph with some bold and some italic\nHeading, level 1\nIntense quote\nfirst item in unordered list\nfirst item in ordered list\n\n'
+>>> 
+>>> doc = docx.Document("demo.docx")
+>>> doc.paragraphs[0].style = 'Normal'
+>>> doc.paragraphs[1].runs[1].underline = True
+>>> doc.paragraphs[1].runs[3].underline = True
+>>> doc.save("restyled.docx")
+>>> 
+>>> doc = docx.Document()
+>>> doc.add_paragraph('Здравствуй Word!')
+<docx.text.paragraph.Paragraph object at 0x7fcbf0362460>
+>>> para_1 = doc.add_paragraph('Это второй абзац')
+>>> para_2 = doc.add_paragraph('Это еще один абзац')
+>>> para_1.add_run("Этот текст добавлен ао 2-ой абзац")
+<docx.text.run.Run object at 0x7fcbf035b580>
+>>> doc.save('multi_para.docx')
+>>> 
+>>> doc = docx.Document()
+>>> doc.add_heading('Header 0', 0)
+<docx.text.paragraph.Paragraph object at 0x7fcbf033b490>
+>>> doc.add_heading('Header 1', 1)
+<docx.text.paragraph.Paragraph object at 0x7fcbf033bf70>
+>>> doc.add_heading('Header 2', 2)
+<docx.text.paragraph.Paragraph object at 0x7fcbf033b490>
+>>> doc.add_heading('Header 3', 3)
+<docx.text.paragraph.Paragraph object at 0x7fcbf033bf70>
+>>> doc.add_heading('Header 4', 4)
+<docx.text.paragraph.Paragraph object at 0x7fcbf033b490>
+>>> doc.save("Headings.docx")
+>>> 
+>>> from docx.enum.text import WD_BREAK
+>>> doc = docx.Document()
+>>> doc.add_paragraph('Этот абзац на первой странице')
+<docx.text.paragraph.Paragraph object at 0x7fcbc001a0d0>
+>>> doc.paragraphs[0].runs[0].add_break(WD_BREAK.PAGE)
+>>> doc.add_paragraph('Этот абзац на 2-ой странице')
+<docx.text.paragraph.Paragraph object at 0x7fcbf033b490>
+>>> doc.save("two_pages.docx")
+>>> 
+>>> from docx.shared import Inches
+>>> doc = docx.Document()
+>>> doc.add_picture('dog_1.jpg', width=Inches(6))
+<docx.shape.InlineShape object at 0x7fcbf033b340>
+>>> doc.paragraphs[0].runs[0].add_break(WD_BREAK.PAGE)
+>>> doc.add_picture('dog_2.jpg', width=Inches(6))
+<docx.shape.InlineShape object at 0x7fcbc001a850>
+>>> doc.save("Dogs.docx")
+>>> 

@@ -1,0 +1,60 @@
+\hypertarget{group___minion}{}\doxysection{Миньон}
+\label{group___minion}\index{Миньон@{Миньон}}
+\doxysubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___minion_ga44f059566e14c4635211fe6765776182}{draw\+Minion}} (int x, int y, int Minion\+Hand, int Minion\+Scale, bool Minion\+Glasses, bool Minion\+Hair, bool Minion\+Roth, C\+O\+L\+O\+R\+R\+EF Minion\+Eyes\+Color, C\+O\+L\+O\+R\+R\+EF Minion\+Pants\+Color, C\+O\+L\+O\+R\+R\+EF Minion\+Glasses\+Color, C\+O\+L\+O\+R\+R\+EF Minion\+Pocket\+Color)
+\begin{DoxyCompactList}\small\item\em Отрисовка персонажа ,,Миньон" -\/ герой мультфильма «Гадкий я». \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+
+
+\doxysubsection{Функции}
+\mbox{\Hypertarget{group___minion_ga44f059566e14c4635211fe6765776182}\label{group___minion_ga44f059566e14c4635211fe6765776182}} 
+\index{Миньон@{Миньон}!drawMinion@{drawMinion}}
+\index{drawMinion@{drawMinion}!Миньон@{Миньон}}
+\doxysubsubsection{\texorpdfstring{drawMinion()}{drawMinion()}}
+{\footnotesize\ttfamily void draw\+Minion (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{Minion\+Hand,  }\item[{int}]{Minion\+Scale,  }\item[{bool}]{Minion\+Glasses,  }\item[{bool}]{Minion\+Hair,  }\item[{bool}]{Minion\+Roth,  }\item[{C\+O\+L\+O\+R\+R\+EF}]{Minion\+Eyes\+Color,  }\item[{C\+O\+L\+O\+R\+R\+EF}]{Minion\+Pants\+Color,  }\item[{C\+O\+L\+O\+R\+R\+EF}]{Minion\+Glasses\+Color,  }\item[{C\+O\+L\+O\+R\+R\+EF}]{Minion\+Pocket\+Color }\end{DoxyParamCaption})}
+
+
+
+Отрисовка персонажа ,,Миньон" -\/ герой мультфильма «Гадкий я». 
+
+
+
+
+\begin{DoxyParams}{Аргументы}
+{\em x} & Х-\/координата точки \\
+\hline
+{\em y} & Y-\/координата точки \\
+\hline
+{\em Minion\+Hand} & Наличие рук у персонажа (0 -\/ Нет рук, 1 -\/ Правая рука, 2 -\/ Левая рука, 3 -\/ Обе руки) \\
+\hline
+{\em Minion\+Scale} & Размер персонажа (1 -\/ Стандартный размер, 2 -\/ В 2 раза больше стандартного размера и т.\+д.) \\
+\hline
+{\em Minion\+Glasses} & Наличие очков у персонажа (0 -\/ Нет очков, 1 -\/ Есть очки) \\
+\hline
+{\em Minion\+Hair} & Наличие волос у персонажа (0 -\/ Нет волос, 1 -\/ Есть волос) \\
+\hline
+{\em Minion\+Roth} & Наличие рта у персонажа (0 -\/ Нет рта, 1 -\/ Есть рот) \\
+\hline
+{\em Minion\+Eyes\+Color} & Цвет глаз персонажа \\
+\hline
+{\em Minion\+Pants\+Color} & Цвет штанов персонажа \\
+\hline
+{\em Minion\+Glasses\+Color} & Цвет очков персонажа \\
+\hline
+{\em Minion\+Pocket\+Color} & Цвет карманчика на штанах персонажа\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Предупреждения}
+Если цвета разных частей тела совпадают, \sout{может произойти ядерный коллапс} могут наблюдаться серъёзные графические баги.
+\end{DoxyWarning}
+\begin{DoxyReturn}{Возвращает}
+Если операция была успешна -\/ true, иначе -\/ false.
+\end{DoxyReturn}
+\begin{DoxyNote}{Заметки}
+Для использования функции нужно создать холст из T\+X\+Lib.
+\end{DoxyNote}
+Пример использования функции смотрите в \mbox{\hyperlink{group___tutor}{примере реализации}}. 

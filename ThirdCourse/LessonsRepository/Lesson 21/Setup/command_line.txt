@@ -1,0 +1,5 @@
+# установка с закачкой из интернета
+pip install pygame
+
+# установка из wheel-файла (пример)
+python -m pip install pygame-1.9.4-cp37-cp37m-win32.whl 

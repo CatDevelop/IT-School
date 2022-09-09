@@ -1,0 +1,23 @@
+>>> fr_2_clr = {'watermelon': 'green', 'pomegranate': 'red', 'peach': 'orange', 'cherry': 'red', 'pear': 'green', 'banana': 'yellow', 'plum': 'purple', 'orange': 'orange'}
+>>> fr_2_clr
+{'watermelon': 'green', 'pomegranate': 'red', 'peach': 'orange', 'cherry': 'red', 'pear': 'green', 'banana': 'yellow', 'plum': 'purple', 'orange': 'orange'}
+>>> clr_2_fr = {}
+>>> for fruit in fr_2_clr:
+	clr = fr_2_clr[fruit]
+	clr_2_fr[clr] = fruit
+
+	
+>>> clr_2_fr
+{'green': 'pear', 'red': 'cherry', 'orange': 'orange', 'yellow': 'banana', 'purple': 'plum'}
+>>> 
+>>> clr_2_fr2 = {}
+>>> for fruit in fr_2_clr:
+	clr = fr_2_clr[fruit]
+	if clr not in clr_2_fr2:
+		clr_2_fr2[clr] = []
+	clr_2_fr2[clr].append(fruit)
+
+	
+>>> clr_2_fr2
+{'green': ['watermelon', 'pear'], 'red': ['pomegranate', 'cherry'], 'orange': ['peach', 'orange'], 'yellow': ['banana'], 'purple': ['plum']}
+>>> 

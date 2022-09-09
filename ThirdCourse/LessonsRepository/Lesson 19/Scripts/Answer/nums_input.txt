@@ -1,0 +1,15 @@
+Python 3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 14:05:16) [MSC v.1915 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license()" for more information.
+>>> line_nums = list(map(int, input("Целые числа через пробел: ").split()))
+Целые числа через пробел: 4 6 -9 23 0 -84
+>>> line_nums
+[4, 6, -9, 23, 0, -84]
+>>> 
+>>> N = 3
+>>> col_nums = [int(input("Введите число: ")) for _ in range(N)]
+Введите число: 4
+Введите число: -5
+Введите число: 8
+>>> col_nums
+[4, -5, 8]
+>>> 

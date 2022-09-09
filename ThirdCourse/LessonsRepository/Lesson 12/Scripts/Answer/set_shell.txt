@@ -1,0 +1,21 @@
+>>> list_a = [5, 2, 3, 'r', 4, 'ee', 8, 11, 23]
+>>> list_b = [4, 1, 'we', 'ee', 2, 'r', 3, -6, 0.23]
+>>> 
+>>> match_list = []
+>>> for i in list_a:
+	for j in list_b:
+		if i == j:
+			match_list.append(i)
+			break
+
+		
+>>> match_list
+[2, 3, 'r', 4, 'ee']
+>>> 
+>>> set(list_a) & set(list_b)
+{2, 3, 4, 'r', 'ee'}
+>>> 
+>>> match_list_2 = list(set(list_a) & set(list_b))
+>>> match_list_2
+[2, 3, 4, 'r', 'ee']
+>>> 

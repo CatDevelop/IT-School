@@ -1,0 +1,48 @@
+Python 3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 14:05:16) [MSC v.1915 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license()" for more information.
+>>> import sys
+>>> for stream in (sys.stdin, sys.stdout, sys.stderr):
+	print(stream)
+
+	
+<idlelib.run.PseudoInputFile object at 0x03230690>
+<idlelib.run.PseudoOutputFile object at 0x032306B0>
+<idlelib.run.PseudoOutputFile object at 0x032306F0>
+>>> 
+>>> sys.stdin.read()
+a
+b
+'a\nb\n'
+>>> 
+>>> sys.stdout.write("abc")
+abc3
+>>> 
+>>> help(print)
+Help on built-in function print in module builtins:
+
+print(...)
+    print(value, ..., sep=' ', end='\n', file=sys.stdout, flush=False)
+    
+    Prints the values to a stream, or to sys.stdout by default.
+    Optional keyword arguments:
+    file:  a file-like object (stream); defaults to the current sys.stdout.
+    sep:   string inserted between values, default a space.
+    end:   string appended after the last value, default a newline.
+    flush: whether to forcibly flush the stream.
+
+>>> # параметр file в функции print() по умолчанию связан с потоком sys.stdout
+>>> 
+>>> help(input)
+Help on built-in function input in module builtins:
+
+input(prompt=None, /)
+    Read a string from standard input.  The trailing newline is stripped.
+    
+    The prompt string, if given, is printed to standard output without a
+    trailing newline before reading input.
+    
+    If the user hits EOF (*nix: Ctrl-D, Windows: Ctrl-Z+Return), raise EOFError.
+    On *nix systems, readline is used if available.
+
+>>> # input() может читать данные до ввода Enter только с потока sys.stdin
+>>> 

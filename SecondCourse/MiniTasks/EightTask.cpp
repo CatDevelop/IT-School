@@ -3,7 +3,7 @@
     #include <stdio.h>
     #include <locale>
     using namespace std;
-    
+
     int main()
     {
         char buffer[50] = {0};
@@ -45,7 +45,7 @@
                 {
                     cout<<c;
                 }
-            } 
+            }
         }else{
             cout<<"Encode: ";
             for(int i = 0; i<strlen(buffer); i++)
@@ -74,6 +74,5 @@
             }
         }
         cout<<endl;
-        system("pause");
         return 0;
     }
